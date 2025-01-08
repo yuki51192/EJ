@@ -1,0 +1,212 @@
+ClearError call:[glGetError]
+LogCall call:[glGetError]
+sizeofGLType call:[sizeof]
+shaderEnumToStr
+Application
+getLibrary
+Application
+toString call:[string] noreturn:[string]
+swap
+loadGlad call:[exit,gladLoadGLLoader] noreturn:[exit]
+initialize call:[getInstance] noreturn:[getInstance]
+getInstance
+getDefaultHint
+isCameraValid
+getCamera
+getCamera
+getLastSize
+swap
+setCamera call:[CameraType,_deleteCamera] noreturn:[CameraType]
+getWidth call:[glfwGetWindowSize]
+getHeight call:[glfwGetWindowSize]
+getSize call:[glfwGetWindowSize]
+getCursorPos call:[glfwGetCursorPos]
+getReverseYCursorPos call:[getCursorPos,getHeight]
+getReverseXCenteredCursorPos call:[getCursorPos,getSize]
+getNDCCursorPos call:[getNDCCursorPos,getSize] noreturn:[getNDCCursorPos]
+getNDCCursorPos call:[getCursorPos]
+getReverseYNDCCursorPos call:[getCursorPos,getSize]
+reversePosY call:[getHeight]
+toGlm
+_getHasChange
+getFov
+getAspectRatio
+getNear
+getFar
+_getMatrix call:[s_getMatrix] noreturn:[s_getMatrix]
+getLeft
+getRight
+getBottom
+getTop
+getNear
+getFar
+_getMatrix call:[s_getMatrix] noreturn:[s_getMatrix]
+touch call:[_setHasChange] noreturn:[_setHasChange]
+hasChange call:[_getHasChange,_setHasChange]
+update
+_setHasChange
+getFov call:[touch]
+getAspectRatio call:[touch]
+getNear call:[touch]
+getFar call:[touch]
+setFov call:[touch] noreturn:[touch]
+setAspectRatio call:[touch] noreturn:[touch]
+setNear call:[touch] noreturn:[touch]
+setFar call:[touch] noreturn:[touch]
+update call:[_getMatrix,operator=,update] noreturn:[update]
+s_getMatrix call:[perspective] noreturn:[perspective]
+getLeft call:[touch]
+getRight call:[touch]
+getBottom call:[touch]
+getTop call:[touch]
+getNear call:[touch]
+getFar call:[touch]
+setLeft call:[touch] noreturn:[touch]
+setRight call:[touch] noreturn:[touch]
+setBottom call:[touch] noreturn:[touch]
+setTop call:[touch] noreturn:[touch]
+setNear call:[touch] noreturn:[touch]
+setFar call:[touch] noreturn:[touch]
+update call:[_getMatrix,operator=,update] noreturn:[update]
+s_getMatrix call:[ortho] noreturn:[ortho]
+toGlm
+getEye
+getRotation
+getRotationEuler call:[eulerAngles] noreturn:[eulerAngles]
+_getHasChange
+getEye call:[touch]
+getRotation call:[touch]
+getRotationEuler call:[eulerAngles,touch] noreturn:[eulerAngles]
+setEye call:[touch] noreturn:[touch]
+setRotation call:[touch] noreturn:[touch]
+setRotationEuler call:[touch] noreturn:[touch]
+touch call:[_setHasChange] noreturn:[_setHasChange]
+hasChange call:[_getHasChange,_setHasChange]
+update call:[inverse,mat4,mat4_cast,operator*=,operator=] noreturn:[operator*=]
+_setHasChange
+EJGLCamera
+isWindowValid
+isViewMatrixValid
+isProjectionMatrixValid
+getWindow
+getViewMatrix
+getProjectionMatrix
+getWindow
+getViewMatrix
+getProjectionMatrix
+getWindowSizeCB
+getKeyCB
+getMouseButtonCB
+getMouseMoveCB
+getScrollCB
+screen2World call:[toGlm,vec4] noreturn:[vec4]
+swap call:[swap,void] noreturn:[swap]
+setWindow
+setViewMatrix call:[ViewMatrixType,_deleteViewMatrix] noreturn:[ViewMatrixType]
+setProjectionMatrix call:[ProjectionMatrixType,_deleteProjectionMatrix] noreturn:[ProjectionMatrixType]
+_deleteViewMatrix
+_deleteProjectionMatrix
+EJGLBufferObject
+EJGLBufferObject
+EJGLBufferObject
+EJGLBufferObject
+EJGLBufferObject
+operatorGLuint
+isValid
+getBufferID
+getBufferType
+EJGLArrayBuffer
+EJGLArrayBuffer
+EJGLArrayBuffer
+EJGLArrayBuffer
+EJGLElementBuffer
+EJGLElementBuffer
+EJGLElementBuffer
+EJGLElementBuffer
+EJGLUniformBuffer
+EJGLUniformBuffer
+EJGLUniformBuffer
+EJGLUniformBuffer
+getBindingPoint
+toString call:[string,toString]
+swap call:[swap] noreturn:[swap]
+setBufferID
+setBufferType
+bind call:[glBindBuffer] noreturn:[glBindBuffer]
+unbind call:[unbind] noreturn:[unbind]
+create call:[bind,glBufferData,glGenBuffers] noreturn:[glBufferData]
+create call:[create,data,size,sizeof] noreturn:[create]
+deleteBuffer call:[glDeleteBuffers]
+unbind call:[glBindBuffer] noreturn:[glBindBuffer]
+isBinding call:[isBinding] noreturn:[isBinding]
+isBinding call:[getBinding]
+getBinding call:[glGetIntegerv]
+toString call:[toString] noreturn:[toString]
+swap call:[swap] noreturn:[swap]
+unbind call:[unbind] noreturn:[unbind]
+toString call:[toString] noreturn:[toString]
+swap call:[swap] noreturn:[swap]
+unbind call:[unbind] noreturn:[unbind]
+toString call:[toString] noreturn:[toString]
+swap call:[swap] noreturn:[swap]
+bindToBindingPoint call:[getBufferID,glBindBufferBase] noreturn:[glBindBufferBase]
+bindToBindingPoint call:[getBufferID,glBindBufferRange] noreturn:[glBindBufferRange]
+unbind call:[unbind] noreturn:[unbind]
+EJGLVertexBufferLayout
+EJGLVertexBufferLayout
+EJGLVertexBufferLayout
+EJGLVertexBufferLayout
+getStride
+getElements
+getElements
+EJGLVertexArray
+EJGLVertexArray
+EJGLVertexArray
+operatorGLuint
+isValid
+getVertexArrayID
+unbind call:[glBindVertexArray] noreturn:[glBindVertexArray]
+size call:[sizeofGLType] noreturn:[sizeofGLType]
+apply call:[glEnableVertexAttribArray,glVertexAttribPointer] noreturn:[glEnableVertexAttribArray]
+swap call:[swap] noreturn:[swap]
+setVertexArrayID
+create call:[glGenVertexArrays] noreturn:[glGenVertexArrays]
+bind call:[glBindVertexArray] noreturn:[glBindVertexArray]
+deleteVertexArray call:[glDeleteVertexArrays]
+isBinding call:[isBinding] noreturn:[isBinding]
+isBinding call:[getBinding]
+getBinding call:[glGetIntegerv]
+EJGLShader
+EJGLShader
+EJGLShader
+EJGLShader
+isValid
+getShaderID
+swap call:[swap] noreturn:[swap]
+setShaderID
+EJGLShaderProgram
+EJGLShaderProgram
+EJGLShaderProgram
+isValid
+getProgramID
+unbind call:[glUseProgram] noreturn:[glUseProgram]
+swap call:[swap] noreturn:[swap]
+setProgramID
+create call:[glCreateProgram] noreturn:[glCreateProgram]
+attachShader call:[getShaderID,glAttachShader] noreturn:[glAttachShader]
+bind call:[glUseProgram] noreturn:[glUseProgram]
+bindUniformBlock call:[glUniformBlockBinding] noreturn:[glUniformBlockBinding]
+setUniform call:[getUniformLocation,setUniform] noreturn:[setUniform]
+setUniform call:[glUniform1i] noreturn:[glUniform1i]
+setUniform call:[glUniform1ui] noreturn:[glUniform1ui]
+setUniform call:[glUniform1f] noreturn:[glUniform1f]
+setUniform call:[glUniform1fv] noreturn:[glUniform1fv]
+setUniform call:[glUniform2fv,value_ptr] noreturn:[glUniform2fv]
+setUniform call:[glUniform2f] noreturn:[glUniform2f]
+setUniform call:[glUniform3fv,value_ptr] noreturn:[glUniform3fv]
+setUniform call:[glUniform3f] noreturn:[glUniform3f]
+setUniform call:[glUniform4fv,value_ptr] noreturn:[glUniform4fv]
+setUniform call:[glUniform4f] noreturn:[glUniform4f]
+setUniform call:[glUniformMatrix3fv,value_ptr] noreturn:[glUniformMatrix3fv]
+setUniform call:[glUniformMatrix4fv,value_ptr] noreturn:[glUniformMatrix4fv]
+main global:[frag,vert] call:[Begin,CreateContext,End,GetDrawData,IMGUI_CHECKVERSION,ImGui_ImplGlfw_InitForOpenGL,ImGui_ImplGlfw_NewFrame,ImGui_ImplOpenGL3_Init,ImGui_ImplOpenGL3_NewFrame,ImGui_ImplOpenGL3_RenderDrawData,NewFrame,Render,Text,add,addBuffer,addBufferLayout,apply,attachShaderBySrc,bind,bindToBindingPoint,create,double,drawElement,getBindingPoint,getCamera,getDefaultHint,getInstance,getProjectionMatrix,getUniformBlockIndexAndBind,getViewMatrix,glBindTexture,glClear,glClearColor,glEnable,glGenTextures,glGenerateMipmap,glTexImage2D,glTexParameteri,glfwGetTime,hasChange,initialize,link,loadGlad,makeContextCurrent,mat4,pollEvents,setUniform,shouldClose,sizeof,stbi_image_free,stbi_load,stbi_set_flip_vertically_on_load,strlen,subData,swapBuffers,toGlm,unbind,update,value_ptr] noreturn:[glGenerateMipmap,subData,swapBuffers,unbind]

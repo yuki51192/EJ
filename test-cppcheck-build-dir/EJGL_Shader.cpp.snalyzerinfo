@@ -1,0 +1,19 @@
+ClearError call:[glGetError]
+LogCall call:[glGetError]
+sizeofGLType call:[sizeof]
+shaderEnumToStr
+EJGLShader
+EJGLShader
+EJGLShader
+EJGLShader
+isValid
+getShaderID
+swap call:[swap] noreturn:[swap]
+setShaderID
+EJGLShader call:[deleteShader] noreturn:[deleteShader]
+operator=
+toString call:[shaderEnumToStr,string,to_string]
+createShaderByFile call:[_createShader,c_str,ifs,is_open,rdbuf,size,str]
+createShaderBySrc call:[_createShader]
+deleteShader call:[glDeleteShader]
+_createShader call:[free,glCompileShader,glCreateShader,glDeleteShader,glGetShaderInfoLog,glGetShaderiv,glShaderSource,malloc,shaderEnumToStr,sizeof]

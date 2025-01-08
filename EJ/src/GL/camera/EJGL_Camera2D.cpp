@@ -1,76 +1,50 @@
-#include "EJ/GL/camera/EJGL_Camera2D.hpp"
-#include "EJ/GL/application/EJGL_Window.hpp"
+#include "EJ/GL/Camera/EJGL_Camera2D.hpp"
+#include "EJ/GL/Application/EJGL_Window.hpp"
 
-#include "EJ/GL/extensions/EJGL_GLMExtension.hpp"
+#include "EJ/GL/Helper/EJGL_GLMExtension.hpp"
 
 EJGL_NAMESPACE_BEGIN
 
-EJGLCamera2D::EJGLCamera2D(EJGLWindow* window_) :
-	EJGLCamera{ window_ }
-{
-	EJGL_ASSERT(window_ != nullptr);
-	auto size = window_->getSize() / 2;
-	setProjectionMatrix<EJGLOrthographicMatrix>(static_cast<float>(-size.x), static_cast<float>(size.x), static_cast<float>(-size.y), static_cast<float>(size.y));
-	setViewMatrix<EJGLViewMatrix>();
-
-	_windowSizeCB = s_windowSizeCB;
-
-	_mouseButtonCB = s_mouseButtonCB;
-	_mouseMoveCB = s_mouseMoveCB;
-	_scrollCB = s_scrollCB;
-}
-
-std::string EJGLCamera2D::toString() const noexcept {
-	return EJGLCamera::toString();
-}
-
-// static
-void EJGLCamera2D::s_windowSizeCB(EJGLWindow& window_, int width_, int height_) {
-	EJGLCamera2D* cam = window_.getCamera<EJGLCamera2D>();
-	glm::ivec2 tmp = window_.getLastSize();
-	auto ortho = cam->getProjectionMatrix<EJGLOrthographicMatrix>();
-	float hW = (width_ >> 1) * cam->_invScale, hH = (height_ >> 1) * cam->_invScale;
+void Camera2D::_windowSizeCB(::glfw::Window& window_, int width_, int height_) {
+	glm::ivec2 tmp = getWindow()->getLastSize();
+	auto ortho = getProjectionMatrix<OrthographicMatrix>();
+	float hW = (width_ >> 1) * _invScale, hH = (height_ >> 1) * _invScale;
 	ortho->setLeft(-hW);
 	ortho->setRight(hW);
 	ortho->setTop(hH);
 	ortho->setBottom(-hH);
 	ortho->update();
 }
-
-void EJGLCamera2D::s_mouseButtonCB(EJGLWindow& window_, MouseButton button_, MouseButtonState action_, ModifierKeyBit mods_) {
-	EJGLCamera2D* cam = window_.getCamera<EJGLCamera2D>();
-	if (button_ == glfw::MouseButton::Right) {
-		if (action_ == glfw::MouseButtonState::Press) {
-			cam->_isMoving = true;
-			cam->_startMovePos = window_.getReverseYCursorPos();
+void Camera2D::_mouseButtonCB(::glfw::Window& window_, Camera2D::MouseButton button_, Camera2D::MouseButtonState action_, Camera2D::ModifierKeyBit mods_) {
+	if (button_ == ::glfw::MouseButton::Right) {
+		if (action_ == ::glfw::MouseButtonState::Press) {
+			_isMoving = true;
+			_startMovePos = Window::getWrapperFromHandle(window_).getReverseYCursorPos();
 		}
-		else if (action_ == glfw::MouseButtonState::Release) {
-			cam->_isMoving = false;
+		else if (action_ == ::glfw::MouseButtonState::Release) {
+			_isMoving = false;
 		}
 	}
 }
-
-void EJGLCamera2D::s_mouseMoveCB(EJGLWindow& window_, double x_, double y_) {
-	EJGLCamera2D* cam = window_.getCamera<EJGLCamera2D>();
-	if (!cam->_isMoving)
+void Camera2D::_mouseMoveCB(::glfw::Window& window_, double x_, double y_) {
+	if (!_isMoving)
 		return;
-	glm::vec2 pos = window_.reversePosY({ x_, y_ });
-	glm::vec3 eye = cam->getViewMatrix()->getEye();
-	eye += glm::vec3{ glm::vec2{ cam->_startMovePos - pos } * cam->_invScale, 0 };
-	cam->getViewMatrix()->setEye(eye);
-	cam->_startMovePos = glm::vec2{ pos };
+	Window& win = Window::getWrapperFromHandle(window_);
+	::glm::vec2 pos = win.reversePosY<float>({ x_, y_ });
+	::glm::vec3 eye = getViewMatrix()->getEye();
+	eye += ::glm::vec3{ ::glm::vec2{ _startMovePos - pos } *_invScale, 0 };
+	getViewMatrix()->setEye(eye);
+	_startMovePos = ::glm::vec2{ pos };
 
 	// move eye to make it like we resize at mouse pos
-	auto mouse = window_.getReverseXCenteredCursorPos() * cam->_invScale;
-	auto eyeScreenPos = ::glm::vec2(cam->getViewMatrix()->getEye());
-
-	std::cout << ::_EJGL toString(mouse) << '\t' << ::_EJGL toString(eyeScreenPos) << '\n';
+	auto mouse = win.getReverseXCenteredCursorPos() * _invScale;
+	auto eyeScreenPos = ::glm::vec2(getViewMatrix()->getEye());
+	// TODO
 }
 
-void EJGLCamera2D::s_scrollCB(EJGLWindow& window_, double x_, double y_) {
-	EJGLCamera2D* cam = window_.getCamera<EJGLCamera2D>();
-	auto ortho = cam->getProjectionMatrix<EJGLOrthographicMatrix>();
-	auto view = cam->getViewMatrix();
+void Camera2D::_scrollCB(::glfw::Window& window_, double x_, double y_) {
+	auto ortho = getProjectionMatrix<OrthographicMatrix>();
+	auto view = getViewMatrix();
 
 	// resize
 	constexpr float _OffsetScale = 0.1f;
@@ -83,15 +57,13 @@ void EJGLCamera2D::s_scrollCB(EJGLWindow& window_, double x_, double y_) {
 	ortho->update();
 
 	// move eye to make it like we resize at mouse pos
-	auto mouse = window_.getReverseXCenteredCursorPos() * cam->_invScale;
+	auto mouse = Window::getWrapperFromHandle(window_).getReverseXCenteredCursorPos() * _invScale;
 	auto eyeScreenPos = ::glm::vec2(view->getEye());
-
-	std::cout << ::_EJGL toString(mouse) << '\t' << ::_EJGL toString(eyeScreenPos) << '\n';
 
 	// y == 1 - scale
 	view->setEye(::glm::vec3((eyeScreenPos - mouse) * y + eyeScreenPos, 1));
 
-	cam->_invScale *= scale;
+	_invScale *= scale;
 }
 
 EJGL_NAMESPACE_END

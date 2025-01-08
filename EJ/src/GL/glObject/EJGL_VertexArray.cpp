@@ -1,22 +1,19 @@
-#include "EJ/GL/glObject/EJGL_VertexArray.hpp"
-#include "EJ/GL/glObject/EJGL_BufferObject.hpp"
+#include "EJ/GL/GlObject/EJGL_VertexArray.hpp"
+#include "EJ/GL/GlObject/EJGL_BufferObject.hpp"
+
+#include <ranges>
 
 EJGL_NAMESPACE_BEGIN
 
-// EJGLVertexBufferLayout
-EJGLVertexBufferLayout& EJGLVertexBufferLayout::operator=(const EJGLVertexBufferLayout& obj_) noexcept {
-	_stride = obj_._stride;
-	_elements = obj_._elements;
-	return *this;
-}
+#pragma region VertexBufferLayout
 
-void EJGLVertexBufferLayout::add(EJGLDataType type_, int count_, GLboolean normalized_) {
-	EJGL_ASSERT(count_ != 0);
+void VertexBufferLayout::add(DataType type_, int count_, GLboolean normalized_) {
+	EJ_ASSERT(count_ != 0);
 	_elements.push_back({ type_, count_, normalized_ });
 	_stride += _elements.back().size();
 }
 
-void EJGLVertexBufferLayout::apply() const {
+void VertexBufferLayout::apply() const {
 	const auto& stride = getStride();
 	const auto& elements = getElements();
 	unsigned long long offset = 0;
@@ -27,91 +24,161 @@ void EJGLVertexBufferLayout::apply() const {
 	}
 }
 
-// EJGLVertexArray
-EJGLVertexArray& EJGLVertexArray::operator=(const EJGLVertexArray& obj_) noexcept {
-	_dataPtr = obj_._dataPtr;
-	return *this;
+#pragma endregion
+
+#pragma region VertexArray
+
+class VertexArray::_VertexArrayImpl {
+public:
+	// construct empty
+	_VertexArrayImpl() noexcept
+	{}
+	// call create() after construct
+	_VertexArrayImpl(default_create) noexcept
+	{
+		create();
+	}
+	// construct by id
+	_VertexArrayImpl(GLuint id_) :
+		_vertexArrayID(id_)
+	{}
+	_VertexArrayImpl(const _VertexArrayImpl& obj_) = delete;
+	_VertexArrayImpl& operator=(const _VertexArrayImpl& obj_) = delete;
+	~_VertexArrayImpl() noexcept {
+		deleteVertexArray();
+	}
+
+	_STD string toStringNoHeader() const noexcept {
+		return _STD string("{ ID: ") + _EJ toString(_vertexArrayID) + " }";
+	}
+
+	void create() {
+		glGenVertexArrays(1, &_vertexArrayID);
+	}
+
+	void bind() const {
+		glBindVertexArray(_vertexArrayID);
+	}
+
+	void addBuffer(const BufferObject& buffer_) {
+		buffer_.bind();
+		_bindingBuffers.push_back(buffer_);
+	}
+	void addBufferLayout(const ArrayBuffer& buffer_, const VertexBufferLayout& layout_) {
+		buffer_.bind();
+		layout_.apply();
+		buffer_.unbind();
+		_bindingBuffers.push_back(buffer_);
+	}
+
+	void deleteVertexArray() {
+		glDeleteVertexArrays(1, &_vertexArrayID);
+		_vertexArrayID = 0;
+	}
+
+public:
+	GLuint _vertexArrayID;
+	_STD vector<BufferObject> _bindingBuffers;
+
+public:
+	static void unbind() {
+		glBindVertexArray(0);
+	}
+
+};
+
+// construct empty
+VertexArray::VertexArray() noexcept :
+	_impl{ _STD make_shared<_VertexArrayImpl>() }
+{}
+// call create() after construct
+VertexArray::VertexArray(default_create) noexcept :
+	_impl{ _STD make_shared<_VertexArrayImpl>(default_create{}) }
+{}
+// construct by id
+VertexArray::VertexArray(GLuint id_) :
+	_impl{ _STD make_shared<_VertexArrayImpl>(id_) }
+{}
+
+_STD string VertexArray::toStringNoHeader() const noexcept {
+	return _impl->toStringNoHeader();
 }
-EJGLVertexArray::~EJGLVertexArray() {
-	deleteVertexArray();
-	_deleteBuffers();
+_STD string VertexArray::toString() const noexcept {
+	return _STD string("[EJ][VertexArray]") + _impl->toStringNoHeader();
 }
 
-std::string EJGLVertexArray::toString() const noexcept {
-	return std::string("[VertexArray]{ ID: ") + std::to_string(_dataPtr->_vertexArrayID) + " }";
+void VertexArray::swap(VertexArray& obj_) noexcept {
+	_STD swap(_impl, obj_._impl);
 }
 
-void EJGLVertexArray::addBuffer(EJGLBufferObject& buffer_) {
-	EJGL_ASSERT(isValid() && "Have you create()?");
-
-	EJGL_ASSERT(buffer_.getBufferType() == EJGLBufferType::ARRAY || buffer_.getBufferType() == EJGLBufferType::ELEMENT && "You can only add VBO/EBO");
-
-#ifdef EJGL_USE_DEBUG_HELPER
-	EJGL_ASSERT(isBinding() && "Have you bind()?");
-#endif // EJGL_USE_DEBUG_HELPER
-
-	buffer_.bind();
-	_dataPtr->_bufferAttaching.push_back(buffer_.getBufferID());
+VertexArray::operator GLuint() const {
+	return _impl->_vertexArrayID;
 }
-void EJGLVertexArray::addBufferLayout(EJGLArrayBuffer& buffer_, const EJGLVertexBufferLayout& layout_) {
-	EJGL_ASSERT(isValid() && "Have you create()?");
-
-#ifdef EJGL_USE_DEBUG_HELPER
-	EJGL_ASSERT(isBinding() && "Have you bind()?");
-#endif // EJGL_USE_DEBUG_HELPER
-
-	buffer_.bind();
-	layout_.apply();
-	_dataPtr->_bufferAttaching.push_back(buffer_.getBufferID());
+bool VertexArray::isValid() const {
+	return _impl->_vertexArrayID != 0;
+}
+GLuint VertexArray::getVertexArrayID() const {
+	return _impl->_vertexArrayID;
 }
 
-void EJGLVertexArray::_deleteBuffers() const {
-	//glDeleteBuffers(_bufferToDelete.size(), _bufferToDelete.data());
+void VertexArray::setVertexArrayID(GLuint ID_) noexcept {
+	_impl->_vertexArrayID = ID_;
+}
+
+void VertexArray::create() {
+	return _impl->create();
+}
+
+void VertexArray::bind() const {
+	EJ_ASSERT(isValid() && "Have you create()?");
+	return _impl->bind();
+}
+
+// Description:
+//	Adds a BufferObject(VBO/EBO) to current VAO.
+// Param buffer_:
+//	buffer to be added
+void VertexArray::addBuffer(const BufferObject& buffer_) {
+	EJ_ASSERT(isValid() && "Have you create()?");
+	EJ_ASSERT(buffer_.getBufferType() == BufferType::ARRAY || buffer_.getBufferType() == BufferType::ELEMENT && "You can only add VBO/EBO");
+	return _impl->addBuffer(buffer_);
+}
+// Description:
+//	Adds a VBO to current VAO with layout.
+// Param buffer_:
+//	buffer to be added
+// Param layout_:
+//	will call layout.apply() for you
+void VertexArray::addBufferLayout(const ArrayBuffer& buffer_, const VertexBufferLayout& layout_) {
+	EJ_ASSERT(isValid() && "Have you create()?");
+	return _impl->addBufferLayout(buffer_, layout_);
+}
+
+void VertexArray::deleteVertexArray() {
+	return _impl->deleteVertexArray();
 }
 
 // static functions
-void EJGLVertexArray::drawArray(EJGLDrawOption EJGLDrawOption_, int first_, GLsizei count_) {
-#ifdef EJGL_USE_DEBUG_HELPER
-	EJGL_ASSERT(isBinding() && "Have you bind()?");
-#endif // EJGL_USE_DEBUG_HELPER
-	EJGL_CALL(glDrawArrays(EJGLDrawOption_, first_, count_));
+void VertexArray::unbind() {
+	_VertexArrayImpl::unbind();
 }
-void EJGLVertexArray::drawElement(EJGLDrawOption EJGLDrawOption_, int first_, GLsizei count_) {
-#ifdef EJGL_USE_DEBUG_HELPER
-	EJGL_ASSERT(isBinding() && "Have you bind()?");
-#endif // EJGL_USE_DEBUG_HELPER
-	EJGL_CALL(glDrawElements(EJGLDrawOption_, count_, EJGLDataType::UNSIGNED_INT, (void*)(sizeof(GLuint) * first_)));
+
+void VertexArray::drawArray(DrawOption drawOption_, GLint first_, GLsizei count_) {
+	glDrawArrays(drawOption_, first_, count_);
 }
-void EJGLVertexArray::mulDrawArray(EJGLDrawOption EJGLDrawOption_, const int* first_, const GLsizei* count_, GLsizei drawcount_) {
-#ifdef EJGL_USE_DEBUG_HELPER
-	EJGL_ASSERT(isBinding() && "Have you bind()?");
-#endif // EJGL_USE_DEBUG_HELPER
-	EJGL_CALL(glMultiDrawArrays(EJGLDrawOption_, first_, count_, drawcount_));
+void VertexArray::drawElement(DrawOption drawOption_, GLint first_, GLsizei count_, DataType valType_) {
+	glDrawElements(drawOption_, count_, valType_, (void*)(sizeofGLType(valType_) * first_));
 }
-void EJGLVertexArray::mulDrawElement(EJGLDrawOption EJGLDrawOption_, const int* first_, const GLsizei* count_, GLsizei drawcount_) {
-#ifdef EJGL_USE_DEBUG_HELPER
-	EJGL_ASSERT(isBinding() && "Have you bind()?");
-#endif // EJGL_USE_DEBUG_HELPER
-	std::vector<const void*> offsets;
-	offsets.reserve(drawcount_);
-	for (int i = 0; i < drawcount_; ++i) {
-		offsets.push_back((void*)(first_[i] * sizeof(GLuint)));
-	}
-	EJGL_CALL(glMultiDrawElements(EJGLDrawOption_, count_, EJGLDataType::UNSIGNED_INT, offsets.data(), drawcount_));
+void VertexArray::mulDrawArray(DrawOption drawOption_, _STD span<GLint> first_, _STD span<GLsizei> count_) {
+	EJ_ASSERT(first_.size() == count_.size() && "offsets's and counts's size must equal to drawcount");
+	glMultiDrawArrays(drawOption_, first_.data(), count_.data(), first_.size());
 }
-void EJGLVertexArray::mulDrawArray(EJGLDrawOption EJGLDrawOption_, const std::vector<GLint>& first_, const std::vector<GLsizei>& count_) {
-#ifdef EJGL_USE_DEBUG_HELPER
-	EJGL_ASSERT(isBinding() && "Have you bind()?");
-#endif // EJGL_USE_DEBUG_HELPER
-	EJGL_ASSERT(first_.size() == count_.size());
-	mulDrawArray(EJGLDrawOption_, first_.data(), count_.data(), static_cast<GLsizei>(first_.size()));
+void VertexArray::mulDrawElement(DrawOption drawOption_, _STD span<GLint> first_, _STD span<GLsizei> count_, DataType valType_) {
+	auto offs = first_ | _STD views::transform([valType_](GLint v_) { return (void*)(v_ * sizeofGLType(valType_)); });
+	_STD vector<const void*> offsets{ offs.begin(), offs.end() };
+	glMultiDrawElements(drawOption_, count_.data(), valType_, offsets.data(), offsets.size());
 }
-void EJGLVertexArray::mulDrawElement(EJGLDrawOption EJGLDrawOption_, const std::vector<GLint>& first_, const std::vector<GLsizei>& count_) {
-#ifdef EJGL_USE_DEBUG_HELPER
-	EJGL_ASSERT(isBinding() && "Have you bind()?");
-#endif // EJGL_USE_DEBUG_HELPER
-	EJGL_ASSERT(first_.size() == count_.size());
-	mulDrawElement(EJGLDrawOption_, first_.data(), count_.data(), static_cast<GLsizei>(first_.size()));
-}
+
+#pragma endregion
 
 EJGL_NAMESPACE_END

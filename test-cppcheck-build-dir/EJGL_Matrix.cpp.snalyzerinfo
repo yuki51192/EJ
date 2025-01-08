@@ -1,0 +1,11 @@
+ClearError call:[glGetError]
+LogCall call:[glGetError]
+sizeofGLType call:[sizeof]
+shaderEnumToStr
+EJGLMatrix
+EJGLMatrix
+EJGLMatrix
+EJGLMatrix
+toGlm
+data call:[toGlm,value_ptr] noreturn:[value_ptr]
+operator=

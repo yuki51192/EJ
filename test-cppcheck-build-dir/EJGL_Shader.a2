@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="3107059995858975943">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cassert&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cassert&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\utils\EJ_Config.hpp" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\utils\EJ_Config.hpp" line="5" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glad/glad.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glad/glad.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\utils\EJGL_Config.hpp" line="7" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\utils\EJGL_Config.hpp" line="8" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;memory&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;memory&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_Shader.hpp" line="8" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_Shader.hpp" line="9" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;fstream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;fstream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\src\GL\glObject\EJGL_Shader.cpp" line="2" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;sstream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;sstream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\src\GL\glObject\EJGL_Shader.cpp" line="3" column="0"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLShader&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLShader&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_Shader.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_Shader.hpp" line="27" column="2"/>
+            <symbol>EJGLShader</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLShader&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLShader&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_Shader.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_Shader.hpp" line="36" column="2"/>
+            <symbol>EJGLShader</symbol>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_Shader.cpp">
+            <location file="D:\Program\c++\EJ\EJ\src\GL\glObject\EJGL_Shader.cpp" line="62" column="19"/>
+        </error>
+  <FileInfo check="ctu">
+<function-call call-id="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_Shader.hpp:66:9" call-funcname="_createShader" call-argnr="1" file="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_Shader.cpp" line="43" col="24" my-id="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_Shader.hpp:59:7" my-argnr="1"/>
+  </FileInfo>
+  <FileInfo check="Uninitialized variables">
+    <unsafe-usage my-id="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_Shader.hpp:51:17" my-argnr="1" my-argname="obj_" file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_Shader.inl" line="4" col="24" value="0"/>
+    <unsafe-usage my-id="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_Shader.hpp:47:14" my-argnr="1" my-argname="obj_" file="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_Shader.cpp" line="13" col="13" value="0"/>
+  </FileInfo>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Config.hpp" functionName="ClearError" lineNumber="21"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Config.hpp" functionName="LogCall" lineNumber="26"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Enum.hpp" functionName="sizeofGLType" lineNumber="253"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Enum.hpp" functionName="shaderEnumToStr" lineNumber="277"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_Shader.hpp" functionName="isValid" lineNumber="53"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_Shader.hpp" functionName="getShaderID" lineNumber="54"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_Shader.inl" functionName="swap" lineNumber="3"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_Shader.inl" functionName="setShaderID" lineNumber="7"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_Shader.cpp" functionName="toString" lineNumber="17"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_Shader.cpp" functionName="createShaderByFile" lineNumber="21"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_Shader.cpp" functionName="createShaderBySrc" lineNumber="41"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_Shader.cpp" functionName="deleteShader" lineNumber="47"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_Shader.cpp" functionName="_createShader" lineNumber="52"/>
+    <functioncall functionName="EJGLShader"/>
+    <functioncall functionName="GL_COMPILE_STATUS"/>
+    <functioncall functionName="GL_INFO_LOG_LENGTH"/>
+    <functioncall functionName="GLbyte"/>
+    <functioncall functionName="GLdouble"/>
+    <functioncall functionName="GLfloat"/>
+    <functioncall functionName="GLint"/>
+    <functioncall functionName="GLshort"/>
+    <functioncall functionName="GLubyte"/>
+    <functioncall functionName="GLuint"/>
+    <functioncall functionName="GLushort"/>
+    <functioncall functionName="_createShader"/>
+    <functioncall functionName="c_str"/>
+    <functioncall functionName="deleteShader"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="free"/>
+    <functioncall functionName="glCompileShader"/>
+    <functioncall functionName="glCreateShader"/>
+    <functioncall functionName="glDeleteShader"/>
+    <functioncall functionName="glGetError"/>
+    <functioncall functionName="glGetShaderInfoLog"/>
+    <functioncall functionName="glGetShaderiv"/>
+    <functioncall functionName="glShaderSource"/>
+    <functioncall functionName="is_open"/>
+    <functioncall functionName="make_shared"/>
+    <functioncall functionName="malloc"/>
+    <functioncall functionName="move"/>
+    <functioncall functionName="rdbuf"/>
+    <functioncall functionName="shaderEnumToStr"/>
+    <functioncall functionName="size"/>
+    <functioncall functionName="str"/>
+    <functioncall functionName="string"/>
+    <functioncall functionName="swap"/>
+    <functioncall functionName="to_string"/>
+    <functioncall functionName="true"/>
+  </FileInfo>
+</analyzerinfo>

@@ -5,150 +5,119 @@
 // Tips:
 //
 
-#include "../utils/EJGL_config.hpp"
-#include "../../utils/EJ_Macros.hpp"
-#include "../utils/EJGL_BaseObject.hpp"
-#include "../utils/EJGL_enum.hpp"
+#include "../Utils/EJGL_config.hpp"
+#include "../../Utils/EJ_Macros.hpp"
+#include "../Utils/EJGL_enum.hpp"
+#include "../Utils/EJGL_Traits.hpp"
 
+#include <span>
 #include <memory>
 #include <vector>
-
-namespace {
-	struct _EJGLVertexArrayElem {
-		GLuint _vertexArrayID;
-		std::vector<GLuint> _bufferAttaching;
-	};
-}
+#include <string>
 
 EJGL_NAMESPACE_BEGIN
 
-class EJGLVertexBufferLayout {
+class VertexBufferLayout {
 public:
 	struct Elem {
-		EJGLDataType type;
+		DataType type;
 		int count;
 		GLboolean normalized;
 
-		EJGL_INLINE unsigned int size() const;
+		unsigned int size() const {
+			return count * sizeofGLType(type);
+		}
 
-		EJGL_INLINE void apply(GLuint index_, const void* offset_ = 0, GLsizei stride_ = 0) const;
+		void apply(GLuint index_, const void* offset_ = 0, GLsizei stride_ = 0) const {
+			glVertexAttribPointer(index_, count, type, normalized, stride_, offset_);
+			glEnableVertexAttribArray(index_);
+		}
 	};
 
 public:
-	EJGLVertexBufferLayout() noexcept :
-		_stride(0)
-	{}
-	EJGLVertexBufferLayout(const EJGLVertexBufferLayout& obj_) noexcept :
-		_stride(obj_._stride),
-		_elements(obj_._elements)
-	{}
-	EJGLVertexBufferLayout(EJGLVertexBufferLayout&& obj_) noexcept :
-		_stride(std::move(obj_._stride)),
-		_elements(std::move(obj_._elements))
-	{}
-	EJGLVertexBufferLayout& operator=(const EJGLVertexBufferLayout& obj_) noexcept;
-	virtual ~EJGLVertexBufferLayout() noexcept
-	{}
+	VertexBufferLayout() noexcept = default;
+	VertexBufferLayout(const VertexBufferLayout& obj_) noexcept = default;
+	VertexBufferLayout& operator=(const VertexBufferLayout& obj_) noexcept = default;
+	virtual ~VertexBufferLayout() noexcept = default;
 
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(GLsizei, getStride, _stride);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(const std::vector<Elem>&, getElements, _elements);
-	EJGL_INLINE EJ_M_GET_FUNC(std::vector<Elem>&, getElements, _elements);
+	EJ_M_GET_FUNC(GLsizei&, stride, _stride);
+	EJ_M_GET_FUNC(_STD vector<Elem>&, elements, _elements);
+	EJ_M_CONST_GET_FUNC(GLsizei, getStride, _stride);
+	EJ_M_CONST_GET_FUNC(const _STD vector<Elem>&, getElements, _elements);
 
-	void add(EJGLDataType type_, int count_, GLboolean normalized_ = GL_FALSE);
+	void add(DataType type_, int count_, GLboolean normalized_ = GL_FALSE);
 
 	void apply() const;
 
 private:
-	GLsizei _stride;
-	std::vector<Elem> _elements;
+	GLsizei _stride = 0;
+	_STD vector<Elem> _elements;
 
 };
 
-class EJGLBufferObject;
-class EJGLArrayBuffer;
-class EJGLElementBuffer;
-class EJGLVertexArray : public EJGLBaseObject
+class BufferObject;
+class ArrayBuffer;
+class ElementBuffer;
+class VertexArray
 {
 public:
-	EJGLVertexArray(GLuint vertexArrayID_ = 0) :
-		EJGLBaseObject(),
-		_dataPtr(std::make_shared<_EJGLVertexArrayElem>(_EJGLVertexArrayElem{ vertexArrayID_ }))
-	{}
-	EJGLVertexArray(const EJGLVertexArray& obj_) noexcept :
-		EJGLBaseObject(obj_),
-		_dataPtr(obj_._dataPtr)
-	{}
-	EJGLVertexArray(EJGLVertexArray&& obj_) noexcept :
-		EJGLBaseObject(std::move(obj_)),
-		_dataPtr(std::move(obj_._dataPtr))
-	{}
-	EJGLVertexArray& operator=(const EJGLVertexArray& obj_) noexcept;
-	virtual ~EJGLVertexArray() noexcept;
+	class _VertexArrayImpl;
 
-	virtual std::string toString() const noexcept override;
+public:
+	// construct empty
+	VertexArray() noexcept;
+	// call create() after construct
+	VertexArray(default_create) noexcept;
+	// construct by id
+	VertexArray(GLuint id_);
+	VertexArray(const VertexArray& obj_) noexcept = default;
+	VertexArray& operator=(const VertexArray& obj_) noexcept = default;
+	virtual ~VertexArray() noexcept = default;
 
-	EJGL_INLINE EJ_M_CLONE_FUNC(EJGLBaseObject, EJGLVertexArray, *this);
+	_STD string toStringNoHeader() const noexcept;
+	_STD string toString() const noexcept;
 
-	EJ_INLINE void swap(EJGLVertexArray& obj_) noexcept;
+	void swap(VertexArray& obj_) noexcept;
 
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(, operator GLuint, _dataPtr->_vertexArrayID);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(bool, isValid, _dataPtr->_vertexArrayID != 0);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(GLuint, getVertexArrayID, _dataPtr->_vertexArrayID);
+	operator GLuint() const;
+	bool isValid() const;
+	GLuint getVertexArrayID() const;
 
-	EJGL_INLINE void setVertexArrayID(GLuint ID_);
+	void setVertexArrayID(GLuint ID_) noexcept;
 
-	EJGL_INLINE void create();
+	void create();
 
-	EJGL_INLINE void bind() const;
-
-	EJGL_INLINE void deleteVertexArray();
+	void bind() const;
 
 	// Description:
 	//	Adds a BufferObject(VBO/EBO) to current VAO.
 	// Param buffer_:
 	//	buffer to be added
-	void addBuffer(EJGLBufferObject& buffer_);
+	void addBuffer(const BufferObject& buffer_);
 	// Description:
 	//	Adds a VBO to current VAO with layout.
 	// Param buffer_:
 	//	buffer to be added
 	// Param layout_:
 	//	will call layout.apply() for you
-	void addBufferLayout(EJGLArrayBuffer& buffer_, const EJGLVertexBufferLayout& layout_);
+	void addBufferLayout(const ArrayBuffer& buffer_, const VertexBufferLayout& layout_);
+
+	void deleteVertexArray();
 
 private:
-	std::shared_ptr<_EJGLVertexArrayElem> _dataPtr;
-
-	void _deleteBuffers() const;
+	_STD shared_ptr<_VertexArrayImpl> _impl;
 
 // static
 public:
-	static EJGL_INLINE void unbind() {
-		glBindVertexArray(0);
-	}
+	static void unbind();
 
-	void drawArray(EJGLDrawOption EJGLDrawOption_, int first_, GLsizei count_);
-	void drawElement(EJGLDrawOption EJGLDrawOption_, int first_, GLsizei count_);
-	void mulDrawArray(EJGLDrawOption EJGLDrawOption_, const int* first_, const GLsizei* count_, GLsizei drawcount_);
-	void mulDrawElement(EJGLDrawOption EJGLDrawOption_, const int* first_, const GLsizei* count_, GLsizei drawcount_);
-	void mulDrawArray(EJGLDrawOption EJGLDrawOption_, const std::vector<GLint>& first_, const std::vector<GLsizei>& count_);
-	void mulDrawElement(EJGLDrawOption EJGLDrawOption_, const std::vector<GLint>& first_, const std::vector<GLsizei>& count_);
-
-// Debug Helper
-#ifdef EJGL_USE_DEBUG_HELPER
-public:
-	EJGL_INLINE bool isBinding() const noexcept;
-
-public:
-	static EJGL_INLINE bool isBinding(GLuint vertexArrayID_);
-	static EJGL_INLINE GLuint getBinding();
-
-#endif // EJGL_USE_DEBUG_HELPER
+	void drawArray(DrawOption drawOption_, GLint first_, GLsizei count_);
+	void drawElement(DrawOption drawOption_, GLint first_, GLsizei count_, DataType valType_ = DataType::UNSIGNED_INT);
+	void mulDrawArray(DrawOption drawOption_, _STD span<GLint> first_, _STD span<GLsizei> count_);
+	void mulDrawElement(DrawOption drawOption_, _STD span<GLint> first_, _STD span<GLsizei> count_, DataType valType_ = DataType::UNSIGNED_INT);
 
 };
 
 EJGL_NAMESPACE_END
-
-#include "EJGL_VertexArray.inl"
 
 #endif // EJGL_VERTEXARRAY_HPP

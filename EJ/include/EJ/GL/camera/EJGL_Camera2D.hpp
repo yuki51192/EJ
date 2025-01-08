@@ -12,45 +12,55 @@
 //	4. ortho projection's center(l/2+r/2, t/2+b/2) always equal (0, 0)
 //
 
-#include "../utils/EJGL_config.hpp"
-#include "../../utils/EJ_Macros.hpp"
-#include "../utils/EJGL_BaseObject.hpp"
-#include "../utils/EJGL_enum.hpp"
+#include "../Utils/EJGL_config.hpp"
+#include "../../Utils/EJ_Macros.hpp"
+#include "../Utils/EJGL_enum.hpp"
 
 #include "EJGL_Camera.hpp"
+#include "../Application/EJGL_Window.hpp"
 
 #include <glm/vec2.hpp>
 
 EJGL_NAMESPACE_BEGIN
 
-class EJGLCamera2D : public EJGLCamera
+class Camera2D : public Camera
 {
 public:
-	EJGLCamera2D(EJGLWindow* window_);
-	EJGLCamera2D(const EJGLCamera2D& obj_) = default;
-	EJGLCamera2D(EJGLCamera2D&& obj_) noexcept = default;
-	virtual ~EJGLCamera2D() = default;
+	Camera2D(Window* window_) :
+		Camera{ window_ }
+	{
+		EJ_ASSERT(window_ != nullptr);
+		auto size = window_->getSize() / 2;
+		setProjectionMatrix<OrthographicMatrix>(static_cast<float>(-size.x), static_cast<float>(size.x), static_cast<float>(-size.y), static_cast<float>(size.y));
+		setViewMatrix<ViewMatrix>();
+		_subs.emplace_back(window_->sizeEvent.subscribe(CallMe::fromMethod<&Camera2D::_windowSizeCB>(this)));
+		_subs.emplace_back(window_->mouseButtonEvent.subscribe(CallMe::fromMethod<&Camera2D::_mouseButtonCB>(this)));
+		_subs.emplace_back(window_->cursorPosEvent.subscribe(CallMe::fromMethod<&Camera2D::_mouseMoveCB>(this)));
+		_subs.emplace_back(window_->scrollEvent.subscribe(CallMe::fromMethod<&Camera2D::_scrollCB>(this)));
+	}
+	Camera2D(const Camera2D& obj_) = default;
+	Camera2D(Camera2D&& obj_) noexcept = default;
+	virtual ~Camera2D() = default;
 
-	EJGLCamera2D& operator=(const EJGLCamera2D&) = default;
+	Camera2D& operator=(const Camera2D&) = default;
 
-	virtual std::string toString() const noexcept override;
-
-	EJGL_INLINE EJ_M_CLONE_FUNC(EJGLBaseObject, EJGLCamera2D, *this);
-
-	// TODO set virtual to this
-	//EJGL_INLINE void swap(EJGLCamera& obj_) noexcept;
+	_STD string toStringNoHeader() const noexcept {
+		return Camera::toStringNoHeader();
+	}
+	_STD string toString() const noexcept {
+		return "[EJ][Camera2D]" + toStringNoHeader();
+	}
 
 private:
 	bool _isMoving = false;
 	glm::vec2 _startMovePos = glm::vec2();
 	float _invScale = 1;
+	_STD vector<CallMe::Subscription> _subs;
 
-// static
-private:
-	static void s_windowSizeCB(EJGLWindow& window_, int width_, int height_);
-	static void s_mouseButtonCB(EJGLWindow& window_, MouseButton button_, MouseButtonState action_, ModifierKeyBit mods_);
-	static void s_mouseMoveCB(EJGLWindow& window_, double x_, double y_);
-	static void s_scrollCB(EJGLWindow& window_, double x_, double y_);
+	void _windowSizeCB(::glfw::Window& window_, int width_, int height_);
+	void _mouseButtonCB(::glfw::Window& window_, MouseButton button_, MouseButtonState action_, ModifierKeyBit mods_);
+	void _mouseMoveCB(::glfw::Window& window_, double x_, double y_);
+	void _scrollCB(::glfw::Window& window_, double x_, double y_);
 
 };
 

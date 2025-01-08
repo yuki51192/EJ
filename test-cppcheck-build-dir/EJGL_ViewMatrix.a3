@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="10479256981830834318">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cassert&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cassert&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\utils\EJ_Config.hpp" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\utils\EJ_Config.hpp" line="5" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glad/glad.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glad/glad.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\utils\EJGL_Config.hpp" line="7" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\utils\EJGL_Config.hpp" line="8" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;bitset&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;bitset&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="12" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/vec3.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/vec3.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="13" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/mat4x4.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/mat4x4.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="14" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/gtc/quaternion.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/gtc/quaternion.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="15" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/gtc/matrix_transform.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/gtc/matrix_transform.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="16" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/gtc/type_ptr.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/gtc/type_ptr.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="17" column="0"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLViewMatrix&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLViewMatrix&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/GL/matrix/EJGL_ViewMatrix.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="24" column="2"/>
+            <symbol>EJGLViewMatrix</symbol>
+        </error>
+  <FileInfo check="ctu">
+<function-call call-id="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.hpp:56:17" call-funcname="_setHasChange" call-argnr="1" file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" line="35" col="15" call-argexpr="false" call-argvaluetype="0" call-argvalue="0"/>  </FileInfo>
+  <FileInfo check="Uninitialized variables">
+    <unsafe-usage my-id="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.hpp:46:17" my-argnr="1" my-argname="rotationEuler_" file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" line="25" col="25" value="0"/>
+  </FileInfo>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Config.hpp" functionName="ClearError" lineNumber="21"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Config.hpp" functionName="LogCall" lineNumber="26"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Enum.hpp" functionName="sizeofGLType" lineNumber="253"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Enum.hpp" functionName="shaderEnumToStr" lineNumber="277"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.hpp" functionName="toGlm" lineNumber="33"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.hpp" functionName="getEye" lineNumber="40"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.hpp" functionName="getRotation" lineNumber="41"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.hpp" functionName="getRotationEuler" lineNumber="42"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.hpp" functionName="_getHasChange" lineNumber="55"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" functionName="getEye" lineNumber="3"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" functionName="getRotation" lineNumber="7"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" functionName="getRotationEuler" lineNumber="11"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" functionName="setEye" lineNumber="16"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" functionName="setRotation" lineNumber="20"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" functionName="setRotationEuler" lineNumber="24"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" functionName="touch" lineNumber="29"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" functionName="hasChange" lineNumber="33"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" functionName="_setHasChange" lineNumber="49"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/src/GL/matrix/EJGL_ViewMatrix.cpp" functionName="toString" lineNumber="12"/>
+    <functioncall functionName="EJGLViewMatrix"/>
+    <functioncall functionName="GLbyte"/>
+    <functioncall functionName="GLdouble"/>
+    <functioncall functionName="GLfloat"/>
+    <functioncall functionName="GLint"/>
+    <functioncall functionName="GLshort"/>
+    <functioncall functionName="GLubyte"/>
+    <functioncall functionName="GLuint"/>
+    <functioncall functionName="GLushort"/>
+    <functioncall functionName="_getHasChange"/>
+    <functioncall functionName="_setHasChange"/>
+    <functioncall functionName="eulerAngles"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="glGetError"/>
+    <functioncall functionName="inverse"/>
+    <functioncall functionName="mat4"/>
+    <functioncall functionName="mat4_cast"/>
+    <functioncall functionName="string"/>
+    <functioncall functionName="toString"/>
+    <functioncall functionName="touch"/>
+    <functioncall functionName="true"/>
+  </FileInfo>
+</analyzerinfo>

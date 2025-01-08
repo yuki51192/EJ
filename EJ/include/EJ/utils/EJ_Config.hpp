@@ -6,7 +6,7 @@
 
 #define EJ_NAMESPACE_BEGIN namespace EJ {
 #define EJ_NAMESPACE_END }
-#define _EJ EJ::
+#define _EJ ::EJ::
 
 #define EJ_INLINE inline
 

@@ -5,10 +5,10 @@
 // Tips:
 //
 
-#include "../utils/EJGL_config.hpp"
-#include "../../utils/EJ_Macros.hpp"
-#include "../utils/EJGL_BaseObject.hpp"
-#include "../utils/EJGL_enum.hpp"
+#include "../Utils/EJGL_config.hpp"
+#include "../../Utils/EJ_Macros.hpp"
+#include "../Utils/EJGL_enum.hpp"
+#include "../Helper/EJGL_GLMExtension.hpp"
 
 #include <bitset>
 #include <glm/vec3.hpp>
@@ -19,44 +19,62 @@
 
 EJGL_NAMESPACE_BEGIN
 
-class EJGLViewMatrix : public EJGLBaseObject, public ::glm::mat4
+class ViewMatrix : public ::glm::mat4
 {
 public:
-	EJGLViewMatrix(const glm::vec3& eye_ = { 0, 0, 1 }, const glm::quat& rotation_ = { 1, 0, 0, 0 });
-	EJGLViewMatrix(const EJGLViewMatrix&) = default;
-	EJGLViewMatrix(EJGLViewMatrix&&) noexcept = default;
-	~EJGLViewMatrix() = default;
+	ViewMatrix(const glm::vec3& eye_ = { 0, 0, 1 }, const glm::quat& rotation_ = { 1, 0, 0, 0 }) :
+		_hasChange{ true },
+		_eye{ eye_ },
+		_rotation{ rotation_ }
+	{}
+	ViewMatrix(const ViewMatrix&) = default;
+	ViewMatrix(ViewMatrix&&) noexcept = default;
+	~ViewMatrix() = default;
 
-	EJGLViewMatrix& operator=(const EJGLViewMatrix&) = default;
+	ViewMatrix& operator=(const ViewMatrix&) = default;
 
-	virtual std::string toString() const noexcept override;
+	_STD string toStringNoHeader() const noexcept {
+		return "{ eye: " + _EJ toString(_eye) + ", rotation : " +
+			_EJ toString(_rotation) + ", { m: " + _EJ toString(static_cast<::glm::mat4>(*this)) + " } }";
+	}
+	_STD string toString() const noexcept {
+		return _STD string("[EJ][ViewMatrix]") + toStringNoHeader();
+	}
 
-	EJGL_INLINE EJ_M_CLONE_FUNC(EJGLBaseObject, EJGLViewMatrix, *this);
+	EJ_M_GET_FUNC(::glm::mat4&, toGlm, *this);
+	EJ_M_CONST_GET_FUNC(const ::glm::mat4&, toGlm, *this);
 
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(const ::glm::mat4&, toGlm, *this);
+	virtual ViewMatrix* clone() const {
+		return new ViewMatrix(*this);
+	}
 
 	// about view
-	EJGL_INLINE glm::vec3& getEye() noexcept;
-	EJGL_INLINE glm::quat& getRotation() noexcept;
-	EJGL_INLINE glm::vec3 getRotationEuler() noexcept;
+	EJ_M_GET_FUNC(glm::vec3&, eye, _eye);
+	EJ_M_GET_FUNC(glm::quat&, rotation, _rotation);
 
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(const glm::vec3&, getEye, _eye);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(const glm::quat&, getRotation, _rotation);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(const glm::vec3, getRotationEuler, ::glm::eulerAngles(_rotation));
+	EJ_M_CONST_GET_FUNC(const glm::vec3&, getEye, _eye);
+	EJ_M_CONST_GET_FUNC(const glm::quat&, getRotation, _rotation);
+	EJ_M_CONST_GET_FUNC(const glm::vec3, getRotationEuler, ::glm::eulerAngles(_rotation));
 
-	EJGL_INLINE void setEye(const glm::vec3& eye_);
-	EJGL_INLINE void setRotation(const glm::quat& rotation_);
-	EJGL_INLINE void setRotationEuler(const glm::vec3& rotationEuler_);
+	EJ_M_SET_FUNC(const glm::vec3&, setEye, _eye = val_);
+	EJ_M_SET_FUNC(const glm::quat&, setRotation, _rotation = val_);
+	EJ_M_SET_FUNC(const glm::vec3&, setRotationEuler, _rotation = glm::quat{ val_ });
 
-	EJGL_INLINE void touch() noexcept;
-	// when call set to false
-	// which means you need to call update to get correct value
-	EJGL_INLINE bool hasChange() const noexcept;
-	virtual EJGL_INLINE void update();
-
-protected:
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(bool, _getHasChange, _hasChange);
-	EJGL_INLINE void _setHasChange(bool val_) const noexcept;
+	bool hasChange() const noexcept {
+		if (_hasChange) {
+			_hasChange = false;
+			return true;
+		} return false;
+	}
+	EJ_INLINE virtual void update() {
+		glm::mat4::operator=(glm::mat4(
+			1.0f, 0.0f, 0.0f, 0.0f,
+			0.0f, 1.0f, 0.0f, 0.0f,
+			0.0f, 0.0f, 1.0f, 0.0f,
+			-_eye.x, -_eye.y, -_eye.z, 1.0f));
+		glm::mat4::operator*=(glm::mat4_cast(glm::inverse(_rotation)));
+		_hasChange = true;
+	}
 
 private:
 	mutable bool _hasChange = false;
@@ -66,7 +84,5 @@ private:
 };
 
 EJGL_NAMESPACE_END
-
-#include "EJGL_ViewMatrix.inl"
 
 #endif // EJGL_ViewMatrix_HPP

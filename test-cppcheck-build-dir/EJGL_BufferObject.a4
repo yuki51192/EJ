@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="7153097063028324303">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cassert&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cassert&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\utils\EJ_Config.hpp" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\utils\EJ_Config.hpp" line="5" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glad/glad.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glad/glad.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\utils\EJGL_Config.hpp" line="7" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\utils\EJGL_Config.hpp" line="8" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;../utils/EJGL_Utils.hpp&quot; not found." verbose="Include file: &quot;../utils/EJGL_Utils.hpp&quot; not found.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="6" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;memory&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;memory&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="9" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="10" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\src\GL\glObject\EJGL_BufferObject.cpp" line="2" column="0"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &apos;EJGLArrayBuffer&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." verbose="The class &apos;EJGLArrayBuffer&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." cwe="398" file0="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_BufferObject.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="76" column="30" info="Derived function &apos;EJGLArrayBuffer::toString&apos;"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="4" column="33" info="Parent function &apos;EJGLBufferObject::toString&apos;"/>
+            <symbol>EJGLArrayBuffer</symbol>
+            <symbol>toString</symbol>
+            <symbol>EJGLBufferObject</symbol>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &apos;EJGLArrayBuffer&apos; defines member function with name &apos;unbind&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." verbose="The class &apos;EJGLArrayBuffer&apos; defines member function with name &apos;unbind&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." cwe="398" file0="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_BufferObject.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="84" column="23" info="Derived function &apos;EJGLArrayBuffer::unbind&apos;"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="23" column="24" info="Parent function &apos;EJGLBufferObject::unbind&apos;"/>
+            <symbol>EJGLArrayBuffer</symbol>
+            <symbol>unbind</symbol>
+            <symbol>EJGLBufferObject</symbol>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &apos;EJGLElementBuffer&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." verbose="The class &apos;EJGLElementBuffer&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." cwe="398" file0="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_BufferObject.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="89" column="32" info="Derived function &apos;EJGLElementBuffer::toString&apos;"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="4" column="33" info="Parent function &apos;EJGLBufferObject::toString&apos;"/>
+            <symbol>EJGLElementBuffer</symbol>
+            <symbol>toString</symbol>
+            <symbol>EJGLBufferObject</symbol>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &apos;EJGLElementBuffer&apos; defines member function with name &apos;unbind&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." verbose="The class &apos;EJGLElementBuffer&apos; defines member function with name &apos;unbind&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." cwe="398" file0="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_BufferObject.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="97" column="25" info="Derived function &apos;EJGLElementBuffer::unbind&apos;"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="23" column="24" info="Parent function &apos;EJGLBufferObject::unbind&apos;"/>
+            <symbol>EJGLElementBuffer</symbol>
+            <symbol>unbind</symbol>
+            <symbol>EJGLBufferObject</symbol>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &apos;EJGLUniformBuffer&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." verbose="The class &apos;EJGLUniformBuffer&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." cwe="398" file0="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_BufferObject.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="102" column="32" info="Derived function &apos;EJGLUniformBuffer::toString&apos;"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="4" column="33" info="Parent function &apos;EJGLBufferObject::toString&apos;"/>
+            <symbol>EJGLUniformBuffer</symbol>
+            <symbol>toString</symbol>
+            <symbol>EJGLBufferObject</symbol>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &apos;EJGLUniformBuffer&apos; defines member function with name &apos;unbind&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." verbose="The class &apos;EJGLUniformBuffer&apos; defines member function with name &apos;unbind&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." cwe="398" file0="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_BufferObject.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="128" column="25" info="Derived function &apos;EJGLUniformBuffer::unbind&apos;"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="23" column="24" info="Parent function &apos;EJGLBufferObject::unbind&apos;"/>
+            <symbol>EJGLUniformBuffer</symbol>
+            <symbol>unbind</symbol>
+            <symbol>EJGLBufferObject</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLBufferObject&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLBufferObject&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_BufferObject.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="27" column="2"/>
+            <symbol>EJGLBufferObject</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLUniformBuffer&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLUniformBuffer&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_BufferObject.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="143" column="2"/>
+            <symbol>EJGLUniformBuffer</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The destructor &apos;~EJGLArrayBuffer&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." verbose="The destructor &apos;~EJGLArrayBuffer&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." file0="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_BufferObject.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="96" column="11" info="Destructor in derived class"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="40" column="11" info="Virtual destructor in base class"/>
+            <symbol>~EJGLArrayBuffer</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The destructor &apos;~EJGLElementBuffer&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." verbose="The destructor &apos;~EJGLElementBuffer&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." file0="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_BufferObject.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="124" column="11" info="Destructor in derived class"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="40" column="11" info="Virtual destructor in base class"/>
+            <symbol>~EJGLElementBuffer</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The destructor &apos;~EJGLUniformBuffer&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." verbose="The destructor &apos;~EJGLUniformBuffer&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." file0="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_BufferObject.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="155" column="11" info="Destructor in derived class"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="40" column="11" info="Virtual destructor in base class"/>
+            <symbol>~EJGLUniformBuffer</symbol>
+        </error>
+  <FileInfo check="Uninitialized variables">
+    <unsafe-usage my-id="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.hpp:44:17" my-argnr="1" my-argname="obj_" file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" line="9" col="24" value="0"/>
+    <unsafe-usage my-id="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.hpp:61:17" my-argnr="1" my-argname="data_" file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" line="34" col="9" value="0"/>
+    <unsafe-usage my-id="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.hpp:39:20" my-argnr="1" my-argname="obj_" file="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_BufferObject.cpp" line="8" col="13" value="0"/>
+  </FileInfo>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Config.hpp" functionName="ClearError" lineNumber="21"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Config.hpp" functionName="LogCall" lineNumber="26"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Enum.hpp" functionName="sizeofGLType" lineNumber="253"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Enum.hpp" functionName="shaderEnumToStr" lineNumber="277"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.hpp" functionName="isValid" lineNumber="48"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.hpp" functionName="getBufferID" lineNumber="50"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.hpp" functionName="getBufferType" lineNumber="51"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.hpp" functionName="getBindingPoint" lineNumber="164"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="toString" lineNumber="4"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="swap" lineNumber="8"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="setBufferID" lineNumber="12"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="setBufferType" lineNumber="15"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="bind" lineNumber="19"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="unbind" lineNumber="23"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="create" lineNumber="27"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="create" lineNumber="33"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="deleteBuffer" lineNumber="37"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="unbind" lineNumber="42"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="isBinding" lineNumber="48"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="isBinding" lineNumber="52"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="getBinding" lineNumber="55"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="toString" lineNumber="76"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="swap" lineNumber="80"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="unbind" lineNumber="84"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="toString" lineNumber="89"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="swap" lineNumber="93"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="unbind" lineNumber="97"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="toString" lineNumber="102"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="swap" lineNumber="106"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="bindToBindingPoint" lineNumber="111"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="bindToBindingPoint" lineNumber="119"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="unbind" lineNumber="128"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/src/GL/glObject/EJGL_BufferObject.cpp" functionName="subData" lineNumber="15"/>
+    <functioncall functionName="EJGLArrayBuffer"/>
+    <functioncall functionName="EJGLBufferObject"/>
+    <functioncall functionName="EJGLElementBuffer"/>
+    <functioncall functionName="EJGLUniformBuffer"/>
+    <functioncall functionName="GL_ARRAY_BUFFER_BINDING"/>
+    <functioncall functionName="GL_ELEMENT_ARRAY_BUFFER_BINDING"/>
+    <functioncall functionName="GL_UNIFORM_BUFFER_BINDING"/>
+    <functioncall functionName="GLbyte"/>
+    <functioncall functionName="GLdouble"/>
+    <functioncall functionName="GLfloat"/>
+    <functioncall functionName="GLint"/>
+    <functioncall functionName="GLshort"/>
+    <functioncall functionName="GLubyte"/>
+    <functioncall functionName="GLuint"/>
+    <functioncall functionName="GLushort"/>
+    <functioncall functionName="STATIC_DRAW"/>
+    <functioncall functionName="_BufferElemType"/>
+    <functioncall functionName="bind"/>
+    <functioncall functionName="create"/>
+    <functioncall functionName="data"/>
+    <functioncall functionName="deleteBuffer"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="getBinding"/>
+    <functioncall functionName="getBufferID"/>
+    <functioncall functionName="glBindBuffer"/>
+    <functioncall functionName="glBindBufferBase"/>
+    <functioncall functionName="glBindBufferRange"/>
+    <functioncall functionName="glBufferData"/>
+    <functioncall functionName="glBufferSubData"/>
+    <functioncall functionName="glDeleteBuffers"/>
+    <functioncall functionName="glGenBuffers"/>
+    <functioncall functionName="glGetError"/>
+    <functioncall functionName="glGetIntegerv"/>
+    <functioncall functionName="isBinding"/>
+    <functioncall functionName="make_shared"/>
+    <functioncall functionName="move"/>
+    <functioncall functionName="operator="/>
+    <functioncall functionName="operatorGLuint"/>
+    <functioncall functionName="size"/>
+    <functioncall functionName="string"/>
+    <functioncall functionName="swap"/>
+    <functioncall functionName="toString"/>
+    <functioncall functionName="true"/>
+    <functioncall functionName="unbind"/>
+  </FileInfo>
+</analyzerinfo>
