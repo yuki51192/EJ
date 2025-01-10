@@ -5,7 +5,7 @@
 
 EJ_NAMESPACE_BEGIN
 
-template <typename T_>
+template <typename T_ = double>
 constexpr static T_ PI = 3.14159265358979323846L;
 
 template <typename T_>

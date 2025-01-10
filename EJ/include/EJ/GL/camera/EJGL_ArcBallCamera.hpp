@@ -23,24 +23,24 @@
 
 EJGL_NAMESPACE_BEGIN
 
-class EJGLArcBallCamera : public Camera
+class ArcBallCamera : public Camera
 {
 public:
-	EJGLArcBallCamera(Window* window_) :
+	ArcBallCamera(Window* window_) :
 		Camera{ window_ }
 	{
 		EJ_ASSERT(window_ != nullptr);
 		setProjectionMatrix<PerspectiveMatrix>();
 		setViewMatrix<ViewMatrix>(::glm::vec3{ 0, 0, 10 });
-		_subs.emplace_back(window_->mouseButtonEvent.subscribe(CallMe::fromMethod<&EJGLArcBallCamera::_mouseButtonCB>(this)));
-		_subs.emplace_back(window_->cursorPosEvent.subscribe(CallMe::fromMethod<&EJGLArcBallCamera::_mouseMoveCB>(this)));
-		_subs.emplace_back(window_->scrollEvent.subscribe(CallMe::fromMethod<&EJGLArcBallCamera::_scrollCB>(this)));
+		_subs.emplace_back(window_->mouseButtonEvent.subscribe(CallMe::fromMethod<&ArcBallCamera::_mouseButtonCB>(this)));
+		_subs.emplace_back(window_->cursorPosEvent.subscribe(CallMe::fromMethod<&ArcBallCamera::_mouseMoveCB>(this)));
+		_subs.emplace_back(window_->scrollEvent.subscribe(CallMe::fromMethod<&ArcBallCamera::_scrollCB>(this)));
 	}
-	EJGLArcBallCamera(const EJGLArcBallCamera& obj_) = default;
-	EJGLArcBallCamera(EJGLArcBallCamera&& obj_) noexcept = default;
-	virtual ~EJGLArcBallCamera() = default;
+	ArcBallCamera(const ArcBallCamera& obj_) = default;
+	ArcBallCamera(ArcBallCamera&& obj_) noexcept = default;
+	virtual ~ArcBallCamera() = default;
 
-	EJGLArcBallCamera& operator=(const EJGLArcBallCamera&) = default;
+	ArcBallCamera& operator=(const ArcBallCamera&) = default;
 
 	_STD string toStringNoHeader() const noexcept {
 		return Camera::toStringNoHeader();

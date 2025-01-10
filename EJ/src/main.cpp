@@ -2,14 +2,13 @@
 
 #include "EJ/GL/EJGL_include.hpp"
 #include "EJ/Helper/EJ_ImageLoader.hpp"
+#include "EJ/GL/Helper/EJGL_ImGuiHelper.hpp"
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <stb_image/stb_image.h>
 #include <glm/gtx/euler_angles.hpp>
 
 #include <glfwpp/glfw.hpp>
-
-#include <ImGuiHelper/ImGuiHelper.hpp>
 
 using namespace EJ;
 
@@ -49,16 +48,16 @@ using namespace EJ;
 
 int main() {
 	Application::initialize();
-	constexpr int initWidth = 1000, initHeight = 987;
+	constexpr int initWidth = 1000, initHeight = 1000;
 
 	Application::getDefaultHint().apply();
 
-	Window window{ initWidth, initHeight, "Eyja" };
+	Window window{ initWidth, initHeight, "EJ" };
 	window.makeContextCurrent();
 
 	Application::getInstance().loadGlad();
 
-	window.setCamera<EJGLArcBallCamera>();
+	window.setCamera<ArcBallCamera>();
 
 	ImGuiHelper::ImGuiLifeHandler imguiLife = ImGuiHelper::init(window, "#version 460");
 
@@ -92,11 +91,12 @@ int main() {
 		VertexBufferLayout layout;
 		layout.add(DataType::FLOAT, 2);
 		layout.add(DataType::FLOAT, 2);
+		constexpr float __size = 1.0f;
 		vao.addBufferLayout(ArrayBuffer(std::vector<float>{
-			-10.0f, -10.0f, 0.0f, 0.0f,
-			10.0f, -10.0f, 1.0f, 0.0f,
-			10.0f, 10.0f, 1.0f, 1.0f,
-			-10.0f, 10.0f, 0.0f, 1.0f,
+			-__size, -__size, 0.0f, 0.0f,
+			__size, -__size, 1.0f, 0.0f,
+			__size, __size, 1.0f, 1.0f,
+			-__size, __size, 0.0f, 1.0f,
 		}), layout);
 		vao.addBuffer(ElementBuffer(std::vector<unsigned int>({
 			0, 1, 2,
@@ -107,7 +107,8 @@ int main() {
 	Texture2D texture1;
 	if (auto img = ImageLoader::stbiLoad("tmp.png", 4)) {
 		texture1.create(img.value(), TexturePixelDataFormat::RGBA, DataType::UNSIGNED_BYTE,
-			TextureOptions{ .wrapsS = TextureWarpOption::CLAMP_TO_BORDER, .wrapsT = TextureWarpOption::CLAMP_TO_BORDER, .minFilter = TextureMinFilterOption::NEAREST, .magFilter = TextureMagFilterOption::LINEAR },
+			TextureOptions{ .wrapsS = TextureWarpOption::CLAMP_TO_BORDER, .wrapsT = TextureWarpOption::CLAMP_TO_BORDER,
+			.minFilter = TextureMinFilterOption::NEAREST, .magFilter = TextureMagFilterOption::NEAREST },
 			TextureInternalFormat::RGBA);
 		texture1.bindToUnitID(1);
 	}
@@ -119,8 +120,6 @@ int main() {
 		BindingGuard guard(shaderProgram);
 		shaderProgram.setUniform("u_tex", (int)1);
 	}
-
-	std::cout << *window.getCamera()->getViewMatrix();
 
 	double _prevTime = glfw::getTime();
 	double _fps = 0;
@@ -139,17 +138,18 @@ int main() {
 			double currentTime = glfw::getTime();
 			_frameCnt++;
 
-			if (currentTime - _prevTime >= 1.0) { // 每秒刷新一次 FPS
+			if (currentTime - _prevTime >= 1.0) {
 				_fps = double(_frameCnt) / (currentTime - _prevTime);
-
 				_frameCnt = 0;
 				_prevTime = currentTime;
 			}
 		}
 
-		ImGui::Begin("Test");
-		ImGui::Text("FPS: %.2lf", _fps);
-		ImGui::End();
+		{
+			ImGuiHelper::ImGuiWindowLifeHandler imWindow = ImGuiHelper::createWindow("Test");
+			ImGui::Text("FPS: %.2lf", _fps);
+			ImGuiHelper::CameraRotation("Camera Rotation", window.getCamera<ArcBallCamera>()->getViewMatrix()->rotation());
+		}
 
 		{
 			BindingGuard uboGuard(vpMatUbo);

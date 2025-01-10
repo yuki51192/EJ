@@ -7,7 +7,7 @@
 #include "../Utils/EJGL_enum.hpp"
 
 #include <memory>
-#include <vector>
+#include <span>
 
 EJGL_NAMESPACE_BEGIN
 
@@ -23,8 +23,13 @@ public:
 	BufferObject(BufferType type_, GLsizeiptr size_, const void* data_ = nullptr, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept;
 	// call create() after construct
 	template<typename Type_>
-	BufferObject(BufferType type_, const _STD vector<Type_>&data_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+	BufferObject(BufferType type_, _STD span<Type_>data_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
 		BufferObject(type_, data_.size() * sizeof(Type_), data_.data(), usage_)
+	{}
+	template <_STD ranges::contiguous_range Range_>
+		requires _STD ranges::sized_range<Range_>
+	BufferObject(BufferType type_, Range_&& range_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+		BufferObject(type_, _STD span<const _STD ranges::range_value_t<Range_>>(range_), usage_)
 	{}
 	// construct with id type
 	BufferObject(GLuint id_, BufferType type_) noexcept;
@@ -50,8 +55,13 @@ public:
 
 	void create(GLsizeiptr size_, const void* data_ = nullptr, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept;
 	template<typename Type_>
-	void create(const _STD vector<Type_>& data_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept {
+	void create(_STD span<Type_> data_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept {
 		create(data_.size() * sizeof(Type_), data_.data(), usage_);
+	}
+	template <_STD ranges::contiguous_range Range_>
+		requires _STD ranges::sized_range<Range_>
+	void create(Range_&& range_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept {
+		create(_STD span<const _STD ranges::range_value_t<Range_>>(range_), usage_);
 	}
 
 	void subData(GLintptr offset_, GLsizeiptr size_, const void* data_) const noexcept;
@@ -61,7 +71,7 @@ public:
 private:
 	_STD shared_ptr<_BufferObjectImpl> _impl;
 
-// static
+	// static
 public:
 	static void unbind(BufferType bufferType_) noexcept;
 
@@ -80,8 +90,13 @@ public:
 	{}
 	// call create() after construct
 	template<typename Type_>
-	ArrayBuffer(const _STD vector<Type_>&data_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+	ArrayBuffer(_STD span<Type_>data_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
 		BufferObject(BufferType::ARRAY, data_.size() * sizeof(Type_), data_.data(), usage_)
+	{}
+	template <_STD ranges::contiguous_range Range_>
+		requires _STD ranges::sized_range<Range_>
+	ArrayBuffer(Range_&& range_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+		ArrayBuffer(_STD span<const _STD ranges::range_value_t<Range_>>(range_), usage_)
 	{}
 	// construct with id type
 	ArrayBuffer(GLuint id_) noexcept :
@@ -120,8 +135,13 @@ public:
 	{}
 	// call create() after construct
 	template<typename Type_>
-	ElementBuffer(const _STD vector<Type_>& data_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+	ElementBuffer(_STD span<Type_> data_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
 		BufferObject(BufferType::ELEMENT, data_.size() * sizeof(Type_), data_.data(), usage_)
+	{}
+	template <_STD ranges::contiguous_range Range_>
+		requires _STD ranges::sized_range<Range_>
+	ElementBuffer(Range_&& range_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+		ElementBuffer(_STD span<const _STD ranges::range_value_t<Range_>>(range_), usage_)
 	{}
 	// construct with id type
 	ElementBuffer(GLuint id_) noexcept :
@@ -160,8 +180,13 @@ public:
 	{}
 	// call create() after construct
 	template<typename Type_>
-	UniformBuffer(const _STD vector<Type_>& data_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+	UniformBuffer(_STD span<Type_> data_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
 		BufferObject(BufferType::UNIFORM, data_.size() * sizeof(Type_), data_.data(), usage_)
+	{}
+	template <_STD ranges::contiguous_range Range_>
+		requires _STD ranges::sized_range<Range_>
+	UniformBuffer(Range_&& range_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+		UniformBuffer(_STD span<const _STD ranges::range_value_t<Range_>>(range_), usage_)
 	{}
 	// construct with id type
 	UniformBuffer(GLuint id_, GLuint bindingPoint_ = 0) noexcept :

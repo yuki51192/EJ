@@ -5,7 +5,7 @@
 
 EJGL_NAMESPACE_BEGIN
 
-glm::vec3 EJGLArcBallCamera::_screenToArcball(const glm::vec2& point) const {
+glm::vec3 ArcBallCamera::_screenToArcball(const glm::vec2& point) const {
 	glm::ivec2 wSize = getWindow()->getSize();
 	glm::vec2 p = point / glm::vec2(wSize.x, wSize.y) * 2.0f - glm::vec2(1.0f);
 	float dist = glm::dot(p, p);
@@ -19,7 +19,7 @@ glm::vec3 EJGLArcBallCamera::_screenToArcball(const glm::vec2& point) const {
 	}
 }
 
-void EJGLArcBallCamera::_mouseButtonCB(::glfw::Window& window_, MouseButton button_, MouseButtonState action_, ModifierKeyBit mods_) {
+void ArcBallCamera::_mouseButtonCB(::glfw::Window& window_, MouseButton button_, MouseButtonState action_, ModifierKeyBit mods_) {
 	if (button_ == glfw::MouseButton::Right) {
 		if (action_ == glfw::MouseButtonState::Press) {
 			_isMoving = true;
@@ -31,7 +31,7 @@ void EJGLArcBallCamera::_mouseButtonCB(::glfw::Window& window_, MouseButton butt
 	}
 }
 
-void EJGLArcBallCamera::_mouseMoveCB(::glfw::Window& window_, double x_, double y_) {
+void ArcBallCamera::_mouseMoveCB(::glfw::Window& window_, double x_, double y_) {
 	if (!_isMoving)
 		return;
 
@@ -53,7 +53,7 @@ void EJGLArcBallCamera::_mouseMoveCB(::glfw::Window& window_, double x_, double 
 	getViewMatrix()->update();
 }
 
-void EJGLArcBallCamera::_scrollCB(::glfw::Window& window_, double x_, double y_) {
+void ArcBallCamera::_scrollCB(::glfw::Window& window_, double x_, double y_) {
 	glm::vec3& eye = getViewMatrix()->eye();
 	float scale = 1.f - 0.1f * static_cast<float>(y_);
 	eye.z *= scale;

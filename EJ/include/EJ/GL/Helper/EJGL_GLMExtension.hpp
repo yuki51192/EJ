@@ -25,7 +25,7 @@ _STD string toString(const ::glm::vec<L, T, Q>& v_) {
     return s;
 }
 template <typename T, ::glm::length_t L, ::glm::qualifier Q>
-std::ostream& operator<<(std::ostream& os_, const ::glm::vec<L, T, Q>& v_) {
+_STD ostream& operator<<(_STD ostream& os_, const ::glm::vec<L, T, Q>& v_) {
     os_ << toString(v_);
     return os_;
 }
@@ -37,7 +37,7 @@ _STD string toString(const ::glm::qua<T, Q>& q_) {
     return s;
 }
 template <typename T, ::glm::qualifier Q>
-std::ostream& operator<<(std::ostream& os_, const ::glm::qua<T, Q>& q_) {
+_STD ostream& operator<<(_STD ostream& os_, const ::glm::qua<T, Q>& q_) {
     os_ << toString(q_);
     return os_;
 }
@@ -58,7 +58,7 @@ _STD string toString(const ::glm::mat<C, R, T, Q>& m_) {
     return s;
 }
 template <typename T, ::glm::length_t C, ::glm::length_t R, ::glm::qualifier Q>
-std::ostream& operator<<(std::ostream& os_, const ::glm::mat<C, R, T, Q>& m_) {
+_STD ostream& operator<<(_STD ostream& os_, const ::glm::mat<C, R, T, Q>& m_) {
     os_ << toString(m_);
     return os_;
 }

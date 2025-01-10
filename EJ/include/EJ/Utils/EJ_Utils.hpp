@@ -38,8 +38,8 @@ constexpr toString(const T_& v_) {
 }
 
 template <typename Type_>
-typename _STD enable_if_t<toString_callable_v<Type_>, std::ostream&>
-operator<<(std::ostream& os_, const Type_& obj_) {
+typename _STD enable_if_t<toString_callable_v<Type_>, _STD ostream&>
+operator<<(_STD ostream& os_, const Type_& obj_) {
     os_ << toString(obj_);
     return os_;
 }

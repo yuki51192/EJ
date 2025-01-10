@@ -94,13 +94,13 @@ public:
     static void setUniform(GLint location_, TYPE_ v0_, TYPE_ v1_, TYPE_ v2_, TYPE_ v3_) { \
         glUniform4##TID_(location_, v0_, v1_, v2_, v3_); \
     } \
-    static void setUnifor(GLint location_, const ::glm::vec<2, TYPE_>& vec_) { \
+    static void setUniform(GLint location_, const ::glm::vec<2, TYPE_>& vec_) { \
         glUniform2##TID_(location_, vec_.x, vec_.y); \
     } \
-    static void setUnifor(GLint location_, const ::glm::vec<3, TYPE_>& vec_) { \
+    static void setUniform(GLint location_, const ::glm::vec<3, TYPE_>& vec_) { \
         glUniform3##TID_(location_, vec_.x, vec_.y, vec_.z); \
     } \
-    static void setUnifor(GLint location_, const ::glm::vec<4, TYPE_>& vec_) { \
+    static void setUniform(GLint location_, const ::glm::vec<4, TYPE_>& vec_) { \
         glUniform4##TID_(location_, vec_.x, vec_.y, vec_.z, vec_.w); \
     }
     __M_UNIFORM_FUNC_BY_TYPE(GLint, i);

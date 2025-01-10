@@ -3321,6 +3321,40 @@ bool ImGui::SliderScalarN(const char* label, ImGuiDataType data_type, void* v, i
     EndGroup();
     return value_changed;
 }
+bool ImGui::SliderFloatN(const char* label, void* p_data, int components, const float* v_min, const float* v_max, const char* format, ImGuiSliderFlags flags)
+{
+    ImGuiWindow* window = GetCurrentWindow();
+    if (window->SkipItems)
+        return false;
+
+    ImGuiContext& g = *GImGui;
+    bool value_changed = false;
+    BeginGroup();
+    PushID(label);
+    PushMultiItemsWidths(components, CalcItemWidth());
+    size_t type_size = GDataTypeInfo[ImGuiDataType_Float].Size;
+    for (int i = 0; i < components; i++)
+    {
+        PushID(i);
+        if (i > 0)
+            SameLine(0, g.Style.ItemInnerSpacing.x);
+        value_changed |= SliderScalar("", ImGuiDataType_Float, p_data, &v_min[i], &v_max[i], format, flags);
+        PopID();
+        PopItemWidth();
+        p_data = (void*)((char*)p_data + type_size);
+    }
+    PopID();
+
+    const char* label_end = FindRenderedTextEnd(label);
+    if (label != label_end)
+    {
+        SameLine(0, g.Style.ItemInnerSpacing.x);
+        TextEx(label, label_end);
+    }
+
+    EndGroup();
+    return value_changed;
+}
 
 bool ImGui::SliderFloat(const char* label, float* v, float v_min, float v_max, const char* format, ImGuiSliderFlags flags)
 {
@@ -3331,15 +3365,27 @@ bool ImGui::SliderFloat2(const char* label, float v[2], float v_min, float v_max
 {
     return SliderScalarN(label, ImGuiDataType_Float, v, 2, &v_min, &v_max, format, flags);
 }
+bool ImGui::SliderFloat2(const char* label, float v[2], float v_min[2], float v_max[2], const char* format, ImGuiSliderFlags flags)
+{
+    return SliderFloatN(label, v, 2, v_min, v_max, format, flags);
+}
 
 bool ImGui::SliderFloat3(const char* label, float v[3], float v_min, float v_max, const char* format, ImGuiSliderFlags flags)
 {
     return SliderScalarN(label, ImGuiDataType_Float, v, 3, &v_min, &v_max, format, flags);
 }
+bool ImGui::SliderFloat3(const char* label, float v[3], float v_min[3], float v_max[3], const char* format, ImGuiSliderFlags flags)
+{
+    return SliderFloatN(label, v, 3, v_min, v_max, format, flags);
+}
 
 bool ImGui::SliderFloat4(const char* label, float v[4], float v_min, float v_max, const char* format, ImGuiSliderFlags flags)
 {
     return SliderScalarN(label, ImGuiDataType_Float, v, 4, &v_min, &v_max, format, flags);
+}
+bool ImGui::SliderFloat4(const char* label, float v[4], float v_min[4], float v_max[4], const char* format, ImGuiSliderFlags flags)
+{
+    return SliderFloatN(label, v, 4, v_min, v_max, format, flags);
 }
 
 bool ImGui::SliderAngle(const char* label, float* v_rad, float v_degrees_min, float v_degrees_max, const char* format, ImGuiSliderFlags flags)

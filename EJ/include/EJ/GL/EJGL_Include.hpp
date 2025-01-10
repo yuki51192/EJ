@@ -18,5 +18,6 @@
 //#include "GlObject/EJGL_Shader.hpp"
 #include "GlObject/EJGL_ShaderProgram.hpp"
 #include "GlObject/EJGL_Texture2D.hpp"
+#include "Helper/EJGL_ImGuiHelper.hpp"
 
 #endif // EJGL_INCLUDE_HPP
