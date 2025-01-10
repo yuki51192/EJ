@@ -1,195 +1,226 @@
 #ifndef EJGL_BUFFEROBJECT_HPP
 #define EJGL_BUFFEROBJECT_HPP
 
-#include "../utils/EJGL_config.hpp"
-#include "../../utils/EJ_Macros.hpp"
-#include "../utils/EJGL_Utils.hpp"
-#include "../utils/EJGL_BaseObject.hpp"
-#include "../utils/EJGL_enum.hpp"
+#include "../Utils/EJGL_config.hpp"
+#include "../../Utils/EJ_Macros.hpp"
+#include "../../Utils/EJ_Utils.hpp"
+#include "../Utils/EJGL_enum.hpp"
 
 #include <memory>
-#include <vector>
-
-namespace {
-	struct _EJGLBufferObjectElem {
-		GLuint _bufferID;
-		_EJGL EJGLBufferType _bufferType;
-	};
-}
+#include <span>
 
 EJGL_NAMESPACE_BEGIN
 
-class EJGLBufferObject: public EJGLBaseObject
+class BufferObject
 {
+private:
+	class _BufferObjectImpl;
+
 public:
-	EJGLBufferObject() noexcept :
-		EJGLBufferObject(0, EJGLBufferType::ARRAY)
+	// construct empty
+	BufferObject(BufferType type_ = BufferType::ARRAY) noexcept;
+	// call create() after construct
+	BufferObject(BufferType type_, GLsizeiptr size_, const void* data_ = nullptr, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept;
+	// call create() after construct
+	template<typename Type_>
+	BufferObject(BufferType type_, _STD span<Type_>data_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+		BufferObject(type_, data_.size() * sizeof(Type_), data_.data(), usage_)
 	{}
-	EJGLBufferObject(EJGLBufferType bufferType_) noexcept :
-		EJGLBufferObject(0, bufferType_)
+	template <_STD ranges::contiguous_range Range_>
+		requires _STD ranges::sized_range<Range_>
+	BufferObject(BufferType type_, Range_&& range_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+		BufferObject(type_, _STD span<const _STD ranges::range_value_t<Range_>>(range_), usage_)
 	{}
-	EJGLBufferObject(GLuint bufferID_, EJGLBufferType bufferType_) noexcept :
-		EJGLBaseObject(),
-		_dataPtr(std::make_shared<_EJGLBufferObjectElem>(_EJGLBufferObjectElem{ bufferID_, bufferType_ }))
-	{}
-	EJGLBufferObject(const EJGLBufferObject& obj_) noexcept :
-		EJGLBaseObject(obj_),
-		_dataPtr(obj_._dataPtr)
-	{}
-	EJGLBufferObject(EJGLBufferObject&& obj_) noexcept :
-		EJGLBaseObject(std::move(obj_)),
-		_dataPtr(std::move(obj_._dataPtr))
-	{}
-	EJGLBufferObject& operator=(const EJGLBufferObject& obj_) noexcept;
-	virtual ~EJGLBufferObject() noexcept;
+	// construct with id type
+	BufferObject(GLuint id_, BufferType type_) noexcept;
+	BufferObject(const BufferObject& obj_) noexcept = default;
+	BufferObject& operator=(const BufferObject& obj_) noexcept = default;
+	virtual ~BufferObject() noexcept = default;
 
-	virtual std::string toString() const noexcept override;
+	_STD string toStringNoHeader() const noexcept;
+	_STD string toString() const noexcept;
 
-	EJGL_INLINE EJ_M_CLONE_FUNC(EJGLBaseObject, EJGLBufferObject, *this);
+	void swap(BufferObject& obj_) noexcept;
 
-	EJGL_INLINE void swap(EJGLBufferObject& obj_) noexcept;
+	operator GLuint() const;
+	bool isValid() const;
+	GLuint getBufferID() const;
+	BufferType getBufferType() const;
 
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(, operator GLuint, _dataPtr->_bufferID);
+	void setBufferID(GLuint ID_) noexcept;
+	void setBufferType(BufferType bufferType_) noexcept;
 
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(bool, isValid, _dataPtr->_bufferID != 0);
+	void bind() const noexcept;
+	void unbind() const noexcept;
 
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(GLuint, getBufferID, _dataPtr->_bufferID);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(EJGLBufferType, getBufferType, _dataPtr->_bufferType);
-
-	EJGL_INLINE void setBufferID(GLuint ID_) noexcept;
-	EJGL_INLINE void setBufferType(EJGLBufferType bufferType_) noexcept;
-
-	EJGL_INLINE void bind() const noexcept;
-	EJGL_INLINE void unbind() const noexcept;
-
-	EJGL_INLINE void create(GLsizeiptr size_, const void* data_ = nullptr, EJGLDataUsage usage_ = EJGLDataUsage::STATIC_DRAW) noexcept;
-	template<typename _BufferElemType>
-	EJGL_INLINE void create(const std::vector<_BufferElemType>& data_, EJGLDataUsage usage_ = EJGLDataUsage::STATIC_DRAW) noexcept;
-	EJGL_INLINE void deleteBuffer() noexcept;
+	void create(GLsizeiptr size_, const void* data_ = nullptr, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept;
+	template<typename Type_>
+	void create(_STD span<Type_> data_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept {
+		create(data_.size() * sizeof(Type_), data_.data(), usage_);
+	}
+	template <_STD ranges::contiguous_range Range_>
+		requires _STD ranges::sized_range<Range_>
+	void create(Range_&& range_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept {
+		create(_STD span<const _STD ranges::range_value_t<Range_>>(range_), usage_);
+	}
 
 	void subData(GLintptr offset_, GLsizeiptr size_, const void* data_) const noexcept;
 
-private:
-	std::shared_ptr<_EJGLBufferObjectElem> _dataPtr;
-
-// static
-public:
-	EJGL_INLINE static void unbind(EJGLBufferType bufferType_) noexcept;
-
-// Debug Helper
-#ifdef EJGL_USE_DEBUG_HELPER
-public:
-	EJGL_INLINE bool isBinding() const noexcept;
-
-public:
-	EJGL_INLINE static bool isBinding(EJGLBufferType bufferType_, GLuint bufferID_) noexcept;
-	EJGL_INLINE static GLuint getBinding(EJGLBufferType bufferType_) noexcept;
-#endif
-};
-
-class EJGLArrayBuffer : public EJGLBufferObject
-{
-public:
-	EJGLArrayBuffer() noexcept :
-		EJGLBufferObject(EJGLBufferType::ARRAY)
-	{}
-	EJGLArrayBuffer(const EJGLArrayBuffer& obj_) noexcept :
-		EJGLBufferObject(obj_)
-	{}
-	EJGLArrayBuffer(EJGLArrayBuffer&& obj_) noexcept :
-		EJGLBufferObject(std::move(obj_))
-	{}
-	virtual ~EJGLArrayBuffer() noexcept
-	{}
-
-	EJGLArrayBuffer& operator=(const EJGLArrayBuffer& obj_) noexcept;
-
-	EJGL_INLINE virtual std::string toString() const noexcept override;
-
-	EJGL_INLINE EJ_M_CLONE_FUNC(EJGLBaseObject, EJGLArrayBuffer, *this);
-
-	EJGL_INLINE void swap(EJGLArrayBuffer& obj_) noexcept;
+	void deleteBuffer() noexcept;
 
 private:
+	_STD shared_ptr<_BufferObjectImpl> _impl;
 
+	// static
 public:
-	EJGL_INLINE static void unbind() noexcept;
+	static void unbind(BufferType bufferType_) noexcept;
 
 };
 
-class EJGLElementBuffer : public EJGLBufferObject
+class ArrayBuffer : public BufferObject
 {
 public:
-	EJGLElementBuffer() noexcept :
-		EJGLBufferObject(EJGLBufferType::ELEMENT)
+	// construct empty
+	ArrayBuffer() noexcept :
+		BufferObject(BufferType::ARRAY)
 	{}
-	EJGLElementBuffer(const EJGLElementBuffer& obj_) noexcept :
-		EJGLBufferObject(obj_)
+	// call create() after construct
+	ArrayBuffer(GLsizeiptr size_, const void* data_ = nullptr, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+		BufferObject(BufferType::ARRAY, size_, data_, usage_)
 	{}
-	EJGLElementBuffer(EJGLElementBuffer&& obj_) noexcept :
-		EJGLBufferObject(std::move(obj_))
+	// call create() after construct
+	template<typename Type_>
+	ArrayBuffer(_STD span<Type_>data_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+		BufferObject(BufferType::ARRAY, data_.size() * sizeof(Type_), data_.data(), usage_)
 	{}
-	virtual ~EJGLElementBuffer() noexcept
+	template <_STD ranges::contiguous_range Range_>
+		requires _STD ranges::sized_range<Range_>
+	ArrayBuffer(Range_&& range_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+		ArrayBuffer(_STD span<const _STD ranges::range_value_t<Range_>>(range_), usage_)
 	{}
+	// construct with id type
+	ArrayBuffer(GLuint id_) noexcept :
+		BufferObject(id_, BufferType::ARRAY)
+	{}
+	ArrayBuffer(const ArrayBuffer& obj_) noexcept = default;
+	ArrayBuffer& operator=(const ArrayBuffer& obj_) noexcept = default;
+	virtual ~ArrayBuffer() noexcept = default;
 
-	EJGLElementBuffer& operator=(const EJGLElementBuffer& obj_) noexcept;
-
-	EJGL_INLINE virtual std::string toString() const noexcept override;
-
-	EJGL_INLINE EJ_M_CLONE_FUNC(EJGLBaseObject, EJGLElementBuffer, *this);
-
-	EJGL_INLINE void swap(EJGLElementBuffer& obj_) noexcept;
+	_STD string toStringNoHeader() const noexcept {
+		return BufferObject::toStringNoHeader();
+	}
+	_STD string toString() const noexcept {
+		return _STD string("[EJ][ArrayBuffer]") + toStringNoHeader();
+	}
 
 private:
 
 public:
-	EJGL_INLINE static void unbind() noexcept;
+	static void unbind() noexcept {
+		BufferObject::unbind(BufferType::ARRAY);
+	}
 
 };
 
-class EJGLUniformBuffer : public EJGLBufferObject
+class ElementBuffer : public BufferObject
 {
 public:
-	EJGLUniformBuffer(GLuint bindingPoint_ = 0) noexcept :
-		EJGLBufferObject(EJGLBufferType::UNIFORM),
+	// construct empty
+	ElementBuffer() noexcept :
+		BufferObject(BufferType::ELEMENT)
+	{}
+	// call create() after construct
+	ElementBuffer(GLsizeiptr size_, const void* data_ = nullptr, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+		BufferObject(BufferType::ELEMENT, size_, data_, usage_)
+	{}
+	// call create() after construct
+	template<typename Type_>
+	ElementBuffer(_STD span<Type_> data_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+		BufferObject(BufferType::ELEMENT, data_.size() * sizeof(Type_), data_.data(), usage_)
+	{}
+	template <_STD ranges::contiguous_range Range_>
+		requires _STD ranges::sized_range<Range_>
+	ElementBuffer(Range_&& range_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+		ElementBuffer(_STD span<const _STD ranges::range_value_t<Range_>>(range_), usage_)
+	{}
+	// construct with id type
+	ElementBuffer(GLuint id_) noexcept :
+		BufferObject(id_, BufferType::ELEMENT)
+	{}
+	ElementBuffer(const ElementBuffer& obj_) noexcept = default;
+	ElementBuffer& operator=(const ElementBuffer& obj_) noexcept = default;
+	virtual ~ElementBuffer() noexcept = default;
+
+	_STD string toStringNoHeader() const noexcept {
+		return BufferObject::toStringNoHeader();
+	}
+	_STD string toString() const noexcept {
+		return _STD string("[EJ][ElementBuffer]") + toStringNoHeader();
+	}
+
+private:
+
+public:
+	static void unbind() noexcept {
+		BufferObject::unbind(BufferType::ELEMENT);
+	}
+
+};
+
+class UniformBuffer : public BufferObject
+{
+public:
+	// construct empty
+	UniformBuffer() noexcept :
+		BufferObject(BufferType::UNIFORM)
+	{}
+	// call create() after construct
+	UniformBuffer(GLsizeiptr size_, const void* data_ = nullptr, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+		BufferObject(BufferType::UNIFORM, size_, data_, usage_)
+	{}
+	// call create() after construct
+	template<typename Type_>
+	UniformBuffer(_STD span<Type_> data_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+		BufferObject(BufferType::UNIFORM, data_.size() * sizeof(Type_), data_.data(), usage_)
+	{}
+	template <_STD ranges::contiguous_range Range_>
+		requires _STD ranges::sized_range<Range_>
+	UniformBuffer(Range_&& range_, DataUsage usage_ = DataUsage::STATIC_DRAW) noexcept :
+		UniformBuffer(_STD span<const _STD ranges::range_value_t<Range_>>(range_), usage_)
+	{}
+	// construct with id type
+	UniformBuffer(GLuint id_, GLuint bindingPoint_ = 0) noexcept :
+		BufferObject(id_, BufferType::UNIFORM),
 		_bindingPoint(bindingPoint_)
 	{}
-	EJGLUniformBuffer(const EJGLUniformBuffer& obj_) noexcept :
-		EJGLBufferObject(obj_),
-		_bindingPoint(obj_._bindingPoint)
-	{}
-	EJGLUniformBuffer(EJGLUniformBuffer&& obj_) noexcept :
-		EJGLBufferObject(std::move(obj_)),
-		_bindingPoint(std::move(obj_._bindingPoint))
-	{}
-	virtual ~EJGLUniformBuffer() noexcept
-	{}
+	UniformBuffer(const UniformBuffer& obj_) noexcept = default;
+	UniformBuffer& operator=(const UniformBuffer& obj_) noexcept = default;
+	virtual ~UniformBuffer() noexcept = default;
 
-	EJGLUniformBuffer& operator=(const EJGLUniformBuffer& obj_) noexcept;
+	_STD string toStringNoHeader() const noexcept {
+		return BufferObject::toStringNoHeader();
+	}
+	_STD string toString() const noexcept {
+		return _STD string("[EJ][ElementBuffer]") + toStringNoHeader();
+	}
 
-	EJGL_INLINE virtual std::string toString() const noexcept override;
-
-	EJGL_INLINE void swap(EJGLUniformBuffer& obj_) noexcept;
-
-	EJGL_INLINE EJ_M_CLONE_FUNC(EJGLBaseObject, EJGLUniformBuffer, *this);
-
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(GLuint, getBindingPoint, _bindingPoint);
+	EJ_M_CONST_GET_FUNC(GLuint, getBindingPoint, _bindingPoint);
 
 	// use glBindBufferBase
-	EJGL_INLINE void bindToBindingPoint(GLuint bindingPoint_) noexcept;
+	void bindToBindingPoint(GLuint bindingPoint_) noexcept;
 	// use glBindBufferRange
-	EJGL_INLINE void bindToBindingPoint(GLuint bindingPoint_, GLintptr offset_, GLsizeiptr size_) noexcept;
+	void bindToBindingPoint(GLuint bindingPoint_, GLintptr offset_, GLsizeiptr size_) noexcept;
 
 private:
-	GLuint _bindingPoint;
+	GLuint _bindingPoint = 0;
 
 public:
-	EJGL_INLINE static void unbind() noexcept;
+	static void unbind() noexcept {
+		BufferObject::unbind(BufferType::UNIFORM);
+	}
 
 };
 
 EJGL_NAMESPACE_END
-
-#include "EJGL_BufferObject.inl"
 
 #endif // EJGL_BUFFEROBJECT_HPP

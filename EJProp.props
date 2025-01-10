@@ -6,7 +6,7 @@
 	<PropertyGroup Label="UserMacros">
 		<OuterDir>D:\Program\c++\EJ\Library</OuterDir>
 		<OuterIncDir>$(OuterDir)\include</OuterIncDir>
-		<OuterLibDir>$(OuterDir)\lib\vs2022</OuterLibDir>
+		<OuterLibDir>$(OuterDir)\lib</OuterLibDir>
 		<InnerDir>D:\Program\c++\EJ\EJ</InnerDir>
 		<InnerIncDir>$(InnerDir)\include</InnerIncDir>
 		<InnerSrcDir>$(InnerDir)\src</InnerSrcDir>
@@ -26,7 +26,7 @@
 	</ItemDefinitionGroup>
 	<ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
 		<Link>
-			<AdditionalDependencies>$(OuterLibDir)\Debug\*lib;$(OuterLibDir)\Common\*lib;glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies>$(OuterLibDir)\Debug\*lib;$(OuterLibDir)\Common\*lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
 		</Link>
 
 		<ClCompile>
@@ -35,7 +35,7 @@
 	</ItemDefinitionGroup>
 	<ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
 		<Link>
-			<AdditionalDependencies>$(OuterLibDir)\Release\*lib;$(OuterLibDir)\Common\*lib;glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies>$(OuterLibDir)\Release\*lib;$(OuterLibDir)\Common\*lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
 		</Link>
 
 		<ClCompile>

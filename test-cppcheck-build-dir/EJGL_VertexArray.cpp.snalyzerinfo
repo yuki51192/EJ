@@ -1,0 +1,89 @@
+ClearError call:[glGetError]
+LogCall call:[glGetError]
+sizeofGLType call:[sizeof]
+shaderEnumToStr
+EJGLVertexBufferLayout
+EJGLVertexBufferLayout
+EJGLVertexBufferLayout
+EJGLVertexBufferLayout
+getStride
+getElements
+getElements
+EJGLVertexArray
+EJGLVertexArray
+EJGLVertexArray
+operatorGLuint
+isValid
+getVertexArrayID
+unbind call:[glBindVertexArray] noreturn:[glBindVertexArray]
+size call:[sizeofGLType] noreturn:[sizeofGLType]
+apply call:[glEnableVertexAttribArray,glVertexAttribPointer] noreturn:[glEnableVertexAttribArray]
+swap call:[swap] noreturn:[swap]
+setVertexArrayID
+create call:[glGenVertexArrays] noreturn:[glGenVertexArrays]
+bind call:[glBindVertexArray] noreturn:[glBindVertexArray]
+deleteVertexArray call:[glDeleteVertexArrays]
+isBinding call:[isBinding] noreturn:[isBinding]
+isBinding call:[getBinding]
+getBinding call:[glGetIntegerv]
+EJGLBufferObject
+EJGLBufferObject
+EJGLBufferObject
+EJGLBufferObject
+EJGLBufferObject
+operatorGLuint
+isValid
+getBufferID
+getBufferType
+EJGLArrayBuffer
+EJGLArrayBuffer
+EJGLArrayBuffer
+EJGLArrayBuffer
+EJGLElementBuffer
+EJGLElementBuffer
+EJGLElementBuffer
+EJGLElementBuffer
+EJGLUniformBuffer
+EJGLUniformBuffer
+EJGLUniformBuffer
+EJGLUniformBuffer
+getBindingPoint
+toString call:[string,toString]
+swap call:[swap] noreturn:[swap]
+setBufferID
+setBufferType
+bind call:[glBindBuffer] noreturn:[glBindBuffer]
+unbind call:[unbind] noreturn:[unbind]
+create call:[bind,glBufferData,glGenBuffers] noreturn:[glBufferData]
+create call:[create,data,size,sizeof] noreturn:[create]
+deleteBuffer call:[glDeleteBuffers]
+unbind call:[glBindBuffer] noreturn:[glBindBuffer]
+isBinding call:[isBinding] noreturn:[isBinding]
+isBinding call:[getBinding]
+getBinding call:[glGetIntegerv]
+toString call:[toString] noreturn:[toString]
+swap call:[swap] noreturn:[swap]
+unbind call:[unbind] noreturn:[unbind]
+toString call:[toString] noreturn:[toString]
+swap call:[swap] noreturn:[swap]
+unbind call:[unbind] noreturn:[unbind]
+toString call:[toString] noreturn:[toString]
+swap call:[swap] noreturn:[swap]
+bindToBindingPoint call:[getBufferID,glBindBufferBase] noreturn:[glBindBufferBase]
+bindToBindingPoint call:[getBufferID,glBindBufferRange] noreturn:[glBindBufferRange]
+unbind call:[unbind] noreturn:[unbind]
+operator=
+add call:[back,push_back,size] noreturn:[size]
+apply call:[apply,getElements,getStride,size] noreturn:[size]
+operator=
+EJGLVertexArray call:[_deleteBuffers,deleteVertexArray,use_count] noreturn:[_deleteBuffers]
+toString call:[string,to_string]
+addBuffer call:[bind,getBufferID,push_back] noreturn:[push_back]
+addBufferLayout call:[apply,bind,getBufferID,push_back] noreturn:[push_back]
+_deleteBuffers
+drawArray call:[glDrawArrays] noreturn:[glDrawArrays]
+drawElement call:[glDrawElements,sizeof] noreturn:[glDrawElements]
+mulDrawArray call:[glMultiDrawArrays] noreturn:[glMultiDrawArrays]
+mulDrawElement call:[data,glMultiDrawElements,push_back,reserve,sizeof] noreturn:[glMultiDrawElements,push_back]
+mulDrawArray call:[data,mulDrawArray,size] noreturn:[mulDrawArray]
+mulDrawElement call:[data,mulDrawElement,size] noreturn:[mulDrawElement]

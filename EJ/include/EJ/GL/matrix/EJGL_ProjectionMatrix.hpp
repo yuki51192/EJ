@@ -5,10 +5,9 @@
 // Tips:
 //
 
-#include "../utils/EJGL_config.hpp"
-#include "../../utils/EJ_Macros.hpp"
-#include "../utils/EJGL_BaseObject.hpp"
-#include "../utils/EJGL_enum.hpp"
+#include "../Utils/EJGL_config.hpp"
+#include "../../Utils/EJ_Macros.hpp"
+#include "../Utils/EJGL_enum.hpp"
 
 #include <bitset>
 #include <glm/mat4x4.hpp>
@@ -16,66 +15,73 @@
 
 EJGL_NAMESPACE_BEGIN
 
-class EJGLProjectionMatrix : public EJGLBaseObject, public ::glm::mat4
+class ProjectionMatrix : public ::glm::mat4
 {
 public:
-	EJGLProjectionMatrix(const glm::mat4& mat_ = glm::mat4(1));
-	EJGLProjectionMatrix(const EJGLProjectionMatrix&) = default;
-	EJGLProjectionMatrix(EJGLProjectionMatrix&&) noexcept = default;
-	virtual ~EJGLProjectionMatrix() = default;
+	ProjectionMatrix(const glm::mat4& mat_ = glm::mat4(1));
+	ProjectionMatrix(const ProjectionMatrix&) = default;
+	ProjectionMatrix(ProjectionMatrix&&) noexcept = default;
+	virtual ~ProjectionMatrix() = default;
 
-	EJGLProjectionMatrix& operator=(const EJGLProjectionMatrix&) = default;
+	ProjectionMatrix& operator=(const ProjectionMatrix&) = default;
 
-	virtual std::string toString() const noexcept override;
+	_STD string toStringNoHeader() const noexcept;
+	_STD string toString() const noexcept;
 
-	EJGL_INLINE EJ_M_CLONE_FUNC(EJGLBaseObject, EJGLProjectionMatrix, *this);
+	EJ_M_CONST_GET_FUNC(const ::glm::mat4&, toGlm, *this);
 
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(const ::glm::mat4&, toGlm, *this);
+	virtual ProjectionMatrix* clone() const {
+		return new ProjectionMatrix(*this);
+	}
 
-	EJGL_INLINE void touch() noexcept;
-	// when call set to false
-	// which means you need to call update to get correct value
-	EJGL_INLINE bool hasChange() const noexcept;
-	virtual EJGL_INLINE void update();
-
-protected:
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(bool, _getHasChange, _hasChange);
-	EJGL_INLINE void _setHasChange(bool val_) const noexcept;
+	bool hasChange() const noexcept {
+		if (_hasChange) {
+			_hasChange = false;
+			return true;
+		} return false;
+	}
+	virtual void update() { _hasChange = true; }
 
 private:
 	mutable bool _hasChange = false;
 
 };
 
-class EJGLPerspectiveMatrix : public EJGLProjectionMatrix {
+class PerspectiveMatrix : public ProjectionMatrix {
 public:
-	EJGLPerspectiveMatrix(float fov_ = 45.f, float aspectRatio_ = 1.f, float near_ = .1f, float far_ = 100.f);
-	EJGLPerspectiveMatrix(const EJGLPerspectiveMatrix&) = default;
-	EJGLPerspectiveMatrix(EJGLPerspectiveMatrix&&) noexcept = default;
-	virtual ~EJGLPerspectiveMatrix() = default;
+	PerspectiveMatrix(float fov_ = 45.f, float aspectRatio_ = 1.f, float near_ = .1f, float far_ = 100.f);
+	PerspectiveMatrix(const PerspectiveMatrix&) = default;
+	PerspectiveMatrix(PerspectiveMatrix&&) noexcept = default;
+	virtual ~PerspectiveMatrix() = default;
 
-	EJGLPerspectiveMatrix& operator=(const EJGLPerspectiveMatrix&) = default;
+	PerspectiveMatrix& operator=(const PerspectiveMatrix&) = default;
 
-	virtual std::string toString() const noexcept override;
+	_STD string toStringNoHeader() const noexcept;
+	_STD string toString() const noexcept;
 
-	EJGL_INLINE EJ_M_CLONE_FUNC(EJGLBaseObject, EJGLPerspectiveMatrix, *this);
+	virtual PerspectiveMatrix* clone() const {
+		return new PerspectiveMatrix(*this);
+	}
 
-	EJGL_INLINE float getFov() noexcept;
-	EJGL_INLINE float getAspectRatio() noexcept;
-	EJGL_INLINE float getNear() noexcept;
-	EJGL_INLINE float getFar() noexcept;
+	EJ_M_GET_FUNC(float&, fov, _fov);
+	EJ_M_GET_FUNC(float&, aspectRatio, _aspectRatio);
+	EJ_M_GET_FUNC(float&, near, _near);
+	EJ_M_GET_FUNC(float&, far, _far);
 
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(float, getFov, _fov);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(float, getAspectRatio, _aspectRatio);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(float, getNear, _near);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(float, getFar, _far);
+	EJ_M_CONST_GET_FUNC(float, getFov, _fov);
+	EJ_M_CONST_GET_FUNC(float, getAspectRatio, _aspectRatio);
+	EJ_M_CONST_GET_FUNC(float, getNear, _near);
+	EJ_M_CONST_GET_FUNC(float, getFar, _far);
 
-	virtual EJGL_INLINE void setFov(float fov_);
-	virtual EJGL_INLINE void setAspectRatio(float aspectRatio_);
-	virtual EJGL_INLINE void setNear(float near_);
-	virtual EJGL_INLINE void setFar(float far_);
+	EJ_M_SET_FUNC(float, setFov, _fov = val_);
+	EJ_M_SET_FUNC(float, setAspectRatio, _aspectRatio = val_);
+	EJ_M_SET_FUNC(float, setNear, _near = val_);
+	EJ_M_SET_FUNC(float, setFar, _far = val_);
 
-	virtual EJGL_INLINE void update() override;
+	virtual void update() override {
+		::glm::mat4::operator=(_getMatrix());
+		ProjectionMatrix::update();
+	}
 
 private:
 	float _fov;
@@ -83,48 +89,56 @@ private:
 	float _near;
 	float _far;
 
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(glm::mat4, _getMatrix, s_getMatrix(_fov, _aspectRatio, _near, _far));
+	EJ_M_CONST_GET_FUNC(glm::mat4, _getMatrix, s_getMatrix(_fov, _aspectRatio, _near, _far));
 
 private:
-	static EJGL_INLINE ::glm::mat4 s_getMatrix(float fov_, float aspect_, float near_, float far_);
+	EJ_INLINE static ::glm::mat4 s_getMatrix(float fov_, float aspect_, float near_, float far_) {
+		return ::glm::perspective(fov_, aspect_, near_, far_);
+	}
 
 };
 
-class EJGLOrthographicMatrix : public EJGLProjectionMatrix {
+class OrthographicMatrix : public ProjectionMatrix {
 public:
-	EJGLOrthographicMatrix(float left_ = -1, float right_ = 1, float bottom_ = -1, float top_ = 1, float near_ = 0.1, float far_ = 10);
-	EJGLOrthographicMatrix(const EJGLOrthographicMatrix&) = default;
-	EJGLOrthographicMatrix(EJGLOrthographicMatrix&&) noexcept = default;
-	virtual ~EJGLOrthographicMatrix() = default;
+	OrthographicMatrix(float left_ = -1, float right_ = 1, float bottom_ = -1, float top_ = 1, float near_ = 0.1, float far_ = 10);
+	OrthographicMatrix(const OrthographicMatrix&) = default;
+	OrthographicMatrix(OrthographicMatrix&&) noexcept = default;
+	virtual ~OrthographicMatrix() = default;
 
-	EJGLOrthographicMatrix& operator=(const EJGLOrthographicMatrix&) = default;
+	OrthographicMatrix& operator=(const OrthographicMatrix&) = default;
 
-	virtual std::string toString() const noexcept override;
+	_STD string toStringNoHeader() const noexcept;
+	_STD string toString() const noexcept;
 
-	EJGL_INLINE EJ_M_CLONE_FUNC(EJGLBaseObject, EJGLOrthographicMatrix, *this);
+	virtual OrthographicMatrix* clone() const {
+		return new OrthographicMatrix(*this);
+	}
 
-	EJGL_INLINE float getLeft() noexcept;
-	EJGL_INLINE float getRight() noexcept;
-	EJGL_INLINE float getBottom() noexcept;
-	EJGL_INLINE float getTop() noexcept;
-	EJGL_INLINE float getNear() noexcept;
-	EJGL_INLINE float getFar() noexcept;
+	EJ_M_GET_FUNC(float&, left, _left);
+	EJ_M_GET_FUNC(float&, right, _right);
+	EJ_M_GET_FUNC(float&, bottom, _bottom);
+	EJ_M_GET_FUNC(float&, top, _top);
+	EJ_M_GET_FUNC(float&, near, _near);
+	EJ_M_GET_FUNC(float&, far, _far);
 
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(float, getLeft, _left);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(float, getRight, _right);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(float, getBottom, _bottom);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(float, getTop, _top);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(float, getNear, _near);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(float, getFar, _far);
+	EJ_M_CONST_GET_FUNC(float, getLeft, _left);
+	EJ_M_CONST_GET_FUNC(float, getRight, _right);
+	EJ_M_CONST_GET_FUNC(float, getBottom, _bottom);
+	EJ_M_CONST_GET_FUNC(float, getTop, _top);
+	EJ_M_CONST_GET_FUNC(float, getNear, _near);
+	EJ_M_CONST_GET_FUNC(float, getFar, _far);
 
-	virtual EJGL_INLINE void setLeft(float left_);
-	virtual EJGL_INLINE void setRight(float right_);
-	virtual EJGL_INLINE void setBottom(float bottom_);
-	virtual EJGL_INLINE void setTop(float top_);
-	virtual EJGL_INLINE void setNear(float near_);
-	virtual EJGL_INLINE void setFar(float far_);
+	EJ_M_SET_FUNC(float, setLeft, _left = val_);
+	EJ_M_SET_FUNC(float, setRight, _right = val_);
+	EJ_M_SET_FUNC(float, setBottom, _bottom = val_);
+	EJ_M_SET_FUNC(float, setTop, _top = val_);
+	EJ_M_SET_FUNC(float, setNear, _near = val_);
+	EJ_M_SET_FUNC(float, setFar, _far = val_);
 
-	virtual EJGL_INLINE void update() override;
+	EJ_INLINE virtual void update() override {
+		::glm::mat4::operator=(_getMatrix());
+		ProjectionMatrix::update();
+	}
 
 private:
 	float _left;
@@ -134,15 +148,15 @@ private:
 	float _near;
 	float _far;
 
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(glm::mat4, _getMatrix, s_getMatrix(_left, _right, _bottom, _top, _near, _far));
+	EJ_M_CONST_GET_FUNC(glm::mat4, _getMatrix, s_getMatrix(_left, _right, _bottom, _top, _near, _far));
 
 private:
-	static EJGL_INLINE glm::mat4 s_getMatrix(float left_, float right_, float bottom_, float top_, float near_, float far_);
+	EJ_INLINE static glm::mat4 s_getMatrix(float left_, float right_, float bottom_, float top_, float near_, float far_) {
+		return ::glm::ortho(left_, right_, bottom_, top_, near_, far_);
+	}
 
 };
 
 EJGL_NAMESPACE_END
-
-#include "EJGL_ProjectionMatrix.inl"
 
 #endif // EJGL_ProjectionMatrix_HPP

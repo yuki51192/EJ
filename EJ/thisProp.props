@@ -5,7 +5,7 @@
 	<PropertyGroup Label="UserMacros">
 		<OuterDir>$(SolutionDir)\Library</OuterDir>
 		<OuterIncDir>$(OuterDir)\include</OuterIncDir>
-		<OuterLibDir>$(OuterDir)\lib\vs2022</OuterLibDir>
+		<OuterLibDir>$(OuterDir)\lib</OuterLibDir>
 		<InnerDir>$(SolutionDir)\EJ</InnerDir>
 		<InnerIncDir>$(InnerDir)\include</InnerIncDir>
 	</PropertyGroup>

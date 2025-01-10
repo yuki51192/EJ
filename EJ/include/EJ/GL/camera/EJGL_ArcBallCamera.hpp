@@ -12,46 +12,54 @@
 //	4. ortho projection's center(l/2+r/2, t/2+b/2) always equal (0, 0)
 //
 
-#include "../utils/EJGL_config.hpp"
-#include "../../utils/EJ_Macros.hpp"
-#include "../utils/EJGL_BaseObject.hpp"
-#include "../utils/EJGL_enum.hpp"
+#include "../Utils/EJGL_config.hpp"
+#include "../../Utils/EJ_Macros.hpp"
+#include "../Utils/EJGL_enum.hpp"
 
 #include "EJGL_Camera.hpp"
+#include "../Application/EJGL_Window.hpp"
 
 #include <glm/vec2.hpp>
 
 EJGL_NAMESPACE_BEGIN
 
-class EJGLArcBallCamera : public EJGLCamera
+class ArcBallCamera : public Camera
 {
 public:
-	EJGLArcBallCamera(EJGLWindow* window_);
-	EJGLArcBallCamera(const EJGLArcBallCamera& obj_) = default;
-	EJGLArcBallCamera(EJGLArcBallCamera&& obj_) noexcept = default;
-	virtual ~EJGLArcBallCamera() = default;
+	ArcBallCamera(Window* window_) :
+		Camera{ window_ }
+	{
+		EJ_ASSERT(window_ != nullptr);
+		setProjectionMatrix<PerspectiveMatrix>();
+		setViewMatrix<ViewMatrix>(::glm::vec3{ 0, 0, 10 });
+		_subs.emplace_back(window_->mouseButtonEvent.subscribe(CallMe::fromMethod<&ArcBallCamera::_mouseButtonCB>(this)));
+		_subs.emplace_back(window_->cursorPosEvent.subscribe(CallMe::fromMethod<&ArcBallCamera::_mouseMoveCB>(this)));
+		_subs.emplace_back(window_->scrollEvent.subscribe(CallMe::fromMethod<&ArcBallCamera::_scrollCB>(this)));
+	}
+	ArcBallCamera(const ArcBallCamera& obj_) = default;
+	ArcBallCamera(ArcBallCamera&& obj_) noexcept = default;
+	virtual ~ArcBallCamera() = default;
 
-	EJGLArcBallCamera& operator=(const EJGLArcBallCamera&) = default;
+	ArcBallCamera& operator=(const ArcBallCamera&) = default;
 
-	virtual std::string toString() const noexcept override;
-
-	EJGL_INLINE EJ_M_CLONE_FUNC(EJGLBaseObject, EJGLArcBallCamera, *this);
-
-	// TODO set virtual to this
-	//EJGL_INLINE void swap(EJGLCamera& obj_) noexcept;
+	_STD string toStringNoHeader() const noexcept {
+		return Camera::toStringNoHeader();
+	}
+	_STD string toString() const noexcept {
+		return "[EJ][ArcBallCamera]" + toStringNoHeader();
+	}
 
 private:
 	bool _isMoving = false;
 	glm::vec2 _lastMouse = glm::vec2{};
+	_STD vector<CallMe::Subscription> _subs;
 
 private:
 	glm::vec3 _screenToArcball(const glm::vec2& point) const;
 
-	// static
-private:
-	static void s_mouseButtonCB(EJGLWindow& window_, MouseButton button_, MouseButtonState action_, ModifierKeyBit mods_);
-	static void s_mouseMoveCB(EJGLWindow& window_, double x_, double y_);
-	static void s_scrollCB(EJGLWindow& window_, double x_, double y_);
+	void _mouseButtonCB(::glfw::Window& window_, MouseButton button_, MouseButtonState action_, ModifierKeyBit mods_);
+	void _mouseMoveCB(::glfw::Window& window_, double x_, double y_);
+	void _scrollCB(::glfw::Window& window_, double x_, double y_);
 
 };
 

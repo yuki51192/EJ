@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="10614643937692175518">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cassert&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cassert&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\utils\EJ_Config.hpp" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\utils\EJ_Config.hpp" line="5" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glad/glad.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glad/glad.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\utils\EJGL_Config.hpp" line="7" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\utils\EJGL_Config.hpp" line="8" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/mat4x4.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/mat4x4.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_Matrix.hpp" line="8" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/gtc/type_ptr.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/gtc/type_ptr.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_Matrix.hpp" line="9" column="0"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLMatrix&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLMatrix&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/GL/matrix/EJGL_Matrix.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_Matrix.hpp" line="15" column="2"/>
+            <symbol>EJGLMatrix</symbol>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Config.hpp" functionName="ClearError" lineNumber="21"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Config.hpp" functionName="LogCall" lineNumber="26"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Enum.hpp" functionName="sizeofGLType" lineNumber="253"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Enum.hpp" functionName="shaderEnumToStr" lineNumber="277"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_Matrix.hpp" functionName="toGlm" lineNumber="33"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_Matrix.hpp" functionName="data" lineNumber="35"/>
+    <functioncall functionName="EJGLMatrix"/>
+    <functioncall functionName="GLbyte"/>
+    <functioncall functionName="GLdouble"/>
+    <functioncall functionName="GLfloat"/>
+    <functioncall functionName="GLint"/>
+    <functioncall functionName="GLshort"/>
+    <functioncall functionName="GLubyte"/>
+    <functioncall functionName="GLuint"/>
+    <functioncall functionName="GLushort"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="glGetError"/>
+    <functioncall functionName="mat4"/>
+    <functioncall functionName="move"/>
+    <functioncall functionName="toGlm"/>
+    <functioncall functionName="true"/>
+    <functioncall functionName="value_ptr"/>
+  </FileInfo>
+</analyzerinfo>

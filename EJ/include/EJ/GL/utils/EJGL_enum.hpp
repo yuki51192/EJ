@@ -6,8 +6,8 @@
 EJGL_NAMESPACE_BEGIN
 
 // Type
-namespace EJGLShaderTypeN {
-	enum EJGL_ENUM_STRONG_TYPE_DECLAR EJGLShaderTypeT : GLenum {
+namespace ShaderTypeN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR ShaderTypeT : GLenum {
 		VERTEX          = GL_VERTEX_SHADER,
 		FRAGEMENT       = GL_FRAGMENT_SHADER,
 		GEOMETRY        = GL_GEOMETRY_SHADER,
@@ -16,24 +16,26 @@ namespace EJGLShaderTypeN {
 		COMPUTE         = GL_COMPUTE_SHADER
 	};
 }
-using EJGLShaderType = EJGLShaderTypeN::EJGLShaderTypeT;
+using ShaderType = ShaderTypeN::ShaderTypeT;
 
-namespace EJGLDataTypeN {
-	enum EJGL_ENUM_STRONG_TYPE_DECLAR EJGLDataTypeT : GLenum {
+namespace DataTypeN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR DataTypeT : GLenum {
+		UNKNOWN		   = 0xffffffff,
 		BYTE           = GL_BYTE,
 		UNSIGNED_BYTE  = GL_UNSIGNED_BYTE,
 		SHORT          = GL_SHORT,
 		UNSIGNED_SHORT = GL_UNSIGNED_SHORT,
 		INT            = GL_INT,
 		UNSIGNED_INT   = GL_UNSIGNED_INT,
+		HALF_FLOAT	   = GL_HALF_FLOAT,
 		FLOAT          = GL_FLOAT,
 		DOUBLE         = GL_DOUBLE
 	};
 }
-using EJGLDataType = EJGLDataTypeN::EJGLDataTypeT;
+using DataType = DataTypeN::DataTypeT;
 
-namespace EJGLBufferTypeN {
-	enum EJGL_ENUM_STRONG_TYPE_DECLAR EJGLBufferTypeT : GLenum {
+namespace BufferTypeN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR BufferTypeT : GLenum {
 		ARRAY   = GL_ARRAY_BUFFER,
 		ELEMENT = GL_ELEMENT_ARRAY_BUFFER,
 		UNIFORM = GL_UNIFORM_BUFFER,
@@ -41,10 +43,10 @@ namespace EJGLBufferTypeN {
 		RENDER  = GL_RENDERBUFFER,
 	};
 }
-using EJGLBufferType = EJGLBufferTypeN::EJGLBufferTypeT;
+using BufferType = BufferTypeN::BufferTypeT;
 
-namespace EJGLTextureTypeN {
-	enum EJGL_ENUM_STRONG_TYPE_DECLAR EJGLTextureTypeT : GLenum {
+namespace TextureTypeN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR TextureTypeT : GLenum {
 		_1D                   = GL_TEXTURE_1D,
 		_1D_ARRAY             = GL_TEXTURE_1D_ARRAY,
 		_2D                   = GL_TEXTURE_2D,
@@ -57,11 +59,11 @@ namespace EJGLTextureTypeN {
 		RECTANGLE             = GL_TEXTURE_RECTANGLE
 	};
 }
-using EJGLTextureType = EJGLTextureTypeN::EJGLTextureTypeT;
+using TextureType = TextureTypeN::TextureTypeT;
 
 // Usage
-namespace EJGLDataUsageN {
-	enum EJGL_ENUM_STRONG_TYPE_DECLAR EJGLDataUsageT : GLenum {
+namespace DataUsageN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR DataUsageT : GLenum {
 		STREAM_DRAW  = GL_STREAM_DRAW,
 		STREAM_READ  = GL_STREAM_READ,
 		STREAM_COPY  = GL_STREAM_COPY,
@@ -73,11 +75,11 @@ namespace EJGLDataUsageN {
 		DYNAMIC_COPY = GL_DYNAMIC_COPY
 	};
 }
-using EJGLDataUsage = EJGLDataUsageN::EJGLDataUsageT;
+using DataUsage = DataUsageN::DataUsageT;
 
 // Option
-namespace EJGLEnableOptionN {
-	enum EJGL_ENUM_STRONG_TYPE_DECLAR EJGLEnableOptionT : GLenum {
+namespace EnableOptionN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR EnableOptionT : GLenum {
 		DEPTH_TEST                = GL_DEPTH_TEST,
 		CULL_FACE                 = GL_CULL_FACE,
 		BLEND                     = GL_BLEND,
@@ -85,10 +87,10 @@ namespace EJGLEnableOptionN {
 		CLIP_DISTANCE0            = GL_CLIP_DISTANCE0,
 	};
 }
-using EJGLEnableOption = EJGLEnableOptionN::EJGLEnableOptionT;
+using EnableOption = EnableOptionN::EnableOptionT;
 
-namespace EJGLDrawOptionN {
-	enum EJGL_ENUM_STRONG_TYPE_DECLAR EJGLDrawOptionT : GLenum {
+namespace DrawOptionN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR DrawOptionT : GLenum {
 		POINTS         = GL_POINTS,
 		LINES          = GL_LINES,
 		LINE_LOOP      = GL_LINE_LOOP,
@@ -99,10 +101,10 @@ namespace EJGLDrawOptionN {
 		PATCHES        = GL_PATCHES
 	};
 }
-using EJGLDrawOption = EJGLDrawOptionN::EJGLDrawOptionT;
+using DrawOption = DrawOptionN::DrawOptionT;
 
-namespace EJGLFaceOptionN {
-	enum EJGL_ENUM_STRONG_TYPE_DECLAR EJGLFaceOptionT : GLenum {
+namespace FaceOptionN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR FaceOptionT : GLenum {
 		FRONT_LEFT     = GL_FRONT_LEFT,
 		FRONT_RIGHT    = GL_FRONT_RIGHT,
 		BACK_LEFT      = GL_BACK_LEFT,
@@ -114,10 +116,10 @@ namespace EJGLFaceOptionN {
 		FRONT_AND_BACK = GL_FRONT_AND_BACK
 	};
 }
-using EJGLFaceOption = EJGLFaceOptionN::EJGLFaceOptionT;
+using FaceOption = FaceOptionN::FaceOptionT;
 
-namespace EJGLTextureMinFilterOptionN {
-	enum EJGL_ENUM_STRONG_TYPE_DECLAR EJGLTextureMinFilterOptionT : GLenum {
+namespace TextureMinFilterOptionN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR TextureMinFilterOptionT : GLenum {
 		NEAREST				   = GL_NEAREST,
 		LINEAR				   = GL_LINEAR,
 		NEAREST_MIPMAP_NEAREST = GL_NEAREST_MIPMAP_NEAREST,
@@ -126,18 +128,18 @@ namespace EJGLTextureMinFilterOptionN {
 		LINEAR_MIPMAP_LINEAR   = GL_LINEAR_MIPMAP_LINEAR
 	};
 }
-using EJGLTextureMinFilterOption = EJGLTextureMinFilterOptionN::EJGLTextureMinFilterOptionT;
+using TextureMinFilterOption = TextureMinFilterOptionN::TextureMinFilterOptionT;
 
-namespace EJGLTextureMagFilterOptionN {
-	enum EJGL_ENUM_STRONG_TYPE_DECLAR EJGLTextureMagFilterOptionT : GLenum {
+namespace TextureMagFilterOptionN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR TextureMagFilterOptionT : GLenum {
 		NEAREST				   = GL_NEAREST,
 		LINEAR				   = GL_LINEAR,
 	};
 }
-using EJGLTextureMagFilterOption = EJGLTextureMagFilterOptionN::EJGLTextureMagFilterOptionT;
+using TextureMagFilterOption = TextureMagFilterOptionN::TextureMagFilterOptionT;
 
-namespace EJGLTextureWarpOptionN {
-	enum EJGL_ENUM_STRONG_TYPE_DECLAR EJGLTextureWarpOptionT : GLenum {
+namespace TextureWarpOptionN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR TextureWarpOptionT : GLenum {
 		CLAMP_TO_EDGE		 = GL_CLAMP_TO_EDGE,
 		CLAMP_TO_BORDER		 = GL_CLAMP_TO_BORDER,
 		MIRRORED_REPEAT		 = GL_MIRRORED_REPEAT,
@@ -145,30 +147,30 @@ namespace EJGLTextureWarpOptionN {
 		MIRROR_CLAMP_TO_EDGE = GL_MIRROR_CLAMP_TO_EDGE
 	};
 }
-using EJGLTextureWarpOption = EJGLTextureWarpOptionN::EJGLTextureWarpOptionT;
+using TextureWarpOption = TextureWarpOptionN::TextureWarpOptionT;
 
 // Mode
-namespace EJGLPolygonModeN {
-	enum EJGL_ENUM_STRONG_TYPE_DECLAR EJGLPolygonModeT : GLenum {
+namespace PolygonModeN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR PolygonModeT : GLenum {
 		POINT = GL_POINT,
 		LINE  = GL_LINE,
 		FILL  = GL_FILL,
 	};
 }
-using EJGLPolygonMode = EJGLPolygonModeN::EJGLPolygonModeT;
+using PolygonMode = PolygonModeN::PolygonModeT;
 
 // Bit
-namespace EJGLClearBitN {
-	enum EJGL_ENUM_STRONG_TYPE_DECLAR EJGLClearBitT : GLbitfield {
+namespace ClearBitN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR ClearBitT : GLbitfield {
 		DEPTH   = GL_DEPTH_BUFFER_BIT,
 		STENCIL = GL_STENCIL_BUFFER_BIT,
 		COLOR   = GL_COLOR_BUFFER_BIT
 	};
 }
-using EJGLClearBit = EJGLClearBitN::EJGLClearBitT;
+using ClearBit = ClearBitN::ClearBitT;
 
-namespace EJGLMapAccessBitN {
-	enum EJGL_ENUM_STRONG_TYPE_DECLAR EJGLMapAccessBitT : GLbitfield {
+namespace MapAccessBitN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR MapAccessBitT : GLbitfield {
 		READ              = GL_MAP_READ_BIT,
 		WRITE             = GL_MAP_WRITE_BIT,
 		INVALIDATE_RANGE  = GL_MAP_INVALIDATE_RANGE_BIT,
@@ -177,42 +179,48 @@ namespace EJGLMapAccessBitN {
 		UNSYNCHRONIZED    = GL_MAP_UNSYNCHRONIZED_BIT
 	};
 }
-using EJGLMapAccessBit = EJGLMapAccessBitN::EJGLMapAccessBitT;
+using MapAccessBit = MapAccessBitN::MapAccessBitT;
 
-//// Formate
-//enum EJGL_ENUM_STRONG_TYPE_DECLAR TextureInternalFormatT : int {
-//	// Base
-//	DEPTH_COMPONENT = _DEPTH_COMPONENT,
-//	DEPTH_STENCIL   = _DEPTH_STENCIL,
-//	RED			   	= _RED,  
-//	RG			   	= _RG,
-//	RGB			   	= _RGB,  
-//	RGBA			= _RGBA,
-//	// Sized
-//	// Compressed
-//};
-//
-//enum EJGL_ENUM_STRONG_TYPE_DECLAR TextureDataFormatT : enum {
-//	RED             = _RED,
-//	RG              = _RG,
-//	RGB             = _RGB,
-//	BGR             = _BGR,
-//	RGBA            = _RGBA,
-//	BGRA            = _BGRA,
-//	RED_INTEGER     = _RED_INTEGER,
-//	RG_INTEGER      = _RG_INTEGER,
-//	RGB_INTEGER     = _RGB_INTEGER,
-//	BGR_INTEGER     = _BGR_INTEGER,
-//	RGBA_INTEGER    = _RGBA_INTEGER,
-//	BGRA_INTEGER    = _BGRA_INTEGER,
-//	STENCIL_INDEX   = _STENCIL_INDEX,
-//	DEPTH_COMPONENT = _DEPTH_COMPONENT,
-//	DEPTH_STENCIL   = _DEPTH_STENCIL,
-//};
+// Formate
+namespace TextureInternalFormatN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR TextureInternalFormatT : GLenum {
+		// Base
+		DEPTH_COMPONENT = GL_DEPTH_COMPONENT,
+		DEPTH_STENCIL   = GL_DEPTH_STENCIL,
+		RED             = GL_RED,
+		RG              = GL_RG,
+		RGB             = GL_RGB,
+		RGBA            = GL_RGBA,
+		// Sized
+		// Compressed
+	};
+}
+using TextureInternalFormat = TextureInternalFormatN::TextureInternalFormatT;
+
+namespace TexturePixelDataFormatN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR TexturePixelDataFormatT : GLenum {
+		RED             = GL_RED,
+		RG              = GL_RG,
+		RGB             = GL_RGB,
+		BGR             = GL_BGR,
+		RGBA            = GL_RGBA,
+		BGRA            = GL_BGRA,
+		RED_INTEGER     = GL_RED_INTEGER,
+		RG_INTEGER      = GL_RG_INTEGER,
+		RGB_INTEGER     = GL_RGB_INTEGER,
+		BGR_INTEGER     = GL_BGR_INTEGER,
+		RGBA_INTEGER    = GL_RGBA_INTEGER,
+		BGRA_INTEGER    = GL_BGRA_INTEGER,
+		STENCIL_INDEX   = GL_STENCIL_INDEX,
+		DEPTH_COMPONENT = GL_DEPTH_COMPONENT,
+		DEPTH_STENCIL   = GL_DEPTH_STENCIL,
+	};
+}
+using TexturePixelDataFormat = TexturePixelDataFormatN::TexturePixelDataFormatT;
 
 // Function
-namespace EJGLDepthFuncN {
-	enum EJGL_ENUM_STRONG_TYPE_DECLAR EJGLDepthFuncT : GLenum {
+namespace DepthFuncN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR DepthFuncT : GLenum {
 		NEVER    = GL_NEVER,
 		LESS     = GL_LESS,
 		EQUAL    = GL_EQUAL,
@@ -223,11 +231,11 @@ namespace EJGLDepthFuncN {
 		ALWAYS   = GL_ALWAYS,
 	};
 }
-using EJGLDepthFunc = EJGLDepthFuncN::EJGLDepthFuncT;
+using DepthFunc = DepthFuncN::DepthFuncT;
 
 // Parameter
-namespace EJGLTextureParameterN {
-	enum EJGL_ENUM_STRONG_TYPE_DECLAR EJGLTextureParameterT : GLenum {
+namespace TextureParameterN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR TextureParameterT : GLenum {
 		DEPTH_STENCIL_MODE = GL_DEPTH_STENCIL_TEXTURE_MODE,
 		BASE_LEVEL		   = GL_TEXTURE_BASE_LEVEL,
 		COMPARE_FUNC	   = GL_TEXTURE_COMPARE_FUNC,
@@ -247,51 +255,71 @@ namespace EJGLTextureParameterN {
 		WRAP_R			   = GL_TEXTURE_WRAP_R
 	};
 }
-using EJGLTextureParameter = EJGLTextureParameterN::EJGLTextureParameterT;
+using TextureParameter = TextureParameterN::TextureParameterT;
+
+// Factor
+namespace BlendFactorN {
+	enum EJGL_ENUM_STRONG_TYPE_DECLAR BlendFactorT : GLenum {
+		ZERO					 = GL_ZERO,
+		ONE						 = GL_ONE,
+		SRC_COLOR				 = GL_SRC_COLOR,
+		ONE_MINUS_SRC_COLOR		 = GL_ONE_MINUS_SRC_COLOR,
+		DST_COLOR		   		 = GL_DST_COLOR,
+		ONE_MINUS_DST_COLOR		 = GL_ONE_MINUS_DST_COLOR,
+		SRC_ALPHA		   		 = GL_SRC_ALPHA,
+		ONE_MINUS_SRC_ALPHA		 = GL_ONE_MINUS_SRC_ALPHA,
+		DST_ALPHA		   		 = GL_DST_ALPHA,
+		ONE_MINUS_DST_ALPHA		 = GL_ONE_MINUS_DST_ALPHA,
+		CONSTANT_COLOR			 = GL_CONSTANT_COLOR,
+		ONE_MINUS_CONSTANT_COLOR = GL_ONE_MINUS_CONSTANT_COLOR,
+		CONSTANT_ALPHA			 = GL_CONSTANT_ALPHA,
+		ONE_MINUS_CONSTANT_ALPHA = GL_ONE_MINUS_CONSTANT_ALPHA,
+	};
+}
+using BlendFactor = BlendFactorN::BlendFactorT;
 
 // Functions
-constexpr unsigned int sizeofGLType(EJGLDataType type_) {
+constexpr unsigned int sizeofGLType(DataType type_) {
 	switch (type_)
 	{
-	case EJGLDataType::BYTE:
+	case DataType::BYTE:
 		return sizeof(GLbyte);
-	case EJGLDataType::UNSIGNED_BYTE:
+	case DataType::UNSIGNED_BYTE:
 		return sizeof(GLubyte);
-	case EJGLDataType::SHORT:
+	case DataType::SHORT:
 		return sizeof(GLshort);
-	case EJGLDataType::UNSIGNED_SHORT:
+	case DataType::UNSIGNED_SHORT:
 		return sizeof(GLushort);
-	case EJGLDataType::INT:
+	case DataType::INT:
 		return sizeof(GLint);
-	case EJGLDataType::UNSIGNED_INT:
+	case DataType::UNSIGNED_INT:
 		return sizeof(GLuint);
-	case EJGLDataType::FLOAT:
+	case DataType::FLOAT:
 		return sizeof(GLfloat);
-	case EJGLDataType::DOUBLE:
+	case DataType::DOUBLE:
 		return sizeof(GLdouble);
 	default:
 		return 0;
 	}
 }
 
-constexpr std::string shaderEnumToStr(const EJGLShaderType shaderType) {
+constexpr std::string shaderEnumToStr(const ShaderType shaderType) {
 	switch (shaderType) {
-	case EJGLShaderType::VERTEX:
+	case ShaderType::VERTEX:
 		return "vertex";
-	case EJGLShaderType::FRAGEMENT:
+	case ShaderType::FRAGEMENT:
 		return "fragment";
-	case EJGLShaderType::GEOMETRY:
+	case ShaderType::GEOMETRY:
 		return "geometry";
-	case EJGLShaderType::TESS_CONTROL:
+	case ShaderType::TESS_CONTROL:
 		return "tess control";
-	case EJGLShaderType::TESS_EVALUATION:
+	case ShaderType::TESS_EVALUATION:
 		return "tess evalution";
-	case EJGLShaderType::COMPUTE:
+	case ShaderType::COMPUTE:
 		return "compute";
 	}
 	return "unknown shader type";
 }
-
 
 	//enum EJGL_ENUM_STRONG_TYPE_DECLAR PixelDataTypeT : enum {
 	//	UNSIGNED_BYTE               = _UNSIGNED_BYTE,
@@ -314,7 +342,6 @@ constexpr std::string shaderEnumToStr(const EJGLShaderType shaderType) {
 	//	UNSIGNED_INT_10_10_10_2     = _UNSIGNED_INT_10_10_10_2,
 	//	UNSIGNED_INT_2_10_10_10_REV = _UNSIGNED_INT_2_10_10_10_REV,
 	//};
-
 
 
 EJGL_NAMESPACE_END

@@ -1,0 +1,48 @@
+ClearError call:[glGetError]
+LogCall call:[glGetError]
+sizeofGLType call:[sizeof]
+shaderEnumToStr
+EJGLShader
+EJGLShader
+EJGLShader
+EJGLShader
+isValid
+getShaderID
+swap call:[swap] noreturn:[swap]
+setShaderID
+EJGLShaderProgram
+EJGLShaderProgram
+EJGLShaderProgram
+isValid
+getProgramID
+unbind call:[glUseProgram] noreturn:[glUseProgram]
+swap call:[swap] noreturn:[swap]
+setProgramID
+create call:[glCreateProgram] noreturn:[glCreateProgram]
+attachShader call:[getShaderID,glAttachShader] noreturn:[glAttachShader]
+bind call:[glUseProgram] noreturn:[glUseProgram]
+bindUniformBlock call:[glUniformBlockBinding] noreturn:[glUniformBlockBinding]
+setUniform call:[getUniformLocation,setUniform] noreturn:[setUniform]
+setUniform call:[glUniform1i] noreturn:[glUniform1i]
+setUniform call:[glUniform1ui] noreturn:[glUniform1ui]
+setUniform call:[glUniform1f] noreturn:[glUniform1f]
+setUniform call:[glUniform1fv] noreturn:[glUniform1fv]
+setUniform call:[glUniform2fv,value_ptr] noreturn:[glUniform2fv]
+setUniform call:[glUniform2f] noreturn:[glUniform2f]
+setUniform call:[glUniform3fv,value_ptr] noreturn:[glUniform3fv]
+setUniform call:[glUniform3f] noreturn:[glUniform3f]
+setUniform call:[glUniform4fv,value_ptr] noreturn:[glUniform4fv]
+setUniform call:[glUniform4f] noreturn:[glUniform4f]
+setUniform call:[glUniformMatrix3fv,value_ptr] noreturn:[glUniformMatrix3fv]
+setUniform call:[glUniformMatrix4fv,value_ptr] noreturn:[glUniformMatrix4fv]
+operator=
+EJGLShaderProgram call:[deleteProgram] noreturn:[deleteProgram]
+toString call:[string,to_string]
+attachShaderByFile call:[createShaderByFile,getShaderID,glAttachShader] noreturn:[glAttachShader]
+attachShaderBySrc call:[createShaderBySrc,getShaderID,glAttachShader] noreturn:[glAttachShader]
+link call:[glDeleteProgram,glGetProgramInfoLog,glGetProgramiv,glLinkProgram,malloc,sizeof]
+deleteProgram call:[glDeleteProgram]
+getUniformLocation call:[c_str,end,find,glGetUniformLocation]
+getUniformBlockIndex call:[c_str,glGetUniformBlockIndex] noreturn:[glGetUniformBlockIndex]
+getUniformBlockIndexAndBind call:[bindUniformBlock,getUniformBlockIndex]
+getAttribLocation call:[c_str,glGetAttribLocation] noreturn:[glGetAttribLocation]

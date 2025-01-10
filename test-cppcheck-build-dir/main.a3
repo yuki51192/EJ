@@ -1,0 +1,673 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="4677217832852787549">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cassert&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cassert&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\utils\EJ_Config.hpp" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\utils\EJ_Config.hpp" line="5" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glad/glad.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glad/glad.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\utils\EJGL_Config.hpp" line="7" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\utils\EJGL_Config.hpp" line="8" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;utils/EJGL_Utils.hpp&quot; not found." verbose="Include file: &quot;utils/EJGL_Utils.hpp&quot; not found.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\EJGL_Include.hpp" line="6" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glfwpp/glfwpp.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glfwpp/glfwpp.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\application\EJGL_Application.hpp" line="11" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/vec2.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/vec2.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\application\EJGL_Window.hpp" line="12" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glfwpp/Window.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glfwpp/Window.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\application\EJGL_Window.hpp" line="13" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\application\EJGL_Window.hpp" line="15" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;bitset&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;bitset&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="12" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/mat4x4.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/mat4x4.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="13" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/gtc/matrix_transform.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/gtc/matrix_transform.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="14" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;bitset&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;bitset&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="12" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/vec3.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/vec3.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="13" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/mat4x4.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/mat4x4.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="14" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/gtc/quaternion.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/gtc/quaternion.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="15" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/gtc/matrix_transform.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/gtc/matrix_transform.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="16" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/gtc/type_ptr.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/gtc/type_ptr.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="17" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glfwpp/window.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glfwpp/window.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="15" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;functional&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;functional&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="16" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;bitset&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;bitset&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="17" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/vec2.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/vec2.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\camera\EJGL_Camera2D.hpp" line="21" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/vec2.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/vec2.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\camera\EJGL_ArcBallCamera.hpp" line="21" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;../utils/EJGL_Utils.hpp&quot; not found." verbose="Include file: &quot;../utils/EJGL_Utils.hpp&quot; not found.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="6" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;memory&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;memory&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="9" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="10" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;memory&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;memory&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_VertexArray.hpp" line="12" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;vector&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_VertexArray.hpp" line="13" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;memory&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;memory&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_Shader.hpp" line="8" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_Shader.hpp" line="9" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;unordered_map&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;unordered_map&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.hpp" line="13" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/vec2.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/vec2.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.hpp" line="14" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/vec3.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/vec3.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.hpp" line="15" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/vec4.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/vec4.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.hpp" line="16" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/mat3x3.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/mat3x3.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.hpp" line="17" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/mat4x4.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/mat4x4.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.hpp" line="18" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/gtc/type_ptr.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/gtc/type_ptr.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.hpp" line="19" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/gtc/type_ptr.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/gtc/type_ptr.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\src\main.cpp" line="4" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;glm/gtc/matrix_transform.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;glm/gtc/matrix_transform.hpp&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\src\main.cpp" line="5" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stb_image/stb_image.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stb_image/stb_image.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\src\main.cpp" line="6" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;imgui-docking/imgui.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;imgui-docking/imgui.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\src\main.cpp" line="8" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;imgui-docking/imgui_impl_glfw.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;imgui-docking/imgui_impl_glfw.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\src\main.cpp" line="9" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;imgui-docking/imgui_impl_opengl3.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;imgui-docking/imgui_impl_opengl3.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="D:\Program\c++\EJ\EJ\src\main.cpp" line="10" column="0"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &apos;EJGLPerspectiveMatrix&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLProjectionMatrix&apos;." verbose="The class &apos;EJGLPerspectiveMatrix&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLProjectionMatrix&apos;." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="56" column="14" info="Derived function &apos;EJGLPerspectiveMatrix::toString&apos;"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="28" column="14" info="Parent function &apos;EJGLProjectionMatrix::toString&apos;"/>
+            <symbol>EJGLPerspectiveMatrix</symbol>
+            <symbol>toString</symbol>
+            <symbol>EJGLProjectionMatrix</symbol>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &apos;EJGLOrthographicMatrix&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLProjectionMatrix&apos;." verbose="The class &apos;EJGLOrthographicMatrix&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLProjectionMatrix&apos;." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="97" column="14" info="Derived function &apos;EJGLOrthographicMatrix::toString&apos;"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="28" column="14" info="Parent function &apos;EJGLProjectionMatrix::toString&apos;"/>
+            <symbol>EJGLOrthographicMatrix</symbol>
+            <symbol>toString</symbol>
+            <symbol>EJGLProjectionMatrix</symbol>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &apos;EJGLCamera2D&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLCamera&apos;." verbose="The class &apos;EJGLCamera2D&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLCamera&apos;." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\camera\EJGL_Camera2D.hpp" line="35" column="14" info="Derived function &apos;EJGLCamera2D::toString&apos;"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="50" column="14" info="Parent function &apos;EJGLCamera::toString&apos;"/>
+            <symbol>EJGLCamera2D</symbol>
+            <symbol>toString</symbol>
+            <symbol>EJGLCamera</symbol>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &apos;EJGLArcBallCamera&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLCamera&apos;." verbose="The class &apos;EJGLArcBallCamera&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLCamera&apos;." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\camera\EJGL_ArcBallCamera.hpp" line="35" column="14" info="Derived function &apos;EJGLArcBallCamera::toString&apos;"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="50" column="14" info="Parent function &apos;EJGLCamera::toString&apos;"/>
+            <symbol>EJGLArcBallCamera</symbol>
+            <symbol>toString</symbol>
+            <symbol>EJGLCamera</symbol>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &apos;EJGLArrayBuffer&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." verbose="The class &apos;EJGLArrayBuffer&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="76" column="30" info="Derived function &apos;EJGLArrayBuffer::toString&apos;"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="4" column="33" info="Parent function &apos;EJGLBufferObject::toString&apos;"/>
+            <symbol>EJGLArrayBuffer</symbol>
+            <symbol>toString</symbol>
+            <symbol>EJGLBufferObject</symbol>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &apos;EJGLArrayBuffer&apos; defines member function with name &apos;unbind&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." verbose="The class &apos;EJGLArrayBuffer&apos; defines member function with name &apos;unbind&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="84" column="23" info="Derived function &apos;EJGLArrayBuffer::unbind&apos;"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="23" column="24" info="Parent function &apos;EJGLBufferObject::unbind&apos;"/>
+            <symbol>EJGLArrayBuffer</symbol>
+            <symbol>unbind</symbol>
+            <symbol>EJGLBufferObject</symbol>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &apos;EJGLElementBuffer&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." verbose="The class &apos;EJGLElementBuffer&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="89" column="32" info="Derived function &apos;EJGLElementBuffer::toString&apos;"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="4" column="33" info="Parent function &apos;EJGLBufferObject::toString&apos;"/>
+            <symbol>EJGLElementBuffer</symbol>
+            <symbol>toString</symbol>
+            <symbol>EJGLBufferObject</symbol>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &apos;EJGLElementBuffer&apos; defines member function with name &apos;unbind&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." verbose="The class &apos;EJGLElementBuffer&apos; defines member function with name &apos;unbind&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="97" column="25" info="Derived function &apos;EJGLElementBuffer::unbind&apos;"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="23" column="24" info="Parent function &apos;EJGLBufferObject::unbind&apos;"/>
+            <symbol>EJGLElementBuffer</symbol>
+            <symbol>unbind</symbol>
+            <symbol>EJGLBufferObject</symbol>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &apos;EJGLUniformBuffer&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." verbose="The class &apos;EJGLUniformBuffer&apos; defines member function with name &apos;toString&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="102" column="32" info="Derived function &apos;EJGLUniformBuffer::toString&apos;"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="4" column="33" info="Parent function &apos;EJGLBufferObject::toString&apos;"/>
+            <symbol>EJGLUniformBuffer</symbol>
+            <symbol>toString</symbol>
+            <symbol>EJGLBufferObject</symbol>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &apos;EJGLUniformBuffer&apos; defines member function with name &apos;unbind&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." verbose="The class &apos;EJGLUniformBuffer&apos; defines member function with name &apos;unbind&apos; also defined in its parent class &apos;EJGLBufferObject&apos;." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="128" column="25" info="Derived function &apos;EJGLUniformBuffer::unbind&apos;"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="23" column="24" info="Parent function &apos;EJGLBufferObject::unbind&apos;"/>
+            <symbol>EJGLUniformBuffer</symbol>
+            <symbol>unbind</symbol>
+            <symbol>EJGLBufferObject</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLProjectionMatrix&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLProjectionMatrix&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="21" column="2"/>
+            <symbol>EJGLProjectionMatrix</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLPerspectiveMatrix&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLPerspectiveMatrix&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="49" column="2"/>
+            <symbol>EJGLPerspectiveMatrix</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLOrthographicMatrix&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLOrthographicMatrix&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="90" column="2"/>
+            <symbol>EJGLOrthographicMatrix</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLViewMatrix&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLViewMatrix&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="24" column="2"/>
+            <symbol>EJGLViewMatrix</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLCamera&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLCamera&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="39" column="2"/>
+            <symbol>EJGLCamera</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLCamera2D&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLCamera2D&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\camera\EJGL_Camera2D.hpp" line="28" column="2"/>
+            <symbol>EJGLCamera2D</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLArcBallCamera&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLArcBallCamera&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\camera\EJGL_ArcBallCamera.hpp" line="28" column="2"/>
+            <symbol>EJGLArcBallCamera</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLBufferObject&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLBufferObject&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="27" column="2"/>
+            <symbol>EJGLBufferObject</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLUniformBuffer&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLUniformBuffer&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="143" column="2"/>
+            <symbol>EJGLUniformBuffer</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLVertexArray&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLVertexArray&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_VertexArray.hpp" line="72" column="2"/>
+            <symbol>EJGLVertexArray</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLShader&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLShader&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_Shader.hpp" line="27" column="2"/>
+            <symbol>EJGLShader</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLShader&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLShader&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_Shader.hpp" line="36" column="2"/>
+            <symbol>EJGLShader</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EJGLShaderProgram&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EJGLShaderProgram&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.hpp" line="35" column="2"/>
+            <symbol>EJGLShaderProgram</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The destructor &apos;~EJGLPerspectiveMatrix&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." verbose="The destructor &apos;~EJGLPerspectiveMatrix&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="52" column="11" info="Destructor in derived class"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="24" column="11" info="Virtual destructor in base class"/>
+            <symbol>~EJGLPerspectiveMatrix</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The destructor &apos;~EJGLOrthographicMatrix&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." verbose="The destructor &apos;~EJGLOrthographicMatrix&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="93" column="11" info="Destructor in derived class"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="24" column="11" info="Virtual destructor in base class"/>
+            <symbol>~EJGLOrthographicMatrix</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The destructor &apos;~EJGLCamera2D&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." verbose="The destructor &apos;~EJGLCamera2D&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\camera\EJGL_Camera2D.hpp" line="31" column="11" info="Destructor in derived class"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="46" column="11" info="Virtual destructor in base class"/>
+            <symbol>~EJGLCamera2D</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The destructor &apos;~EJGLArcBallCamera&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." verbose="The destructor &apos;~EJGLArcBallCamera&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\camera\EJGL_ArcBallCamera.hpp" line="31" column="11" info="Destructor in derived class"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="46" column="11" info="Virtual destructor in base class"/>
+            <symbol>~EJGLArcBallCamera</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The destructor &apos;~EJGLArrayBuffer&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." verbose="The destructor &apos;~EJGLArrayBuffer&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="96" column="11" info="Destructor in derived class"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="40" column="11" info="Virtual destructor in base class"/>
+            <symbol>~EJGLArrayBuffer</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The destructor &apos;~EJGLElementBuffer&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." verbose="The destructor &apos;~EJGLElementBuffer&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="124" column="11" info="Destructor in derived class"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="40" column="11" info="Virtual destructor in base class"/>
+            <symbol>~EJGLElementBuffer</symbol>
+        </error>
+        <error id="missingOverride" severity="style" msg="The destructor &apos;~EJGLUniformBuffer&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." verbose="The destructor &apos;~EJGLUniformBuffer&apos; overrides a destructor in a base class but is not marked with a &apos;override&apos; specifier." file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="155" column="11" info="Destructor in derived class"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="40" column="11" info="Virtual destructor in base class"/>
+            <symbol>~EJGLUniformBuffer</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;_windowSizeCB&apos; shadows outer variable" verbose="Local variable &apos;_windowSizeCB&apos; shadows outer variable" cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\camera\EJGL_Camera.inl" line="4" column="16" info="Shadow variable"/>
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="102" column="16" info="Shadowed declaration"/>
+            <symbol>_windowSizeCB</symbol>
+        </error>
+        <error id="constParameterReference" severity="style" msg="Parameter &apos;obj_&apos; can be declared as reference to const" verbose="Parameter &apos;obj_&apos; can be declared as reference to const" cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\application\EJGL_Application.inl" line="7" column="37" info="Parameter &apos;obj_&apos; can be declared as reference to const"/>
+            <symbol>obj_</symbol>
+        </error>
+        <error id="constParameterReference" severity="style" msg="Parameter &apos;obj_&apos; can be declared as reference to const" verbose="Parameter &apos;obj_&apos; can be declared as reference to const" cwe="398" file0="D:/Program/c++/EJ/EJ/src/main.cpp">
+            <location file="D:\Program\c++\EJ\EJ\include\EJ\GL\application\EJGL_Window.inl" line="3" column="27" info="Parameter &apos;obj_&apos; can be declared as reference to const"/>
+            <symbol>obj_</symbol>
+        </error>
+  <FileInfo check="ctu">
+<function-call call-id="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.hpp:40:17" call-funcname="_setHasChange" call-argnr="1" file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.inl" line="11" col="15" call-argexpr="false" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.hpp:56:17" call-funcname="_setHasChange" call-argnr="1" file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" line="35" col="15" call-argexpr="false" call-argvaluetype="0" call-argvalue="0"/>  </FileInfo>
+  <FileInfo check="Null pointer">
+    <unsafe-usage my-id="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.hpp:77:7" my-argnr="1" my-argname="name_" file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" line="32" col="51" value="0"/>
+  </FileInfo>
+  <FileInfo check="Uninitialized variables">
+    <unsafe-usage my-id="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Window.hpp:76:22" my-argnr="1" my-argname="size_" file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Window.inl" line="50" col="28" value="0"/>
+    <unsafe-usage my-id="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.hpp:46:17" my-argnr="1" my-argname="rotationEuler_" file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" line="25" col="25" value="0"/>
+    <unsafe-usage my-id="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.hpp:52:17" my-argnr="1" my-argname="obj_" file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.inl" line="6" col="22" value="0"/>
+    <unsafe-usage my-id="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.hpp:44:17" my-argnr="1" my-argname="obj_" file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" line="9" col="24" value="0"/>
+    <unsafe-usage my-id="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.hpp:61:17" my-argnr="1" my-argname="data_" file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" line="34" col="9" value="0"/>
+    <unsafe-usage my-id="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_VertexArray.hpp:86:17" my-argnr="1" my-argname="obj_" file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_VertexArray.inl" line="16" col="24" value="0"/>
+    <unsafe-usage my-id="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_Shader.hpp:51:17" my-argnr="1" my-argname="obj_" file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_Shader.inl" line="4" col="24" value="0"/>
+    <unsafe-usage my-id="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.hpp:49:17" my-argnr="1" my-argname="obj_" file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" line="4" col="24" value="0"/>
+    <unsafe-usage my-id="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.hpp:61:17" my-argnr="1" my-argname="shader_" file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" line="17" col="2" value="0"/>
+  </FileInfo>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Config.hpp" functionName="ClearError" lineNumber="21"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Config.hpp" functionName="LogCall" lineNumber="26"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Enum.hpp" functionName="sizeofGLType" lineNumber="253"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/utils/EJGL_Enum.hpp" functionName="shaderEnumToStr" lineNumber="277"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Application.hpp" functionName="getLibrary" lineNumber="29"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Application.inl" functionName="toString" lineNumber="3"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Application.inl" functionName="swap" lineNumber="7"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Application.inl" functionName="loadGlad" lineNumber="11"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Application.inl" functionName="initialize" lineNumber="19"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Application.inl" functionName="getInstance" lineNumber="23"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Application.inl" functionName="getDefaultHint" lineNumber="28"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Window.hpp" functionName="isCameraValid" lineNumber="48"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Window.hpp" functionName="getCamera" lineNumber="51"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Window.hpp" functionName="getCamera" lineNumber="54"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Window.hpp" functionName="getLastSize" lineNumber="68"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Window.inl" functionName="swap" lineNumber="3"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Window.inl" functionName="setCamera" lineNumber="8"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Window.inl" functionName="getWidth" lineNumber="14"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Window.inl" functionName="getHeight" lineNumber="19"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Window.inl" functionName="getSize" lineNumber="24"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Window.inl" functionName="getCursorPos" lineNumber="30"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Window.inl" functionName="getReverseYCursorPos" lineNumber="35"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Window.inl" functionName="getReverseXCenteredCursorPos" lineNumber="40"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Window.inl" functionName="getNDCCursorPos" lineNumber="45"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Window.inl" functionName="getNDCCursorPos" lineNumber="48"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Window.inl" functionName="getReverseYNDCCursorPos" lineNumber="52"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/application/EJGL_Window.inl" functionName="reversePosY" lineNumber="59"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.hpp" functionName="toGlm" lineNumber="30"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.hpp" functionName="_getHasChange" lineNumber="39"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.hpp" functionName="getFov" lineNumber="63"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.hpp" functionName="getAspectRatio" lineNumber="64"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.hpp" functionName="getNear" lineNumber="65"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.hpp" functionName="getFar" lineNumber="66"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.hpp" functionName="_getMatrix" lineNumber="81"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.hpp" functionName="getLeft" lineNumber="106"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.hpp" functionName="getRight" lineNumber="107"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.hpp" functionName="getBottom" lineNumber="108"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.hpp" functionName="getTop" lineNumber="109"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.hpp" functionName="getNear" lineNumber="110"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.hpp" functionName="getFar" lineNumber="111"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.hpp" functionName="_getMatrix" lineNumber="130"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.inl" functionName="touch" lineNumber="5"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.inl" functionName="hasChange" lineNumber="9"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.inl" functionName="_setHasChange" lineNumber="20"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.inl" functionName="getFov" lineNumber="28"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.inl" functionName="getAspectRatio" lineNumber="32"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.inl" functionName="getNear" lineNumber="36"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.inl" functionName="getFar" lineNumber="40"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.inl" functionName="update" lineNumber="62"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.inl" functionName="s_getMatrix" lineNumber="67"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.inl" functionName="getLeft" lineNumber="75"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.inl" functionName="getRight" lineNumber="79"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.inl" functionName="getBottom" lineNumber="83"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.inl" functionName="getTop" lineNumber="87"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.inl" functionName="getNear" lineNumber="91"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.inl" functionName="getFar" lineNumber="95"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.inl" functionName="update" lineNumber="125"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ProjectionMatrix.inl" functionName="s_getMatrix" lineNumber="130"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.hpp" functionName="toGlm" lineNumber="33"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.hpp" functionName="getEye" lineNumber="40"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.hpp" functionName="getRotation" lineNumber="41"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.hpp" functionName="getRotationEuler" lineNumber="42"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.hpp" functionName="_getHasChange" lineNumber="55"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" functionName="getEye" lineNumber="3"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" functionName="getRotation" lineNumber="7"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" functionName="getRotationEuler" lineNumber="11"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" functionName="setEye" lineNumber="16"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" functionName="setRotation" lineNumber="20"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" functionName="setRotationEuler" lineNumber="24"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" functionName="touch" lineNumber="29"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" functionName="hasChange" lineNumber="33"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/matrix/EJGL_ViewMatrix.inl" functionName="_setHasChange" lineNumber="49"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.hpp" functionName="isWindowValid" lineNumber="54"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.hpp" functionName="isViewMatrixValid" lineNumber="55"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.hpp" functionName="isProjectionMatrixValid" lineNumber="56"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.hpp" functionName="getWindow" lineNumber="58"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.hpp" functionName="getViewMatrix" lineNumber="60"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.hpp" functionName="getProjectionMatrix" lineNumber="62"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.hpp" functionName="getWindow" lineNumber="64"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.hpp" functionName="getViewMatrix" lineNumber="66"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.hpp" functionName="getProjectionMatrix" lineNumber="68"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.hpp" functionName="getWindowSizeCB" lineNumber="70"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.hpp" functionName="getKeyCB" lineNumber="72"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.hpp" functionName="getMouseButtonCB" lineNumber="73"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.hpp" functionName="getMouseMoveCB" lineNumber="74"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.hpp" functionName="getScrollCB" lineNumber="75"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.hpp" functionName="screen2World" lineNumber="97"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.inl" functionName="swap" lineNumber="3"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.inl" functionName="setViewMatrix" lineNumber="21"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.inl" functionName="setProjectionMatrix" lineNumber="26"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.inl" functionName="_deleteViewMatrix" lineNumber="31"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/camera/EJGL_Camera.inl" functionName="_deleteProjectionMatrix" lineNumber="34"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.hpp" functionName="isValid" lineNumber="48"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.hpp" functionName="getBufferID" lineNumber="50"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.hpp" functionName="getBufferType" lineNumber="51"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.hpp" functionName="getBindingPoint" lineNumber="164"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="toString" lineNumber="4"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="swap" lineNumber="8"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="setBufferID" lineNumber="12"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="setBufferType" lineNumber="15"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="bind" lineNumber="19"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="unbind" lineNumber="23"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="create" lineNumber="27"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="create" lineNumber="33"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="deleteBuffer" lineNumber="37"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="unbind" lineNumber="42"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="isBinding" lineNumber="48"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="isBinding" lineNumber="52"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="getBinding" lineNumber="55"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="toString" lineNumber="76"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="swap" lineNumber="80"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="unbind" lineNumber="84"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="toString" lineNumber="89"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="swap" lineNumber="93"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="unbind" lineNumber="97"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="toString" lineNumber="102"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="swap" lineNumber="106"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="bindToBindingPoint" lineNumber="111"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="bindToBindingPoint" lineNumber="119"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_BufferObject.inl" functionName="unbind" lineNumber="128"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_VertexArray.hpp" functionName="getStride" lineNumber="52"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_VertexArray.hpp" functionName="getElements" lineNumber="53"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_VertexArray.hpp" functionName="getElements" lineNumber="54"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_VertexArray.hpp" functionName="isValid" lineNumber="89"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_VertexArray.hpp" functionName="getVertexArrayID" lineNumber="90"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_VertexArray.hpp" functionName="unbind" lineNumber="120"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_VertexArray.inl" functionName="size" lineNumber="4"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_VertexArray.inl" functionName="apply" lineNumber="8"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_VertexArray.inl" functionName="swap" lineNumber="15"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_VertexArray.inl" functionName="setVertexArrayID" lineNumber="19"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_VertexArray.inl" functionName="create" lineNumber="23"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_VertexArray.inl" functionName="bind" lineNumber="27"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_VertexArray.inl" functionName="deleteVertexArray" lineNumber="32"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_VertexArray.inl" functionName="isBinding" lineNumber="39"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_VertexArray.inl" functionName="isBinding" lineNumber="43"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_VertexArray.inl" functionName="getBinding" lineNumber="46"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_Shader.hpp" functionName="isValid" lineNumber="53"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_Shader.hpp" functionName="getShaderID" lineNumber="54"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_Shader.inl" functionName="swap" lineNumber="3"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_Shader.inl" functionName="setShaderID" lineNumber="7"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.hpp" functionName="isValid" lineNumber="51"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.hpp" functionName="getProgramID" lineNumber="53"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.hpp" functionName="unbind" lineNumber="96"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="swap" lineNumber="3"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="setProgramID" lineNumber="7"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="create" lineNumber="11"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="attachShader" lineNumber="15"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="bind" lineNumber="21"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="bindUniformBlock" lineNumber="26"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="setUniform" lineNumber="31"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="setUniform" lineNumber="71"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="setUniform" lineNumber="74"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="setUniform" lineNumber="77"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="setUniform" lineNumber="80"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="setUniform" lineNumber="83"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="setUniform" lineNumber="86"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="setUniform" lineNumber="89"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="setUniform" lineNumber="92"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="setUniform" lineNumber="95"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="setUniform" lineNumber="98"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="setUniform" lineNumber="101"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/include/EJ/GL/glObject/EJGL_ShaderProgram.inl" functionName="setUniform" lineNumber="104"/>
+    <functiondecl file="D:/Program/c++/EJ/EJ/src/main.cpp" functionName="main" lineNumber="48"/>
+    <functioncall functionName="Any"/>
+    <functioncall functionName="Application"/>
+    <functioncall functionName="Begin"/>
+    <functioncall functionName="CameraType"/>
+    <functioncall functionName="Core"/>
+    <functioncall functionName="CreateContext"/>
+    <functioncall functionName="EJGLArcBallCamera"/>
+    <functioncall functionName="EJGLArrayBuffer"/>
+    <functioncall functionName="EJGLBufferObject"/>
+    <functioncall functionName="EJGLCamera"/>
+    <functioncall functionName="EJGLCamera2D"/>
+    <functioncall functionName="EJGLElementBuffer"/>
+    <functioncall functionName="EJGLOrthographicMatrix"/>
+    <functioncall functionName="EJGLPerspectiveMatrix"/>
+    <functioncall functionName="EJGLProjectionMatrix"/>
+    <functioncall functionName="EJGLShader"/>
+    <functioncall functionName="EJGLShaderProgram"/>
+    <functioncall functionName="EJGLUniformBuffer"/>
+    <functioncall functionName="EJGLVertexArray"/>
+    <functioncall functionName="EJGLVertexBufferLayout"/>
+    <functioncall functionName="EJGLViewMatrix"/>
+    <functioncall functionName="End"/>
+    <functioncall functionName="GLADloadproc"/>
+    <functioncall functionName="GL_ARRAY_BUFFER_BINDING"/>
+    <functioncall functionName="GL_ELEMENT_ARRAY_BUFFER_BINDING"/>
+    <functioncall functionName="GL_FALSE"/>
+    <functioncall functionName="GL_LINEAR"/>
+    <functioncall functionName="GL_REPEAT"/>
+    <functioncall functionName="GL_RGBA"/>
+    <functioncall functionName="GL_TEXTURE_2D"/>
+    <functioncall functionName="GL_TEXTURE_MAG_FILTER"/>
+    <functioncall functionName="GL_TEXTURE_MIN_FILTER"/>
+    <functioncall functionName="GL_TEXTURE_WRAP_S"/>
+    <functioncall functionName="GL_TEXTURE_WRAP_T"/>
+    <functioncall functionName="GL_UNIFORM_BUFFER_BINDING"/>
+    <functioncall functionName="GL_UNSIGNED_BYTE"/>
+    <functioncall functionName="GL_VERTEX_ARRAY_BINDING"/>
+    <functioncall functionName="GLbyte"/>
+    <functioncall functionName="GLdouble"/>
+    <functioncall functionName="GLfloat"/>
+    <functioncall functionName="GLint"/>
+    <functioncall functionName="GLshort"/>
+    <functioncall functionName="GLsizei"/>
+    <functioncall functionName="GLubyte"/>
+    <functioncall functionName="GLuint"/>
+    <functioncall functionName="GLushort"/>
+    <functioncall functionName="GetDrawData"/>
+    <functioncall functionName="IMGUI_CHECKVERSION"/>
+    <functioncall functionName="ImGui_ImplGlfw_InitForOpenGL"/>
+    <functioncall functionName="ImGui_ImplGlfw_NewFrame"/>
+    <functioncall functionName="ImGui_ImplOpenGL3_Init"/>
+    <functioncall functionName="ImGui_ImplOpenGL3_NewFrame"/>
+    <functioncall functionName="ImGui_ImplOpenGL3_RenderDrawData"/>
+    <functioncall functionName="KeyCode"/>
+    <functioncall functionName="KeyState"/>
+    <functioncall functionName="ModifierKeyBit"/>
+    <functioncall functionName="MouseButton"/>
+    <functioncall functionName="MouseButtonState"/>
+    <functioncall functionName="Native"/>
+    <functioncall functionName="NewFrame"/>
+    <functioncall functionName="NoRobustness"/>
+    <functioncall functionName="OpenGl"/>
+    <functioncall functionName="ProjectionMatrixType"/>
+    <functioncall functionName="Render"/>
+    <functioncall functionName="STATIC_DRAW"/>
+    <functioncall functionName="Text"/>
+    <functioncall functionName="ViewMatrixType"/>
+    <functioncall functionName="Window"/>
+    <functioncall functionName="_BufferElemType"/>
+    <functioncall functionName="_deleteCamera"/>
+    <functioncall functionName="_deleteProjectionMatrix"/>
+    <functioncall functionName="_deleteViewMatrix"/>
+    <functioncall functionName="_getHasChange"/>
+    <functioncall functionName="_getMatrix"/>
+    <functioncall functionName="_setHasChange"/>
+    <functioncall functionName="add"/>
+    <functioncall functionName="addBuffer"/>
+    <functioncall functionName="addBufferLayout"/>
+    <functioncall functionName="apply"/>
+    <functioncall functionName="assert"/>
+    <functioncall functionName="attachShaderBySrc"/>
+    <functioncall functionName="bind"/>
+    <functioncall functionName="bindToBindingPoint"/>
+    <functioncall functionName="create"/>
+    <functioncall functionName="data"/>
+    <functioncall functionName="dontCare"/>
+    <functioncall functionName="drawElement"/>
+    <functioncall functionName="eulerAngles"/>
+    <functioncall functionName="exit"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="function"/>
+    <functioncall functionName="getBinding"/>
+    <functioncall functionName="getBindingPoint"/>
+    <functioncall functionName="getBufferID"/>
+    <functioncall functionName="getCamera"/>
+    <functioncall functionName="getCursorPos"/>
+    <functioncall functionName="getDefaultHint"/>
+    <functioncall functionName="getHeight"/>
+    <functioncall functionName="getInstance"/>
+    <functioncall functionName="getNDCCursorPos"/>
+    <functioncall functionName="getProjectionMatrix"/>
+    <functioncall functionName="getShaderID"/>
+    <functioncall functionName="getSize"/>
+    <functioncall functionName="getUniformBlockIndexAndBind"/>
+    <functioncall functionName="getUniformLocation"/>
+    <functioncall functionName="getViewMatrix"/>
+    <functioncall functionName="glAttachShader"/>
+    <functioncall functionName="glBindBuffer"/>
+    <functioncall functionName="glBindBufferBase"/>
+    <functioncall functionName="glBindBufferRange"/>
+    <functioncall functionName="glBindTexture"/>
+    <functioncall functionName="glBindVertexArray"/>
+    <functioncall functionName="glBufferData"/>
+    <functioncall functionName="glClear"/>
+    <functioncall functionName="glClearColor"/>
+    <functioncall functionName="glCreateProgram"/>
+    <functioncall functionName="glDeleteBuffers"/>
+    <functioncall functionName="glDeleteVertexArrays"/>
+    <functioncall functionName="glEnable"/>
+    <functioncall functionName="glEnableVertexAttribArray"/>
+    <functioncall functionName="glGenBuffers"/>
+    <functioncall functionName="glGenTextures"/>
+    <functioncall functionName="glGenVertexArrays"/>
+    <functioncall functionName="glGenerateMipmap"/>
+    <functioncall functionName="glGetError"/>
+    <functioncall functionName="glGetIntegerv"/>
+    <functioncall functionName="glTexImage2D"/>
+    <functioncall functionName="glTexParameteri"/>
+    <functioncall functionName="glUniform1f"/>
+    <functioncall functionName="glUniform1fv"/>
+    <functioncall functionName="glUniform1i"/>
+    <functioncall functionName="glUniform1ui"/>
+    <functioncall functionName="glUniform2f"/>
+    <functioncall functionName="glUniform2fv"/>
+    <functioncall functionName="glUniform3f"/>
+    <functioncall functionName="glUniform3fv"/>
+    <functioncall functionName="glUniform4f"/>
+    <functioncall functionName="glUniform4fv"/>
+    <functioncall functionName="glUniformBlockBinding"/>
+    <functioncall functionName="glUniformMatrix3fv"/>
+    <functioncall functionName="glUniformMatrix4fv"/>
+    <functioncall functionName="glUseProgram"/>
+    <functioncall functionName="glVertexAttribPointer"/>
+    <functioncall functionName="gladLoadGLLoader"/>
+    <functioncall functionName="glfwGetCursorPos"/>
+    <functioncall functionName="glfwGetProcAddress"/>
+    <functioncall functionName="glfwGetTime"/>
+    <functioncall functionName="glfwGetWindowSize"/>
+    <functioncall functionName="hasChange"/>
+    <functioncall functionName="init"/>
+    <functioncall functionName="initialize"/>
+    <functioncall functionName="inverse"/>
+    <functioncall functionName="isBinding"/>
+    <functioncall functionName="isValid"/>
+    <functioncall functionName="link"/>
+    <functioncall functionName="loadGlad"/>
+    <functioncall functionName="makeContextCurrent"/>
+    <functioncall functionName="make_shared"/>
+    <functioncall functionName="mat4"/>
+    <functioncall functionName="mat4_cast"/>
+    <functioncall functionName="move"/>
+    <functioncall functionName="operatorGLuint"/>
+    <functioncall functionName="ortho"/>
+    <functioncall functionName="override"/>
+    <functioncall functionName="perspective"/>
+    <functioncall functionName="pollEvents"/>
+    <functioncall functionName="s_getMatrix"/>
+    <functioncall functionName="setCamera"/>
+    <functioncall functionName="setUniform"/>
+    <functioncall functionName="shouldClose"/>
+    <functioncall functionName="size"/>
+    <functioncall functionName="sizeofGLType"/>
+    <functioncall functionName="stbi_image_free"/>
+    <functioncall functionName="stbi_load"/>
+    <functioncall functionName="stbi_set_flip_vertically_on_load"/>
+    <functioncall functionName="string"/>
+    <functioncall functionName="strlen"/>
+    <functioncall functionName="subData"/>
+    <functioncall functionName="swap"/>
+    <functioncall functionName="swapBuffers"/>
+    <functioncall functionName="toGlm"/>
+    <functioncall functionName="toString"/>
+    <functioncall functionName="touch"/>
+    <functioncall functionName="true"/>
+    <functioncall functionName="unbind"/>
+    <functioncall functionName="update"/>
+    <functioncall functionName="value_ptr"/>
+    <functioncall functionName="vec2"/>
+    <functioncall functionName="vec4"/>
+    <functioncall functionName="vector"/>
+  </FileInfo>
+</analyzerinfo>

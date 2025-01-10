@@ -1,0 +1,105 @@
+ClearError call:[glGetError]
+LogCall call:[glGetError]
+sizeofGLType call:[sizeof]
+shaderEnumToStr
+toGlm
+_getHasChange
+getFov
+getAspectRatio
+getNear
+getFar
+_getMatrix call:[s_getMatrix] noreturn:[s_getMatrix]
+getLeft
+getRight
+getBottom
+getTop
+getNear
+getFar
+_getMatrix call:[s_getMatrix] noreturn:[s_getMatrix]
+touch call:[_setHasChange] noreturn:[_setHasChange]
+hasChange call:[_getHasChange,_setHasChange]
+update
+_setHasChange
+getFov call:[touch]
+getAspectRatio call:[touch]
+getNear call:[touch]
+getFar call:[touch]
+setFov call:[touch] noreturn:[touch]
+setAspectRatio call:[touch] noreturn:[touch]
+setNear call:[touch] noreturn:[touch]
+setFar call:[touch] noreturn:[touch]
+update call:[_getMatrix,operator=,update] noreturn:[update]
+s_getMatrix call:[perspective] noreturn:[perspective]
+getLeft call:[touch]
+getRight call:[touch]
+getBottom call:[touch]
+getTop call:[touch]
+getNear call:[touch]
+getFar call:[touch]
+setLeft call:[touch] noreturn:[touch]
+setRight call:[touch] noreturn:[touch]
+setBottom call:[touch] noreturn:[touch]
+setTop call:[touch] noreturn:[touch]
+setNear call:[touch] noreturn:[touch]
+setFar call:[touch] noreturn:[touch]
+update call:[_getMatrix,operator=,update] noreturn:[update]
+s_getMatrix call:[ortho] noreturn:[ortho]
+toGlm
+getEye
+getRotation
+getRotationEuler call:[eulerAngles] noreturn:[eulerAngles]
+_getHasChange
+getEye call:[touch]
+getRotation call:[touch]
+getRotationEuler call:[eulerAngles,touch] noreturn:[eulerAngles]
+setEye call:[touch] noreturn:[touch]
+setRotation call:[touch] noreturn:[touch]
+setRotationEuler call:[touch] noreturn:[touch]
+touch call:[_setHasChange] noreturn:[_setHasChange]
+hasChange call:[_getHasChange,_setHasChange]
+update call:[inverse,mat4,mat4_cast,operator*=,operator=] noreturn:[operator*=]
+_setHasChange
+EJGLCamera
+isWindowValid
+isViewMatrixValid
+isProjectionMatrixValid
+getWindow
+getViewMatrix
+getProjectionMatrix
+getWindow
+getViewMatrix
+getProjectionMatrix
+getWindowSizeCB
+getKeyCB
+getMouseButtonCB
+getMouseMoveCB
+getScrollCB
+screen2World call:[toGlm,vec4] noreturn:[vec4]
+swap call:[swap,void] noreturn:[swap]
+setWindow
+setViewMatrix call:[ViewMatrixType,_deleteViewMatrix] noreturn:[ViewMatrixType]
+setProjectionMatrix call:[ProjectionMatrixType,_deleteProjectionMatrix] noreturn:[ProjectionMatrixType]
+_deleteViewMatrix
+_deleteProjectionMatrix
+isCameraValid
+getCamera
+getCamera
+getLastSize
+swap
+setCamera call:[CameraType,_deleteCamera] noreturn:[CameraType]
+getWidth call:[glfwGetWindowSize]
+getHeight call:[glfwGetWindowSize]
+getSize call:[glfwGetWindowSize]
+getCursorPos call:[glfwGetCursorPos]
+getReverseYCursorPos call:[getCursorPos,getHeight]
+getReverseXCenteredCursorPos call:[getCursorPos,getSize]
+getNDCCursorPos call:[getNDCCursorPos,getSize] noreturn:[getNDCCursorPos]
+getNDCCursorPos call:[getCursorPos]
+getReverseYNDCCursorPos call:[getCursorPos,getSize]
+reversePosY call:[getHeight]
+EJGLArcBallCamera
+toString call:[toString] noreturn:[toString]
+_screenToArcball call:[dot,getSize,getWindow,normalize,sqrt,vec2,vec3] noreturn:[normalize,vec3]
+s_mouseButtonCB call:[getReverseYCursorPos] noreturn:[getReverseYCursorPos]
+s_mouseMoveCB call:[_screenToArcball,getEye,getKey,getRotation,getViewMatrix,reversePosY,rotation,setEye,setRotation,vec3] noreturn:[setEye,setRotation]
+s_scrollCB call:[getEye,getViewMatrix,setEye] noreturn:[setEye]

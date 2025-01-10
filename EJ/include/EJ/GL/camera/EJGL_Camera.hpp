@@ -5,122 +5,141 @@
 // Tips:
 //
 
-#include "../utils/EJGL_config.hpp"
-#include "../../utils/EJ_Macros.hpp"
-#include "../utils/EJGL_BaseObject.hpp"
-#include "../utils/EJGL_enum.hpp"
+#include "../Utils/EJGL_config.hpp"
+#include "../../Utils/EJ_Macros.hpp"
+#include "../Utils/EJGL_enum.hpp"
 
-#include "../matrix/EJGL_ProjectionMatrix.hpp"
-#include "../matrix/EJGL_ViewMatrix.hpp"
+#include "../Matrix/EJGL_ProjectionMatrix.hpp"
+#include "../Matrix/EJGL_ViewMatrix.hpp"
 
-#include <glfwpp/window.h>
+#include <glfwpp/Window.hpp>
 #include <functional>
 #include <bitset>
 
 EJGL_NAMESPACE_BEGIN
 
-class EJGLWindow;
+class Window;
 
-class EJGLCamera : public EJGLBaseObject
+class Camera
 {
 public:
-	using WindowSizeCBT = ::std::function<void(EJGLWindow&, int, int)>;
+	using WindowSizeCBT = _STD function<void(Window&, int, int)>;
 
 	using KeyCode = ::glfw::KeyCode;
 	using KeyState = ::glfw::KeyState;
 	using ModifierKeyBit = ::glfw::ModifierKeyBit;
 	using MouseButton = ::glfw::MouseButton;
 	using MouseButtonState = ::glfw::MouseButtonState;
-	using KeyCBT = ::std::function<void(EJGLWindow&, KeyCode, int, KeyState, ModifierKeyBit)>;
-	using MouseButtonCBT = ::std::function<void(EJGLWindow&, MouseButton, MouseButtonState, ModifierKeyBit)>;
-	using MouseMoveCBT = ::std::function<void(EJGLWindow&, double, double)>;
-	using ScrollCBT = ::std::function<void(EJGLWindow&, double, double)>;
 
 public:
-	EJGLCamera(EJGLWindow* window_) :
+	Camera(Window* window_) :
 		_window{ window_ },
 		_view{ nullptr }, 
 		_projection{ nullptr }
 	{}
-	EJGLCamera(const EJGLCamera& obj_);
-	EJGLCamera(EJGLCamera&& obj_) noexcept;
-	virtual ~EJGLCamera();
+	Camera(const Camera& obj_) :
+		_window{ obj_._window },
+		_view{ obj_._view != nullptr ?
+			obj_._view->clone() : nullptr},
+		_projection{ obj_._projection != nullptr ?
+			obj_._projection->clone() : nullptr}
+	{}
+	Camera(Camera&& obj_) noexcept :
+		_window{ std::move(obj_._window) },
+		_view{ std::move(obj_._view) },
+		_projection{ std::move(obj_._projection) }
+	{
+		obj_._view = nullptr;
+		obj_._projection = nullptr;
+	}
+	virtual ~Camera() {
+		_deleteProjectionMatrix();
+		_deleteViewMatrix();
+	}
 
-	EJGLCamera& operator=(EJGLCamera obj_);
+	Camera& operator=(const Camera& obj_) {
+		_window = obj_._window;
+		_deleteViewMatrix();
+		_view = obj_._view != nullptr ?
+			obj_._view->clone() : nullptr;
+		_deleteProjectionMatrix();
+		_projection = obj_._projection != nullptr ?
+			obj_._projection->clone() : nullptr;
+		return *this;
+	}
 
-	virtual std::string toString() const noexcept override;
+	_STD string toStringNoHeader() const noexcept {
+		return "{ view: " + _view->toString() + ",\nprojection : " + _projection->toString() + " }";
+	}
+	_STD string toString() const noexcept {
+		return "[EJ][Camera]" + toStringNoHeader();
+	}
 
-	EJGL_INLINE EJ_M_CLONE_FUNC(EJGLBaseObject, EJGLCamera, *this);
+	void swap(Camera& obj_) noexcept {
+		_STD swap(_window, obj_._window);
+		_STD swap(_view, obj_._view);
+		_STD swap(_projection, obj_._projection);
+	}
 
-	EJGL_INLINE void swap(EJGLCamera& obj_) noexcept;
+	EJ_M_CONST_GET_FUNC(bool, isWindowValid, _window != nullptr);
+	EJ_M_CONST_GET_FUNC(bool, isViewMatrixValid, _view != nullptr);
+	EJ_M_CONST_GET_FUNC(bool, isProjectionMatrixValid, _projection != nullptr);
 
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(bool, isWindowValid, _window != nullptr);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(bool, isViewMatrixValid, _view != nullptr);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(bool, isProjectionMatrixValid, _projection != nullptr);
+	EJ_M_CONST_GET_FUNC(const Window*, getWindow, _window);
+	template<typename ViewMatrixType = ViewMatrix>
+	EJ_M_CONST_GET_FUNC(const ViewMatrixType*, getViewMatrix, static_cast<ViewMatrixType*>(_view));
+	template<typename ProjectionMatrixType = ProjectionMatrix>
+	EJ_M_CONST_GET_FUNC(const ProjectionMatrixType*, getProjectionMatrix, static_cast<ProjectionMatrixType*>(_projection));
 
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(const EJGLWindow*, getWindow, _window);
-	template<typename ViewMatrixType = EJGLViewMatrix>
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(const ViewMatrixType*, getViewMatrix, static_cast<ViewMatrixType*>(_view));
-	template<typename ProjectionMatrixType = EJGLProjectionMatrix>
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(const ProjectionMatrixType*, getProjectionMatrix, static_cast<ProjectionMatrixType*>(_projection));
+	EJ_M_GET_FUNC(Window*, getWindow, _window);
+	template<typename ViewMatrixType = ViewMatrix>
+	EJ_M_GET_FUNC(ViewMatrixType*, getViewMatrix, static_cast<ViewMatrixType*>(_view));
+	template<typename ProjectionMatrixType = ProjectionMatrix>
+	EJ_M_GET_FUNC(ProjectionMatrixType*, getProjectionMatrix, static_cast<ProjectionMatrixType*>(_projection));
 
-	EJGL_INLINE EJ_M_GET_FUNC(EJGLWindow*, getWindow, _window);
-	template<typename ViewMatrixType = EJGLViewMatrix>
-	EJGL_INLINE EJ_M_GET_FUNC(ViewMatrixType*, getViewMatrix, static_cast<ViewMatrixType*>(_view));
-	template<typename ProjectionMatrixType = EJGLProjectionMatrix>
-	EJGL_INLINE EJ_M_GET_FUNC(ProjectionMatrixType*, getProjectionMatrix, static_cast<ProjectionMatrixType*>(_projection));
-
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(const WindowSizeCBT, getWindowSizeCB, _windowSizeCB);
-
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(const KeyCBT, getKeyCB, _keyCB);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(const MouseButtonCBT, getMouseButtonCB, _mouseButtonCB);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(const MouseMoveCBT, getMouseMoveCB, _mouseMoveCB);
-	EJGL_INLINE EJ_M_CONST_GET_FUNC(const ScrollCBT, getScrollCB, _scrollCB);
-
-	virtual EJGL_INLINE void setWindow(EJGLWindow* window_);
 	template<typename ViewMatrixType, typename... Args>
 	// Description:
 	//	Use setViewMatrix<Type>() to set viewMatrix to type.
 	//	Type must inherit from EGL::ViewMatrix.
 	// Param args_:
 	//	to initilize view, which is new Type(args_...)
-	EJGL_INLINE void setViewMatrix(Args... args_);
+	void setViewMatrix(Args... args_) {
+		_deleteViewMatrix();
+		_view = new ViewMatrixType(args_...);
+	}
 	template<typename ProjectionMatrixType, typename... Args>
 	// Description:
 	//	Use setProjectionMatrix<Type>() to set projectionMatrix to type.
 	//	Type must inherit from EGL::ProjectionMatrix.
 	// Param args_:
 	//	to initilize projection, which is new Type(args_...)
-	EJGL_INLINE void setProjectionMatrix(Args... args_);
+	void setProjectionMatrix(Args... args_) {
+		_deleteProjectionMatrix();
+		_projection = new ProjectionMatrixType(args_...);
+	}
 
 	// about camera
-	//EJGL_INLINE virtual EJ_M_CONST_GET_FUNC(glm::vec3, getCameraPos, _scrollCB);
+	//virtual EJ_M_CONST_GET_FUNC(glm::vec3, getCameraPos, _scrollCB);
 
 	// you need to call update() before this, or it might be wrong
-	EJGL_INLINE glm::vec3 screen2World(const glm::vec2& scPos_) const {
+	glm::vec3 screen2World(const glm::vec2& scPos_) const {
 		return _view->toGlm() * _projection->toGlm() * glm::vec4(scPos_, 0, 1);
 	}
 
-protected:
-	WindowSizeCBT _windowSizeCB = nullptr;
-
-	KeyCBT _keyCB = nullptr;
-	MouseButtonCBT _mouseButtonCB = nullptr;
-	MouseMoveCBT _mouseMoveCB = nullptr;
-	ScrollCBT _scrollCB = nullptr;
-
 private:
-	EJGLWindow* _window;
-	EJGLViewMatrix* _view;
-	EJGLProjectionMatrix* _projection;
+	Window* _window;
+	ViewMatrix* _view;
+	ProjectionMatrix* _projection;
 
-	EJGL_INLINE void _deleteViewMatrix();
-	EJGL_INLINE void _deleteProjectionMatrix();
+	void _deleteViewMatrix() {
+		delete _view;
+	}
+	void _deleteProjectionMatrix() {
+		delete _projection;
+	}
 
 };
 
 EJGL_NAMESPACE_END
-
-#include "EJGL_Camera.inl"
 
 #endif // EJGL_CAMERA_HPP

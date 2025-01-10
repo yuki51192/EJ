@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.16.0"/>
+    <errors>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;cassert&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;cassert&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\utils\EJ_Config.hpp" line="4"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;iostream&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;iostream&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\utils\EJ_Config.hpp" line="5"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glad/glad.h&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glad/glad.h&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\utils\EJGL_Config.hpp" line="7"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;iostream&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;iostream&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\utils\EJGL_Config.hpp" line="8"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;ClearError&amp;#039; is never used." verbose="The function &amp;#039;ClearError&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\utils\EJGL_Config.hpp" line="21"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;LogCall&amp;#039; is never used." verbose="The function &amp;#039;LogCall&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\utils\EJGL_Config.hpp" line="26"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/vec2.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/vec2.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\application\EJGL_Window.hpp" line="12"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glfwpp/Window.h&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glfwpp/Window.h&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\application\EJGL_Window.hpp" line="13"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;iostream&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;iostream&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\application\EJGL_Window.hpp" line="15"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;bitset&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;bitset&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="12"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/mat4x4.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/mat4x4.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="13"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/gtc/matrix_transform.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/gtc/matrix_transform.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="14"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &amp;#039;EJGLPerspectiveMatrix&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLProjectionMatrix&amp;#039;." verbose="The class &amp;#039;EJGLPerspectiveMatrix&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLProjectionMatrix&amp;#039;." cwe="398" file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="56" info="Derived function &amp;#039;EJGLPerspectiveMatrix::toString&amp;#039;"/>
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="28" info="Parent function &amp;#039;EJGLProjectionMatrix::toString&amp;#039;"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &amp;#039;EJGLOrthographicMatrix&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLProjectionMatrix&amp;#039;." verbose="The class &amp;#039;EJGLOrthographicMatrix&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLProjectionMatrix&amp;#039;." cwe="398" file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="97" info="Derived function &amp;#039;EJGLOrthographicMatrix::toString&amp;#039;"/>
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="28" info="Parent function &amp;#039;EJGLProjectionMatrix::toString&amp;#039;"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;EJGLProjectionMatrix&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;EJGLProjectionMatrix&amp;#039; has a constructor with 1 argument that is not explicit. Such, so called &amp;quot;Converting constructors&amp;quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="21"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;EJGLPerspectiveMatrix&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;EJGLPerspectiveMatrix&amp;#039; has a constructor with 1 argument that is not explicit. Such, so called &amp;quot;Converting constructors&amp;quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="49"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;EJGLOrthographicMatrix&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;EJGLOrthographicMatrix&amp;#039; has a constructor with 1 argument that is not explicit. Such, so called &amp;quot;Converting constructors&amp;quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="90"/>
+        </error>
+        <error id="missingOverride" severity="style" msg="The destructor &amp;#039;~EJGLPerspectiveMatrix&amp;#039; overrides a destructor in a base class but is not marked with a &amp;#039;override&amp;#039; specifier." verbose="The destructor &amp;#039;~EJGLPerspectiveMatrix&amp;#039; overrides a destructor in a base class but is not marked with a &amp;#039;override&amp;#039; specifier." file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="52" info="Destructor in derived class"/>
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="24" info="Virtual destructor in base class"/>
+        </error>
+        <error id="missingOverride" severity="style" msg="The destructor &amp;#039;~EJGLOrthographicMatrix&amp;#039; overrides a destructor in a base class but is not marked with a &amp;#039;override&amp;#039; specifier." verbose="The destructor &amp;#039;~EJGLOrthographicMatrix&amp;#039; overrides a destructor in a base class but is not marked with a &amp;#039;override&amp;#039; specifier." file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="93" info="Destructor in derived class"/>
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" line="24" info="Virtual destructor in base class"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;bitset&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;bitset&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="12"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/vec3.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/vec3.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="13"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/mat4x4.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/mat4x4.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="14"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/gtc/quaternion.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/gtc/quaternion.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="15"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/gtc/matrix_transform.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/gtc/matrix_transform.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="16"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/gtc/type_ptr.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/gtc/type_ptr.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="17"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;EJGLViewMatrix&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;EJGLViewMatrix&amp;#039; has a constructor with 1 argument that is not explicit. Such, so called &amp;quot;Converting constructors&amp;quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" line="24"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glfwpp/window.h&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glfwpp/window.h&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="15"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;functional&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;functional&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="16"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;bitset&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;bitset&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="17"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;EJGLCamera&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;EJGLCamera&amp;#039; has a constructor with 1 argument that is not explicit. Such, so called &amp;quot;Converting constructors&amp;quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="39"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;isProjectionMatrixValid&amp;#039; is never used." verbose="The function &amp;#039;isProjectionMatrixValid&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="56"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;isViewMatrixValid&amp;#039; is never used." verbose="The function &amp;#039;isViewMatrixValid&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="55"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;isWindowValid&amp;#039; is never used." verbose="The function &amp;#039;isWindowValid&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="54"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;screen2World&amp;#039; is never used." verbose="The function &amp;#039;screen2World&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="97"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;string&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;string&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="4"/>
+        </error>
+        <error id="constParameterCallback" severity="style" msg="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const. However it seems that &amp;#039;onPosEvent&amp;#039; is a callback function, if &amp;#039;window_&amp;#039; is declared with const you might also need to cast function pointer(s)." verbose="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const. However it seems that &amp;#039;onPosEvent&amp;#039; is a callback function, if &amp;#039;window_&amp;#039; is declared with const you might also need to cast function pointer(s)." cwe="398" file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="49" info="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const"/>
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="14" info="You might need to cast the function pointer here"/>
+        </error>
+        <error id="constParameterCallback" severity="style" msg="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const. However it seems that &amp;#039;onFocusEvent&amp;#039; is a callback function, if &amp;#039;window_&amp;#039; is declared with const you might also need to cast function pointer(s)." verbose="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const. However it seems that &amp;#039;onFocusEvent&amp;#039; is a callback function, if &amp;#039;window_&amp;#039; is declared with const you might also need to cast function pointer(s)." cwe="398" file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="66" info="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const"/>
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="18" info="You might need to cast the function pointer here"/>
+        </error>
+        <error id="constParameterCallback" severity="style" msg="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const. However it seems that &amp;#039;onIconifyEvent&amp;#039; is a callback function, if &amp;#039;window_&amp;#039; is declared with const you might also need to cast function pointer(s)." verbose="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const. However it seems that &amp;#039;onIconifyEvent&amp;#039; is a callback function, if &amp;#039;window_&amp;#039; is declared with const you might also need to cast function pointer(s)." cwe="398" file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="69" info="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const"/>
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="19" info="You might need to cast the function pointer here"/>
+        </error>
+        <error id="constParameterCallback" severity="style" msg="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const. However it seems that &amp;#039;onMaximizeEvent&amp;#039; is a callback function, if &amp;#039;window_&amp;#039; is declared with const you might also need to cast function pointer(s)." verbose="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const. However it seems that &amp;#039;onMaximizeEvent&amp;#039; is a callback function, if &amp;#039;window_&amp;#039; is declared with const you might also need to cast function pointer(s)." cwe="398" file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="72" info="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const"/>
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="20" info="You might need to cast the function pointer here"/>
+        </error>
+        <error id="constParameterCallback" severity="style" msg="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const. However it seems that &amp;#039;onFramebufferSizeEvent&amp;#039; is a callback function, if &amp;#039;window_&amp;#039; is declared with const you might also need to cast function pointer(s)." verbose="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const. However it seems that &amp;#039;onFramebufferSizeEvent&amp;#039; is a callback function, if &amp;#039;window_&amp;#039; is declared with const you might also need to cast function pointer(s)." cwe="398" file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="75" info="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const"/>
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="21" info="You might need to cast the function pointer here"/>
+        </error>
+        <error id="constParameterCallback" severity="style" msg="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const. However it seems that &amp;#039;onContentScaleEvent&amp;#039; is a callback function, if &amp;#039;window_&amp;#039; is declared with const you might also need to cast function pointer(s)." verbose="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const. However it seems that &amp;#039;onContentScaleEvent&amp;#039; is a callback function, if &amp;#039;window_&amp;#039; is declared with const you might also need to cast function pointer(s)." cwe="398" file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="78" info="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const"/>
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="22" info="You might need to cast the function pointer here"/>
+        </error>
+        <error id="constParameterCallback" severity="style" msg="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const. However it seems that &amp;#039;onCharEvent&amp;#039; is a callback function, if &amp;#039;window_&amp;#039; is declared with const you might also need to cast function pointer(s)." verbose="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const. However it seems that &amp;#039;onCharEvent&amp;#039; is a callback function, if &amp;#039;window_&amp;#039; is declared with const you might also need to cast function pointer(s)." cwe="398" file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="88" info="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const"/>
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="24" info="You might need to cast the function pointer here"/>
+        </error>
+        <error id="constParameterCallback" severity="style" msg="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const. However it seems that &amp;#039;onCursorEnterEvent&amp;#039; is a callback function, if &amp;#039;window_&amp;#039; is declared with const you might also need to cast function pointer(s)." verbose="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const. However it seems that &amp;#039;onCursorEnterEvent&amp;#039; is a callback function, if &amp;#039;window_&amp;#039; is declared with const you might also need to cast function pointer(s)." cwe="398" file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="105" info="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const"/>
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="27" info="You might need to cast the function pointer here"/>
+        </error>
+        <error id="constParameterCallback" severity="style" msg="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const. However it seems that &amp;#039;onDropEvent&amp;#039; is a callback function, if &amp;#039;window_&amp;#039; is declared with const you might also need to cast function pointer(s)." verbose="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const. However it seems that &amp;#039;onDropEvent&amp;#039; is a callback function, if &amp;#039;window_&amp;#039; is declared with const you might also need to cast function pointer(s)." cwe="398" file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="115" info="Parameter &amp;#039;window_&amp;#039; can be declared as reference to const"/>
+            <location file="EJ\src\GL\application\EJGL_Window.cpp" line="29" info="You might need to cast the function pointer here"/>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &amp;#039;_windowSizeCB&amp;#039; shadows outer variable" verbose="Local variable &amp;#039;_windowSizeCB&amp;#039; shadows outer variable" cwe="398" file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera.inl" line="4" info="Shadow variable"/>
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="102" info="Shadowed declaration"/>
+        </error>
+        <error id="constParameterReference" severity="style" msg="Parameter &amp;#039;obj_&amp;#039; can be declared as reference to const" verbose="Parameter &amp;#039;obj_&amp;#039; can be declared as reference to const" cwe="398" file0="EJ/src/GL/application/EJGL_Window.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\application\EJGL_Window.inl" line="3"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;getReverseYNDCCursorPos&amp;#039; is never used." verbose="The function &amp;#039;getReverseYNDCCursorPos&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\application\EJGL_Window.inl" line="52"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/vec2.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/vec2.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\camera\EJGL_ArcBallCamera.hpp" line="21"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;EJGLArcBallCamera&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;EJGLArcBallCamera&amp;#039; has a constructor with 1 argument that is not explicit. Such, so called &amp;quot;Converting constructors&amp;quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="EJ/src/GL/camera/EJGL_ArcBallCamera.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\camera\EJGL_ArcBallCamera.hpp" line="28"/>
+        </error>
+        <error id="missingOverride" severity="style" msg="The destructor &amp;#039;~EJGLArcBallCamera&amp;#039; overrides a destructor in a base class but is not marked with a &amp;#039;override&amp;#039; specifier." verbose="The destructor &amp;#039;~EJGLArcBallCamera&amp;#039; overrides a destructor in a base class but is not marked with a &amp;#039;override&amp;#039; specifier." file0="EJ/src/GL/camera/EJGL_ArcBallCamera.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\camera\EJGL_ArcBallCamera.hpp" line="31" info="Destructor in derived class"/>
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="46" info="Virtual destructor in base class"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &amp;#039;EJGLArcBallCamera&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLCamera&amp;#039;." verbose="The class &amp;#039;EJGLArcBallCamera&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLCamera&amp;#039;." cwe="398" file0="EJ/src/main.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\camera\EJGL_ArcBallCamera.hpp" line="35" info="Derived function &amp;#039;EJGLArcBallCamera::toString&amp;#039;"/>
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="50" info="Parent function &amp;#039;EJGLCamera::toString&amp;#039;"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/gtx/quaternion.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/gtx/quaternion.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\src\GL\camera\EJGL_ArcBallCamera.cpp" line="6"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &amp;#039;EJGLArcBallCamera&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLCamera&amp;#039;." verbose="The class &amp;#039;EJGLArcBallCamera&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLCamera&amp;#039;." cwe="398" file0="EJ/src/GL/camera/EJGL_ArcBallCamera.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\camera\EJGL_ArcBallCamera.cpp" line="23" info="Derived function &amp;#039;EJGLArcBallCamera::toString&amp;#039;"/>
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="50" info="Parent function &amp;#039;EJGLCamera::toString&amp;#039;"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;EJGLCamera::_view&amp;#039; is not initialized in the copy constructor." verbose="Member variable &amp;#039;EJGLCamera::_view&amp;#039; is not initialized in the copy constructor. Member variables of native types, pointers, or references are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior." cwe="398" file0="EJ/src/GL/camera/EJGL_Camera.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\camera\EJGL_Camera.cpp" line="5"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;EJGLCamera::_projection&amp;#039; is not initialized in the copy constructor." verbose="Member variable &amp;#039;EJGLCamera::_projection&amp;#039; is not initialized in the copy constructor. Member variables of native types, pointers, or references are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior." cwe="398" file0="EJ/src/GL/camera/EJGL_Camera.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\camera\EJGL_Camera.cpp" line="5"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/vec2.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/vec2.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera2D.hpp" line="21"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;EJGLCamera2D&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;EJGLCamera2D&amp;#039; has a constructor with 1 argument that is not explicit. Such, so called &amp;quot;Converting constructors&amp;quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="EJ/src/GL/camera/EJGL_Camera2D.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera2D.hpp" line="28"/>
+        </error>
+        <error id="missingOverride" severity="style" msg="The destructor &amp;#039;~EJGLCamera2D&amp;#039; overrides a destructor in a base class but is not marked with a &amp;#039;override&amp;#039; specifier." verbose="The destructor &amp;#039;~EJGLCamera2D&amp;#039; overrides a destructor in a base class but is not marked with a &amp;#039;override&amp;#039; specifier." file0="EJ/src/GL/camera/EJGL_Camera2D.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera2D.hpp" line="31" info="Destructor in derived class"/>
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="46" info="Virtual destructor in base class"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &amp;#039;EJGLCamera2D&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLCamera&amp;#039;." verbose="The class &amp;#039;EJGLCamera2D&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLCamera&amp;#039;." cwe="398" file0="EJ/src/main.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera2D.hpp" line="35" info="Derived function &amp;#039;EJGLCamera2D::toString&amp;#039;"/>
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="50" info="Parent function &amp;#039;EJGLCamera::toString&amp;#039;"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &amp;#039;EJGLCamera2D&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLCamera&amp;#039;." verbose="The class &amp;#039;EJGLCamera2D&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLCamera&amp;#039;." cwe="398" file0="EJ/src/GL/camera/EJGL_Camera2D.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\camera\EJGL_Camera2D.cpp" line="23" info="Derived function &amp;#039;EJGLCamera2D::toString&amp;#039;"/>
+            <location file="EJ\include\EJ\GL\camera\EJGL_Camera.hpp" line="50" info="Parent function &amp;#039;EJGLCamera::toString&amp;#039;"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &amp;quot;../utils/EJGL_Utils.hpp&amp;quot; not found." verbose="Include file: &amp;quot;../utils/EJGL_Utils.hpp&amp;quot; not found." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="6"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;memory&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;memory&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="9"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;vector&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;vector&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="10"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;EJGLBufferObject&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;EJGLBufferObject&amp;#039; has a constructor with 1 argument that is not explicit. Such, so called &amp;quot;Converting constructors&amp;quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="EJ/src/GL/glObject/EJGL_BufferObject.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="27"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;EJGLUniformBuffer&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;EJGLUniformBuffer&amp;#039; has a constructor with 1 argument that is not explicit. Such, so called &amp;quot;Converting constructors&amp;quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="EJ/src/GL/glObject/EJGL_BufferObject.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="143"/>
+        </error>
+        <error id="missingOverride" severity="style" msg="The destructor &amp;#039;~EJGLArrayBuffer&amp;#039; overrides a destructor in a base class but is not marked with a &amp;#039;override&amp;#039; specifier." verbose="The destructor &amp;#039;~EJGLArrayBuffer&amp;#039; overrides a destructor in a base class but is not marked with a &amp;#039;override&amp;#039; specifier." file0="EJ/src/GL/glObject/EJGL_BufferObject.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="96" info="Destructor in derived class"/>
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="40" info="Virtual destructor in base class"/>
+        </error>
+        <error id="missingOverride" severity="style" msg="The destructor &amp;#039;~EJGLElementBuffer&amp;#039; overrides a destructor in a base class but is not marked with a &amp;#039;override&amp;#039; specifier." verbose="The destructor &amp;#039;~EJGLElementBuffer&amp;#039; overrides a destructor in a base class but is not marked with a &amp;#039;override&amp;#039; specifier." file0="EJ/src/GL/glObject/EJGL_BufferObject.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="124" info="Destructor in derived class"/>
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="40" info="Virtual destructor in base class"/>
+        </error>
+        <error id="missingOverride" severity="style" msg="The destructor &amp;#039;~EJGLUniformBuffer&amp;#039; overrides a destructor in a base class but is not marked with a &amp;#039;override&amp;#039; specifier." verbose="The destructor &amp;#039;~EJGLUniformBuffer&amp;#039; overrides a destructor in a base class but is not marked with a &amp;#039;override&amp;#039; specifier." file0="EJ/src/GL/glObject/EJGL_BufferObject.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="155" info="Destructor in derived class"/>
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.hpp" line="40" info="Virtual destructor in base class"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;string&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;string&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\src\GL\glObject\EJGL_BufferObject.cpp" line="2"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &amp;#039;EJGLArrayBuffer&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLBufferObject&amp;#039;." verbose="The class &amp;#039;EJGLArrayBuffer&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLBufferObject&amp;#039;." cwe="398" file0="EJ/src/GL/glObject/EJGL_BufferObject.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="76" info="Derived function &amp;#039;EJGLArrayBuffer::toString&amp;#039;"/>
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="4" info="Parent function &amp;#039;EJGLBufferObject::toString&amp;#039;"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &amp;#039;EJGLArrayBuffer&amp;#039; defines member function with name &amp;#039;unbind&amp;#039; also defined in its parent class &amp;#039;EJGLBufferObject&amp;#039;." verbose="The class &amp;#039;EJGLArrayBuffer&amp;#039; defines member function with name &amp;#039;unbind&amp;#039; also defined in its parent class &amp;#039;EJGLBufferObject&amp;#039;." cwe="398" file0="EJ/src/GL/glObject/EJGL_BufferObject.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="84" info="Derived function &amp;#039;EJGLArrayBuffer::unbind&amp;#039;"/>
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="23" info="Parent function &amp;#039;EJGLBufferObject::unbind&amp;#039;"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &amp;#039;EJGLElementBuffer&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLBufferObject&amp;#039;." verbose="The class &amp;#039;EJGLElementBuffer&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLBufferObject&amp;#039;." cwe="398" file0="EJ/src/GL/glObject/EJGL_BufferObject.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="89" info="Derived function &amp;#039;EJGLElementBuffer::toString&amp;#039;"/>
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="4" info="Parent function &amp;#039;EJGLBufferObject::toString&amp;#039;"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &amp;#039;EJGLElementBuffer&amp;#039; defines member function with name &amp;#039;unbind&amp;#039; also defined in its parent class &amp;#039;EJGLBufferObject&amp;#039;." verbose="The class &amp;#039;EJGLElementBuffer&amp;#039; defines member function with name &amp;#039;unbind&amp;#039; also defined in its parent class &amp;#039;EJGLBufferObject&amp;#039;." cwe="398" file0="EJ/src/GL/glObject/EJGL_BufferObject.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="97" info="Derived function &amp;#039;EJGLElementBuffer::unbind&amp;#039;"/>
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="23" info="Parent function &amp;#039;EJGLBufferObject::unbind&amp;#039;"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &amp;#039;EJGLUniformBuffer&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLBufferObject&amp;#039;." verbose="The class &amp;#039;EJGLUniformBuffer&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLBufferObject&amp;#039;." cwe="398" file0="EJ/src/GL/glObject/EJGL_BufferObject.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="102" info="Derived function &amp;#039;EJGLUniformBuffer::toString&amp;#039;"/>
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="4" info="Parent function &amp;#039;EJGLBufferObject::toString&amp;#039;"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &amp;#039;EJGLUniformBuffer&amp;#039; defines member function with name &amp;#039;unbind&amp;#039; also defined in its parent class &amp;#039;EJGLBufferObject&amp;#039;." verbose="The class &amp;#039;EJGLUniformBuffer&amp;#039; defines member function with name &amp;#039;unbind&amp;#039; also defined in its parent class &amp;#039;EJGLBufferObject&amp;#039;." cwe="398" file0="EJ/src/GL/glObject/EJGL_BufferObject.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="128" info="Derived function &amp;#039;EJGLUniformBuffer::unbind&amp;#039;"/>
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="23" info="Parent function &amp;#039;EJGLBufferObject::unbind&amp;#039;"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;setBufferID&amp;#039; is never used." verbose="The function &amp;#039;setBufferID&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="12"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;setBufferType&amp;#039; is never used." verbose="The function &amp;#039;setBufferType&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_BufferObject.inl" line="15"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;memory&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;memory&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_Shader.hpp" line="8"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;string&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;string&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_Shader.hpp" line="9"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;EJGLShader&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;EJGLShader&amp;#039; has a constructor with 1 argument that is not explicit. Such, so called &amp;quot;Converting constructors&amp;quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="EJ/src/GL/glObject/EJGL_Shader.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_Shader.hpp" line="27"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;EJGLShader&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;EJGLShader&amp;#039; has a constructor with 1 argument that is not explicit. Such, so called &amp;quot;Converting constructors&amp;quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="EJ/src/GL/glObject/EJGL_Shader.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_Shader.hpp" line="36"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;fstream&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;fstream&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\src\GL\glObject\EJGL_Shader.cpp" line="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;sstream&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;sstream&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\src\GL\glObject\EJGL_Shader.cpp" line="3"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="EJ/src/GL/glObject/EJGL_Shader.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\glObject\EJGL_Shader.cpp" line="62"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;unordered_map&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;unordered_map&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.hpp" line="13"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/vec2.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/vec2.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.hpp" line="14"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/vec3.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/vec3.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.hpp" line="15"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/vec4.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/vec4.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.hpp" line="16"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/mat3x3.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/mat3x3.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.hpp" line="17"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/mat4x4.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/mat4x4.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.hpp" line="18"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/gtc/type_ptr.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/gtc/type_ptr.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.hpp" line="19"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;EJGLShaderProgram&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;EJGLShaderProgram&amp;#039; has a constructor with 1 argument that is not explicit. Such, so called &amp;quot;Converting constructors&amp;quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="EJ/src/GL/glObject/EJGL_ShaderProgram.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.hpp" line="35"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;getProgramID&amp;#039; is never used." verbose="The function &amp;#039;getProgramID&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.hpp" line="53"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="EJ/src/GL/glObject/EJGL_ShaderProgram.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\glObject\EJGL_ShaderProgram.cpp" line="46"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;attachShaderByFile&amp;#039; is never used." verbose="The function &amp;#039;attachShaderByFile&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\glObject\EJGL_ShaderProgram.cpp" line="20"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;getAttribLocation&amp;#039; is never used." verbose="The function &amp;#039;getAttribLocation&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\glObject\EJGL_ShaderProgram.cpp" line="89"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;memory&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;memory&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_VertexArray.hpp" line="12"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;vector&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;vector&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_VertexArray.hpp" line="13"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;EJGLVertexArray&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;EJGLVertexArray&amp;#039; has a constructor with 1 argument that is not explicit. Such, so called &amp;quot;Converting constructors&amp;quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="EJ/src/GL/glObject/EJGL_VertexArray.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_VertexArray.hpp" line="72"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;getVertexArrayID&amp;#039; is never used." verbose="The function &amp;#039;getVertexArrayID&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_VertexArray.hpp" line="90"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="EJ/src/GL/glObject/EJGL_VertexArray.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\glObject\EJGL_VertexArray.cpp" line="25"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="EJ/src/GL/glObject/EJGL_VertexArray.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\glObject\EJGL_VertexArray.cpp" line="85"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="EJ/src/GL/glObject/EJGL_VertexArray.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\glObject\EJGL_VertexArray.cpp" line="100"/>
+        </error>
+        <error id="constParameterReference" severity="style" msg="Parameter &amp;#039;buffer_&amp;#039; can be declared as reference to const" verbose="Parameter &amp;#039;buffer_&amp;#039; can be declared as reference to const" cwe="398" file0="EJ/src/GL/glObject/EJGL_VertexArray.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\glObject\EJGL_VertexArray.cpp" line="46"/>
+        </error>
+        <error id="constParameterReference" severity="style" msg="Parameter &amp;#039;buffer_&amp;#039; can be declared as reference to const" verbose="Parameter &amp;#039;buffer_&amp;#039; can be declared as reference to const" cwe="398" file0="EJ/src/GL/glObject/EJGL_VertexArray.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\glObject\EJGL_VertexArray.cpp" line="58"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;drawArray&amp;#039; is never used." verbose="The function &amp;#039;drawArray&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\glObject\EJGL_VertexArray.cpp" line="75"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/mat4x4.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/mat4x4.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_Matrix.hpp" line="8"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/gtc/type_ptr.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/gtc/type_ptr.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_Matrix.hpp" line="9"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;EJGLMatrix&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;EJGLMatrix&amp;#039; has a constructor with 1 argument that is not explicit. Such, so called &amp;quot;Converting constructors&amp;quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="EJ/src/GL/matrix/EJGL_Matrix.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_Matrix.hpp" line="15"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &amp;#039;EJGLPerspectiveMatrix&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLProjectionMatrix&amp;#039;." verbose="The class &amp;#039;EJGLPerspectiveMatrix&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLProjectionMatrix&amp;#039;." cwe="398" file0="EJ/src/GL/matrix/EJGL_ProjectionMatrix.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\matrix\EJGL_ProjectionMatrix.cpp" line="22" info="Derived function &amp;#039;EJGLPerspectiveMatrix::toString&amp;#039;"/>
+            <location file="EJ\src\GL\matrix\EJGL_ProjectionMatrix.cpp" line="12" info="Parent function &amp;#039;EJGLProjectionMatrix::toString&amp;#039;"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The class &amp;#039;EJGLOrthographicMatrix&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLProjectionMatrix&amp;#039;." verbose="The class &amp;#039;EJGLOrthographicMatrix&amp;#039; defines member function with name &amp;#039;toString&amp;#039; also defined in its parent class &amp;#039;EJGLProjectionMatrix&amp;#039;." cwe="398" file0="EJ/src/GL/matrix/EJGL_ProjectionMatrix.cpp" sinceDate="2024/12/24">
+            <location file="EJ\src\GL\matrix\EJGL_ProjectionMatrix.cpp" line="35" info="Derived function &amp;#039;EJGLOrthographicMatrix::toString&amp;#039;"/>
+            <location file="EJ\src\GL\matrix\EJGL_ProjectionMatrix.cpp" line="12" info="Parent function &amp;#039;EJGLProjectionMatrix::toString&amp;#039;"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &amp;quot;utils/EJGL_Utils.hpp&amp;quot; not found." verbose="Include file: &amp;quot;utils/EJGL_Utils.hpp&amp;quot; not found." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\EJGL_Include.hpp" line="6"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glfwpp/glfwpp.h&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glfwpp/glfwpp.h&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\application\EJGL_Application.hpp" line="11"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;getLibrary&amp;#039; is never used." verbose="The function &amp;#039;getLibrary&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\application\EJGL_Application.hpp" line="29"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/gtc/type_ptr.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/gtc/type_ptr.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\src\main.cpp" line="4"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;glm/gtc/matrix_transform.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;glm/gtc/matrix_transform.hpp&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\src\main.cpp" line="5"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;stb_image/stb_image.h&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;stb_image/stb_image.h&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\src\main.cpp" line="6"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;imgui-docking/imgui.h&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;imgui-docking/imgui.h&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\src\main.cpp" line="8"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;imgui-docking/imgui_impl_glfw.h&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;imgui-docking/imgui_impl_glfw.h&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\src\main.cpp" line="9"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &amp;lt;imgui-docking/imgui_impl_opengl3.h&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &amp;lt;imgui-docking/imgui_impl_opengl3.h&amp;gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." sinceDate="2024/12/24">
+            <location file="EJ\src\main.cpp" line="10"/>
+        </error>
+        <error id="constParameterReference" severity="style" msg="Parameter &amp;#039;obj_&amp;#039; can be declared as reference to const" verbose="Parameter &amp;#039;obj_&amp;#039; can be declared as reference to const" cwe="398" file0="EJ/src/main.cpp" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\application\EJGL_Application.inl" line="7"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;attachShader&amp;#039; is never used." verbose="The function &amp;#039;attachShader&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.inl" line="15"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;setProgramID&amp;#039; is never used." verbose="The function &amp;#039;setProgramID&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_ShaderProgram.inl" line="7"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;getAspectRatio&amp;#039; is never used." verbose="The function &amp;#039;getAspectRatio&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.inl" line="32"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;getFar&amp;#039; is never used." verbose="The function &amp;#039;getFar&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.inl" line="95"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;getFov&amp;#039; is never used." verbose="The function &amp;#039;getFov&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.inl" line="28"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;getNear&amp;#039; is never used." verbose="The function &amp;#039;getNear&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ProjectionMatrix.inl" line="91"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;getRotationEuler&amp;#039; is never used." verbose="The function &amp;#039;getRotationEuler&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.inl" line="11"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;setRotationEuler&amp;#039; is never used." verbose="The function &amp;#039;setRotationEuler&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\matrix\EJGL_ViewMatrix.inl" line="24"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;setShaderID&amp;#039; is never used." verbose="The function &amp;#039;setShaderID&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_Shader.inl" line="7"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;setVertexArrayID&amp;#039; is never used." verbose="The function &amp;#039;setVertexArrayID&amp;#039; is never used." cwe="561" sinceDate="2024/12/24">
+            <location file="EJ\include\EJ\GL\glObject\EJGL_VertexArray.inl" line="19"/>
+        </error>
+    </errors>
+</results>

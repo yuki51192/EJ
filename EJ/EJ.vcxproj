@@ -19,63 +19,47 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\glad.c" />
-    <ClCompile Include="src\GL\application\EJGL_Window.cpp" />
-    <ClCompile Include="src\GL\camera\EJGL_ArcBallCamera.cpp" />
-    <ClCompile Include="src\GL\camera\EJGL_Camera.cpp" />
-    <ClCompile Include="src\GL\camera\EJGL_Camera2D.cpp" />
-    <ClCompile Include="src\GL\glObject\EJGL_BufferObject.cpp" />
-    <ClCompile Include="src\GL\glObject\EJGL_Shader.cpp" />
-    <ClCompile Include="src\GL\glObject\EJGL_ShaderProgram.cpp" />
-    <ClCompile Include="src\GL\glObject\EJGL_VertexArray.cpp" />
-    <ClCompile Include="src\GL\matrix\EJGL_Matrix.cpp" />
-    <ClCompile Include="src\GL\matrix\EJGL_ProjectionMatrix.cpp" />
-    <ClCompile Include="src\GL\matrix\EJGL_ViewMatrix.cpp" />
+    <ClCompile Include="src\GL\Camera\EJGL_ArcBallCamera.cpp" />
+    <ClCompile Include="src\GL\Camera\EJGL_Camera2D.cpp" />
+    <ClCompile Include="src\GL\GlObject\EJGL_BufferObject.cpp" />
+    <ClCompile Include="src\GL\GlObject\EJGL_Shader.cpp" />
+    <ClCompile Include="src\GL\GlObject\EJGL_ShaderProgram.cpp" />
+    <ClCompile Include="src\GL\GlObject\EJGL_Texture2D.cpp" />
+    <ClCompile Include="src\GL\GlObject\EJGL_VertexArray.cpp" />
+    <ClCompile Include="src\GL\Helper\EJGL_ImGuiHelper.cpp" />
+    <ClCompile Include="src\GL\Matrix\EJGL_ProjectionMatrix.cpp" />
+    <ClCompile Include="src\GL\Matrix\EJGL_ViewMatrix.cpp" />
+    <ClCompile Include="src\Helper\EJ_ImageLoader.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\EJ\Containers\EJ_ContainerBase.hpp" />
-    <ClInclude Include="include\EJ\Containers\EJ_IteratorBase.hpp" />
-    <ClInclude Include="include\EJ\Containers\EJ_StaticArray.hpp" />
-    <ClInclude Include="include\EJ\Containers\EJ_String.hpp" />
-    <ClInclude Include="include\EJ\GL\application\EJGL_Application.hpp" />
-    <ClInclude Include="include\EJ\GL\application\EJGL_Window.hpp" />
-    <ClInclude Include="include\EJ\GL\camera\EJGL_ArcBallCamera.hpp" />
-    <ClInclude Include="include\EJ\GL\camera\EJGL_Camera.hpp" />
-    <ClInclude Include="include\EJ\GL\camera\EJGL_Camera2D.hpp" />
+    <ClInclude Include="include\EJ\Containers\ContainerHelper.hpp" />
+    <ClInclude Include="include\EJ\GL\Application\EJGL_Application.hpp" />
+    <ClInclude Include="include\EJ\GL\Application\EJGL_Window.hpp" />
+    <ClInclude Include="include\EJ\GL\Camera\EJGL_ArcBallCamera.hpp" />
+    <ClInclude Include="include\EJ\GL\Camera\EJGL_Camera.hpp" />
+    <ClInclude Include="include\EJ\GL\Camera\EJGL_Camera2D.hpp" />
     <ClInclude Include="include\EJ\GL\EJGL_Include.hpp" />
-    <ClInclude Include="include\EJ\GL\extensions\EJGL_GLMExtension.hpp" />
-    <ClInclude Include="include\EJ\GL\glObject\EJGL_BufferObject.hpp" />
-    <ClInclude Include="include\EJ\GL\glObject\EJGL_Shader.hpp" />
-    <ClInclude Include="include\EJ\GL\glObject\EJGL_ShaderProgram.hpp" />
-    <ClInclude Include="include\EJ\GL\glObject\EJGL_VertexArray.hpp" />
-    <ClInclude Include="include\EJ\GL\matrix\EJGL_Matrix.hpp" />
-    <ClInclude Include="include\EJ\GL\matrix\EJGL_ProjectionMatrix.hpp" />
-    <ClInclude Include="include\EJ\GL\matrix\EJGL_ViewMatrix.hpp" />
-    <ClInclude Include="include\EJ\GL\utils\EJGL_BaseObject.hpp" />
-    <ClInclude Include="include\EJ\GL\utils\EJGL_config.hpp" />
-    <ClInclude Include="include\EJ\GL\utils\EJGL_enum.hpp" />
-    <ClInclude Include="include\EJ\GL\utils\EJGL_ObjectExample.hpp" />
-    <ClInclude Include="include\EJ\GL\utils\EJGL_Utils.hpp" />
-    <ClInclude Include="include\EJ\utils\EJ_BaseObject.hpp" />
-    <ClInclude Include="include\EJ\utils\EJ_Config.hpp" />
-    <ClInclude Include="include\EJ\utils\EJ_Macros.hpp" />
-    <ClInclude Include="include\EJ\utils\EJ_ObjectExample.hpp" />
-    <ClInclude Include="include\EJ\utils\EJ_Point.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="include\EJ\GL\application\EJGL_Application.inl" />
-    <None Include="include\EJ\GL\application\EJGL_Window.inl" />
-    <None Include="include\EJ\GL\camera\EJGL_Camera.inl" />
-    <None Include="include\EJ\GL\glObject\EJGL_BufferObject.inl" />
-    <None Include="include\EJ\GL\glObject\EJGL_Shader.inl" />
-    <None Include="include\EJ\GL\glObject\EJGL_ShaderProgram.inl" />
-    <None Include="include\EJ\GL\glObject\EJGL_VertexArray.inl" />
-    <None Include="include\EJ\GL\matrix\EJGL_Matrix.inl" />
-    <None Include="include\EJ\GL\matrix\EJGL_ProjectionMatrix.inl" />
-    <None Include="include\EJ\GL\matrix\EJGL_ViewMatrix.inl" />
-    <None Include="include\EJ\GL\utils\EJGL_BaseObject.inl" />
-    <None Include="include\EJ\utils\EJ_BaseObject.inl" />
+    <ClInclude Include="include\EJ\GL\GlObject\EJGL_Texture2D.hpp" />
+    <ClInclude Include="include\EJ\GL\Helper\EJGL_ImGuiHelper.hpp" />
+    <ClInclude Include="include\EJ\Helper\EJ_EasyStructs.hpp" />
+    <ClInclude Include="include\EJ\GL\Helper\EJGL_BindingGuard.hpp" />
+    <ClInclude Include="include\EJ\GL\Helper\EJGL_GLMExtension.hpp" />
+    <ClInclude Include="include\EJ\GL\GlObject\EJGL_BufferObject.hpp" />
+    <ClInclude Include="include\EJ\GL\GlObject\EJGL_Shader.hpp" />
+    <ClInclude Include="include\EJ\GL\GlObject\EJGL_ShaderProgram.hpp" />
+    <ClInclude Include="include\EJ\GL\GlObject\EJGL_VertexArray.hpp" />
+    <ClInclude Include="include\EJ\GL\Matrix\EJGL_ProjectionMatrix.hpp" />
+    <ClInclude Include="include\EJ\GL\Matrix\EJGL_ViewMatrix.hpp" />
+    <ClInclude Include="include\EJ\GL\Utils\EJGL_Config.hpp" />
+    <ClInclude Include="include\EJ\GL\Utils\EJGL_Enum.hpp" />
+    <ClInclude Include="include\EJ\GL\Utils\EJGL_Traits.hpp" />
+    <ClInclude Include="include\EJ\Helper\EJ_ImageLoader.hpp" />
+    <ClInclude Include="include\EJ\Utils\EJ_Config.hpp" />
+    <ClInclude Include="include\EJ\Utils\EJ_Macros.hpp" />
+    <ClInclude Include="include\EJ\Utils\EJ_Math.hpp" />
+    <ClInclude Include="include\EJ\Utils\EJ_Traits.hpp" />
+    <ClInclude Include="include\EJ\Utils\EJ_Utils.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

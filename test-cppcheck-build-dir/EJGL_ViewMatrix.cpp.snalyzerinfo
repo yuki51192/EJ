@@ -1,0 +1,21 @@
+ClearError call:[glGetError]
+LogCall call:[glGetError]
+sizeofGLType call:[sizeof]
+shaderEnumToStr
+toGlm
+getEye
+getRotation
+getRotationEuler call:[eulerAngles] noreturn:[eulerAngles]
+_getHasChange
+getEye call:[touch]
+getRotation call:[touch]
+getRotationEuler call:[eulerAngles,touch] noreturn:[eulerAngles]
+setEye call:[touch] noreturn:[touch]
+setRotation call:[touch] noreturn:[touch]
+setRotationEuler call:[touch] noreturn:[touch]
+touch call:[_setHasChange] noreturn:[_setHasChange]
+hasChange call:[_getHasChange,_setHasChange]
+update call:[inverse,mat4,mat4_cast,operator*=,operator=] noreturn:[operator*=]
+_setHasChange
+EJGLViewMatrix
+toString call:[string,toString]
