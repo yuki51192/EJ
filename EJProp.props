@@ -4,10 +4,10 @@
 	<ImportGroup Label="PropertySheets" />
 
 	<PropertyGroup Label="UserMacros">
-		<OuterDir>D:\Program\c++\EJ\Library</OuterDir>
+		<OuterDir>D:\gitlab\EJ\Library</OuterDir>
 		<OuterIncDir>$(OuterDir)\include</OuterIncDir>
 		<OuterLibDir>$(OuterDir)\lib</OuterLibDir>
-		<InnerDir>D:\Program\c++\EJ\EJ</InnerDir>
+		<InnerDir>D:\gitlab\EJ\EJ</InnerDir>
 		<InnerIncDir>$(InnerDir)\include</InnerIncDir>
 		<InnerSrcDir>$(InnerDir)\src</InnerSrcDir>
 	</PropertyGroup>
